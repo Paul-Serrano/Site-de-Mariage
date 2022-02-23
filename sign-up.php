@@ -3,49 +3,47 @@
 include_once "_nav.php";
 require "includes/_connect.php";
 
+$regularForm = ["name", "surname", "mail", "tel", "adress", "pass", "pass2"];
+$regularFormLabel = ["Nom", "Prénom", "Adresse Mail", "Téléphone", "Adresse Postale", "Mot de Passe", "Retapez mot de passe"];
+$hypotheticForm = ["housing", "food", "sideGuest"];
+$choice = ["yes", "no"];
+$question = ["Avez vous déjà prévu votre logement pour l'évènement ?",
+"Avez vous des allergies ou un régime alimentaire particulier ?",
+"Venez vous avec une ou plusieurs personnes ne pouvant pas s'inscrire sur le site ?"
+];
+$form = [$regularForm, $hypotheticForm, $question, $regularFormLabel];
 ?>
 
 
 <body>
     <main class="sign-up-main">
-        <form action="sign-up_post.php" method="POST">
-            <label for="name">Nom</label>
-            <input id="name" type="text">
-            <label for="surname">Prénom</label>
-            <input id="Surname" type="text">
-            <label for="mail">Mail</label>
-            <input id="mail" type="text">
-            <label for="tel">Téléphone</label>
-            <input id="tel" type="text">
-            <label for="adress">Adresse</label>
-            <input id="adress" type="text">
-            <label for="pass">Mot de passe</label>
-            <input id="pass" type="text">
-            <label for="pass2">répétez mot de passe</label>
-            <input id="pass2" type="text">
-            <div class="housing-form">
-                <p>Avez vous déjà prévu votre logement pour l'évènement ?</p>
-                <input id="housing-yes" type="radio" name="housing" value="yes">
-                <label for="housing-yes">Oui</label>
-                <input id="housing-no" type="radio" name="housing" value="no">
-                <label for="housing-no">Non</label> 
+        <form class="sign-up-form" action="sign-up_post.php" method="POST">
+            <div class="regular-form">
+                <?php
+                for($i = 0; $i < count($form[0]); $i++) {
+                ?>
+                <div class="<?php echo $form[0][$i]?>-form-group form-group">
+                    <label for="<?php echo $form[0][$i]?>" class="sign-up-label"><p><?php echo $form[3][$i]?></p></label>
+                    <input id="<?php echo $form[0][$i]?>" type="text">
+                </div>
+                <?php
+                }
+                ?>
             </div>
-            <div class="food-form">
-                <p>Avez vous des allergies ou un régime alimentaire particulier ?</p>
-                <input id="food-yes" type="radio" name="food" value="yes">
-                <label for="food-yes">Oui</label>
-                <input id="food-no" type="radio" name="food" value="no">
-                <label for="food-no">Non</label>
-                <div class="food-issue"></div> 
-            </div>
-            <div class="sideGuest-form">
-                <p>Venez vous avec une ou plusieurs personnes ne pouvant pas s'inscrire sur le site ?</p>
-                <input id="sideGuest-yes" type="radio" name="sideGuest" value="yes">
-                <label for="sideGuest-yes">Oui</label>
-                <input id="sideGuest-no" type="radio" name="sideGuest" value="no">
-                <label for="sideGuest-no">Non</label>
+            <div class="additionnal-form">
+                <?php
+                for($i = 0; $i < count($form) - 1; $i++) {
+                ?>
+                <div class="<?php echo $form[1][$i]?>-form additionnal-form-group">
+                    <p><?php echo $form[2][$i]?></p>
+                    <input id="<?php echo $form[1][$i]?>-yes" type="checkbox" name="<?php echo $form[1][$i]?>" value="yes">
+                    <label for="<?php echo $form[1][$i]?>-yes" class="sign-up-label"><p>Oui</p></label>
+                </div>
+                <?php
+                }
+                ?>
             </div>
         </form>
     </main>
-    <script src="script.js"></script>
+    <script src="public/script.js"></script>
 </body>
