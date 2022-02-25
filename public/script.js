@@ -4,7 +4,7 @@ function addFood() {
     <div class="additionnal-food-container">
         <div class="sign-up-label-container">
             <label for="food" class="sign-up-label"><p>Aliment</p></label>
-            <div class="btn-container">
+            <div class="food-btn-container">
                 <button type="button" class="add-btn" onclick="addFood()">
                     <img src="public/img/add.png" alt="ajouter"></img>
                 </button>
@@ -24,7 +24,6 @@ function addSideGuestFood(i) {
   for ($i = 0; $i < $count; $i++) {
     $addFood[$i] = $(`.sideGuest-food-choice-container-${$i}`);
   }
-  console.log($addFood);
   $addFood[i].after(`
       <div class="additionnal-sideGuest-food-container additionnal-sideGuest-food-container-${i}">
           <div class="sign-up-label-container">
@@ -65,10 +64,10 @@ function yesSideGuest() {
     <hr class="sideGuest-hr">
     <div class="sideGuest-btn-container">
         <button type="button" class="add-sideGuest-btn" onclick="addSideGuest()">
-            <img src="public/img/add.png" alt="ajouter"></img>
+            <img class="add-img" src="public/img/add.png" alt="ajouter"></img>
         </button>
         <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(0)">
-            <img src="public/img/minus.png" alt="ajouter"></img>
+            <img class="add-img" src="public/img/minus.png" alt="ajouter"></img>
         </button>
     </div>
 </div>
@@ -99,10 +98,10 @@ function addSideGuest() {
   <hr class="sideGuest-hr">
   <div class="sideGuest-btn-container">
       <button type="button" class="add-sideGuest-btn" onclick="addSideGuest()">
-          <img src="public/img/add.png" alt="ajouter"></img>
+          <img class="add-img" src="public/img/add.png" alt="ajouter"></img>
       </button>
       <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(${$count})">
-          <img src="public/img/minus.png" alt="ajouter"></img>
+          <img class="add-img" src="public/img/minus.png" alt="ajouter"></img>
       </button>
   </div>
 </div>
