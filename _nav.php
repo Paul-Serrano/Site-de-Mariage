@@ -13,6 +13,6 @@ require "_head.php"
         <button class="nav-btn"><img class="nav-img" src="public/img/settings.png" alt="panneau de configuration"></button>
     </div>
     <div class="nav-bottom">
-    <img class="nav-img" src="public/img/lantern-big.png" alt="lanternes">
+    <img class="nav-img lantern-large" src="public/img/lantern-big.png" alt="lanternes">
     </div>
 </nav>

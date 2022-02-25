@@ -6,6 +6,10 @@
   color: #557174;
 }
 
+html {
+  height: auto !important;
+}
+
 img {
   max-width: 100%;
   height: 100%;
@@ -13,7 +17,6 @@ img {
 
 body {
   background: linear-gradient(165deg, #f7f7e8 0%, #c7cfb7 100%);
-  height: 100vh;
 }
 
 main {
@@ -28,7 +31,7 @@ nav {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 2.5%;
+  padding-top: 1%;
 }
 
 nav p {
@@ -61,11 +64,50 @@ nav p {
 
 .lantern-small {
   margin-top: 2.5%;
+  width: 7.5%;
+}
+
+.lantern-large {
+  width: 20%;
 }
 
 /*nav -- end*/
 
 /*sign-up form -- start*/
+
+.sign-in-link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.sign-up-main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-info {
+  color: black;
+  font-size: 0.3rem;
+}
+
+.form-info-container {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: rgb(199, 207, 183);
+  background: linear-gradient(
+    165deg,
+    rgba(199, 207, 183, 1) 0%,
+    rgba(157, 173, 127, 1) 100%
+  );
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  padding: 1%;
+}
 
 .sign-up-form {
   display: flex;
@@ -84,12 +126,14 @@ nav p {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  margin: 2.5% 0;
 }
 
 .form-group {
   width: 100%;
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 
@@ -97,32 +141,40 @@ nav p {
   display: flex;
   flex-direction: column;
   width: 30%;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.form-group input {
-  width: 50%;
+.sign-up-label {
+  width: 100%;
+}
+
+.form-group input,
+.additionnal-input {
+  width: 75%;
   font-family: "Sans-serif";
-  font-size: 50%;
+  font-size: 30%;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #557174;
   border-radius: 0.5rem 0.25rem;
+  padding: 2.5%;
 }
 
-.housing-form p,
-.food-form p,
-.sideGuest-form p {
+.housing-choice-form p,
+.food-choice-form p,
+.sideGuest-choice-form p {
   font-size: 30%;
 }
 
 .sign-up-label p {
   font-size: 30%;
-  width: 100%;
-  text-align: center;
+  width: 75%;
+  margin: 0 15%;
 }
 
-.housing-form input,
-.food-form input,
-.sideGuest-form input {
+.housing-choice-form input,
+.food-choice-form input,
+.sideGuest-choice-form input {
   display: none;
 }
 
@@ -138,6 +190,38 @@ input[type="checkbox"] + label {
   border-radius: 0.5rem 0.25rem;
 }
 
+.additionnal-form-btn {
+  display: flex;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 1px #557174;
+  margin: 5% auto;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.5rem 0.25rem;
+}
+
+.additionnal-form-btn p {
+  text-align: center;
+  width: 100%;
+}
+
+.additionnal-form-btn:active {
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+  color: #f7f7e8;
+  border: 1px black solid;
+}
+
+.additionnal-form-btn:active .additionnal-form-btn p {
+  color: #f7f7e8;
+}
+
 input[type="checkbox"]:checked + label {
   background: rgb(157, 173, 127);
   background: linear-gradient(
@@ -151,6 +235,135 @@ input[type="checkbox"]:checked + label {
 
 input[type="checkbox"]:checked + label p {
   color: #f7f7e8;
+}
+
+#food {
+  display: flex;
+}
+
+.add-btn {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 50%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+}
+
+.sign-up-label-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+}
+
+.additionnal-food-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.additionnal-sideGuest-container {
+  display: flex;
+  width: 75%;
+  justify-content: flex-start;
+}
+
+.sub-additionnal-sideGuest-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100%;
+  margin-top: 15%;
+}
+
+.additionnal-sideGuest-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.submit-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.submit-container a p,
+.submit-container p {
+  font-size: 30%;
+}
+
+.sign-up-submit-btn {
+  display: flex;
+  width: 75%;
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+}
+
+.sign-up-submit-btn p {
+  font-size: 50%;
+  color: #f7f7e8;
+}
+
+.additionnal-sideGuest-input {
+  width: 90%;
+  display: flex !important;
+  margin: 5% 0;
+}
+
+.sideGuest-food-container {
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.sideGuest-hr {
+  width: 50%;
+  color: rgba(85, 113, 116, 1);
+  border: solid 1px black;
+  margin: 5% auto;
+}
+
+.additionnal-sideGuest-food-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideGuest-btn-container {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.add-sideGuest-btn {
+  display: flex;
+  flex-direction: center;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.additionnal-sideGuest-label {
+  display: flex;
+  align-items: center;
 }
 
 /*sign-up form -- end*/
