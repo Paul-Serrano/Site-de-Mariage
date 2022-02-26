@@ -147,6 +147,8 @@ nav p {
 
 .sign-up-label {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .form-group input,
@@ -251,13 +253,14 @@ input[type="checkbox"]:checked + label p {
 .btn-container {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 25%;
+  align-items: center;
 }
 
 .food-btn-container {
   display: flex;
   justify-content: center;
-  width: 25%;
+  width: 50%;
 }
 
 .sign-up-label-container {
@@ -376,6 +379,23 @@ input[type="checkbox"]:checked + label p {
   width: 75%;
   display: flex;
   margin: 0 auto;
+}
+
+.sideGuest-food-control {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sideGuest-food-control {
+  display: flex;
+  align-items: center;
+}
+
+.sideGuest-food-individual-control {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 /*sign-up form -- end*/

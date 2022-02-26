@@ -26,7 +26,7 @@ $form = [$regularForm, $hypotheticForm, $question, $regularFormLabel, $specialFo
                 ?>
                 <div class="<?php echo $form[0][$i]?>-form-group form-group">
                     <label for="<?php echo $form[0][$i]?>" class="sign-up-label"><p><?php echo $form[3][$i]?></p></label>
-                    <input id="<?php echo $form[0][$i]?>" type="text">
+                    <input id="<?php echo $form[0][$i]?>" type="text" value="" name="<?php echo $form[0][$i]?>">
                 </div>
                 <?php
                 }
@@ -43,8 +43,8 @@ $form = [$regularForm, $hypotheticForm, $question, $regularFormLabel, $specialFo
                 ?>
                 <div class="<?php echo $form[1][$i]?>-form additionnal-form-group">
                     <p><?php echo $form[2][$i]?></p>
-                    <div class="additionnal-<?php echo $form[4][$i]?>-container">
-                        <button class="additionnal-form-btn" type="button" <?php if($i == 2){ echo 'onclick="addFood()"';} else{ echo 'onclick="yesSideGuest()"';}?>>
+                    <div class="additionnal-<?php echo $form[4][$i]?>-container-0 additionnal-<?php echo $form[4][$i]?>-container">
+                        <button class="additionnal-form-btn" type="button" <?php if($i == 2){ echo 'onclick="addFood(0)"';} else{ echo 'onclick="yesSideGuest()"';}?>>
                             <p>Oui</p>
                         </button>
                     </div>

@@ -1,6 +1,8 @@
 <?php
 
-require "_head.php"
+session_start();
+
+require "_head.php";
 
 ?>
 
