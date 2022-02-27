@@ -75,7 +75,7 @@ if (isset($_GET['success'])) {
                 }
                 ?>
             </div>
-            <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p></div>" : ''; ?>
+            <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
             <div class="submit-container">
                 <div class="sign-in-link-container">
                     <div class="form-info-container">

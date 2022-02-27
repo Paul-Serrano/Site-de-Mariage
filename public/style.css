@@ -6,10 +6,6 @@
   color: #557174;
 }
 
-html {
-  height: auto !important;
-}
-
 img {
   max-width: 100%;
   height: 100%;
@@ -17,6 +13,10 @@ img {
 
 body {
   background: linear-gradient(165deg, #f7f7e8 0%, #c7cfb7 100%);
+}
+
+button {
+  cursor: pointer;
 }
 
 main {
@@ -32,13 +32,21 @@ main {
   width: 50%;
   font-size: 50%;
   background: #ff633b;
-  opacity: 75%;
+  z-index: 1;
   border-radius: 0.5rem 0.25rem;
   border: 1px solid black;
   padding: 1%;
   align-items: center;
   align-self: flex-end;
   margin: 2.5%;
+}
+
+.alert-container .alert {
+  width: 25%;
+  margin: 0 auto 2.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .alert-warning {
@@ -50,7 +58,7 @@ main {
   position: absolute;
   width: 35%;
   align-self: center;
-  margin-top: -5%;
+  margin-top: -10%;
 }
 
 .alert p {
@@ -58,6 +66,13 @@ main {
   width: 100%;
   color: #f7f7e8;
   text-align: center;
+}
+
+.close-alert {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /*Alerts -- end*/
@@ -84,6 +99,7 @@ nav p {
   width: 95%;
   margin: auto;
   justify-content: space-between;
+  position: relative;
 }
 
 .nav-bottom {
@@ -106,6 +122,17 @@ nav p {
 
 .lantern-large {
   width: 20%;
+}
+
+.user-block {
+  /* display: none; */
+  display: flex;
+  width: 50%;
+  position: absolute;
+}
+
+.user-img:hover .user-block {
+  display: flex;
 }
 
 /*nav -- end*/
@@ -232,6 +259,67 @@ nav p {
 }
 
 /* Index -- end*/
+
+/* sign in form -- start */
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2.5% auto;
+}
+
+.sign-in-label,
+.sign-in-input {
+  width: 35%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 50%;
+}
+
+.sign-in-label p {
+  font-size: 75%;
+}
+
+.sign-in-input {
+  border-radius: 0.5rem 0.25rem;
+  border: solid 1px #557174;
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: 7.5%;
+  padding: 0 2.5%;
+}
+
+.sign-in-btn {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  padding: 1%;
+  justify-content: center;
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+}
+
+.sign-in-btn p {
+  font-size: 50%;
+  color: #f7f7e8;
+}
+
+.sign-in-submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+/* sign -in form -- end */
 
 /*sign-up form -- start*/
 

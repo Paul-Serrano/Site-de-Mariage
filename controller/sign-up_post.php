@@ -16,7 +16,19 @@ if(isset($_POST["sign-up-submit"])) {
     $housing = $_POST['housing-choice'];
     $pass = $_POST["pass"];
     $pass2 = $_POST["pass2"];
-    $userInfo = [$name, $surname, $mail, $tel, $pass, $adress];
+    $userInfo = [$name, $surname, $mail, $tel, $pass, $pass2, $adress];
+
+    for($i = 0; $i < count($userInfo); $i++) {
+        if(empty($userInfo[$i])) {
+            header('Location:../view/sign-up.php?error=missingInput');
+            exit();
+        }
+    }
+    
+    if ($pass !== $pass2) {
+        header('Location:../view/sign-up.php?error=differentPasswords');
+        exit();
+    }
     // $nbOfAdditionnalFood = 
 for($i = 1; $i < 3; $i++) {
     $food[$i] = $_POST["food-".$i.""];
@@ -34,18 +46,6 @@ for($j = 0; $j < count($sideGuest); $j++) {
         $sideGuestFoodSmall[$i] = $_POST["sideGuest-food-".$i.""];
     }
     $sideGuestFoodBig[$j] =  $sideGuestFoodSmall;
-}
-
-for($i = 0; $i < count($userInfo); $i++) {
-    if(empty($userInfo[$i])) {
-        header('Location:../view/sign-up.php?error=missingInput');
-        exit();
-    }
-}
-
-if ($pass != $pass2) {
-    header('Location:../view/sign-up.php?error=differentPasswords');
-        exit();
 }
 
     
@@ -80,13 +80,14 @@ if ($pass != $pass2) {
 
  
     if($reqSignUp) {
+        session_start();
         $_SESSION["name"] = $name;
         $_SESSION["surname"] = $surname;
         $_SESSION["mail"] = $mail;
         $_SESSION["tel"] = $tel;
         $_SESSION["adress"] = $adress;
         $_SESSION["housing"] = $housing;
-        header("Location:../view/index.php?success");
+        header("Location:../view/index.php?success=signUp");
 
         ?><pre><?php
         var_dump($bindValues);

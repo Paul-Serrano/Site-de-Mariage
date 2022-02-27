@@ -1,6 +1,6 @@
 <?php
 
-require "../includes/dev.env.php";
+require "../dev.env.php";
 
 $db_string = "mysql:dbname=".DATABASE.";host=".SERVER;
 

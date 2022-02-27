@@ -149,3 +149,8 @@ function minusSideGuestFood(i) {
   $subFood = $(`.additionnal-sideGuest-food-container-${i}`).last();
   $subFood.remove();
 }
+
+function closeAlert() {
+  $alert = $(".alert");
+  $alert.css("display", "none");
+}

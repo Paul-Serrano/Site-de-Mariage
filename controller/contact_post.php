@@ -6,11 +6,9 @@ if(isset($_POST['contact-submit'])){
   
          if(true) {
 
-          $header = "";
-          $header="MIME-Version: 1.0\r\n";
-          $header.='From:"Site Mariage'."\n";
-          $header.='Content-Type:text/html; charset="utf-8"'."\n";
-          $header.='Content-Transfer-Encoding: 8bit'; 
+          $paulMail = "paul.serrano08374@gmail.com";
+          $sujet = "test";
+          $header ='From:"Site Mariage'; 
           $message='
           <html>
             <body>
@@ -21,20 +19,13 @@ if(isset($_POST['contact-submit'])){
           </html>
           '; 
   
-  mail("paul.serrano08374@gmail.com", "Site Mariage !", $message,
-  $header);
-
-
-
-         }
+        mail($paulMail, $sujet, $message, $header);
+       }
 
          else {
           return;
         }
-         
-         echo "<script>alert('Votre message a bien été envoyé, je vous répondrais dans les meilleurs délais !');</script>";
-         sleep(1);
 
-         header("Location:../view/index.php");
+         header("Location:../view/index.php?success=sendMail");
  
 } ?>

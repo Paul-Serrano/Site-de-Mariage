@@ -5,16 +5,31 @@ include_once "../includes/_nav.php";
 $alert = false;
 
 if (isset($_GET['success'])) {
-    $alert = true;
+    if($_GET['success'] == 'sendMail') {
+        $alert = true;
     $type = "success";
-    $message = "Bienvenu !!!";
+    $message = "Votre message a bien été envoyé, nous vous répondrons dans les meilleurs délais !";
+    }
+
+    if($_GET['success'] == 'signUp') {
+        $alert = true;
+    $type = "success";
+    $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
+    }
+
+    if($_GET['success'] == 'signIn') {
+        $alert = true;
+    $type = "success";
+    $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
+    }
+    
 }
 
 ?>
 
 <body>
 <main class="index-main">
-<?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p></div>" : ''; ?>
+<?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
     <div class="index-container">
         <div class="index-top-container">
             <a class="index-block-link" href="../view/contact.php">
@@ -53,4 +68,5 @@ if (isset($_GET['success'])) {
         </div>
     </div>
 </main>
+<script src="../public/script.js"></script>
 </body>
