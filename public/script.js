@@ -2,22 +2,24 @@ function addFood(i) {
   $addFood = $(`.additionnal-food-container-${i}`);
   $food = $(`.additionnal-food-container`);
   $count = $food.length;
-  $addFood.after(`
-        <div class="additionnal-food-container-${$count} additionnal-food-container">
-            <div class="sign-up-label-container">
-                <label for="food" class="sign-up-label"><p>Aliment</p></label>
-                <div class="food-btn-container">
-                    <button type="button" class="add-food-btn" onclick="addFood(${$count})">
-                        <img src="../public/img/add.png" alt="ajouter"></img>
-                    </button>
-                    <button type="button" class="add-food-btn" onclick="minusFood()">
-                        <img src="../public/img/minus.png" alt="ajouter"></img>
-                    </button>
-                </div>
+  if ($count < 7) {
+    $addFood.after(`
+    <div class="additionnal-food-container-${$count} additionnal-food-container">
+        <div class="sign-up-label-container">
+            <label for="food" class="sign-up-label"><p>Aliment</p></label>
+            <div class="food-btn-container">
+                <button type="button" class="add-food-btn" onclick="addFood(${$count})">
+                    <img src="../public/img/add.png" alt="ajouter"></img>
+                </button>
+                <button type="button" class="add-food-btn" onclick="minusFood()">
+                    <img src="../public/img/minus.png" alt="ajouter"></img>
+                </button>
             </div>
-            <input class="additionnal-input" id="food" type="text" name="food-${$count}" value="">
         </div>
-    `);
+        <input class="additionnal-input" id="food" type="text" name="food-${$count}" value="">
+    </div>
+`);
+  }
 }
 
 function addSideGuestFood(i, j) {
@@ -96,41 +98,43 @@ function addSideGuest(i) {
   $additionnalFoodChoiceForm = $(`.additionnal-sideGuest-food-container-${i}`);
   $count2 = $additionnalFoodChoiceForm.length;
   $count = $foodChoiceForm.length;
-  $addFood.after(`
-  <div class="sideGuest-food-container" id="sideGuest-food-container-${$count}">
-  <div class="sub-additionnal-sideGuest-form-container">
-      <label for="sideGuestName" class="sign-up-label additionnal-sideGuest-label"><p>Name</p></label>
-      <input class="additionnal-input additionnal-sideGuest-input" id="sideGuestName" name="sideGuest-name-${$count}" type="text">
-      <label for="sideGuestSurname" class="sign-up-label additionnal-sideGuest-label"><p>Surname</p></label>
-      <input class="additionnal-input additionnal-sideGuest-input" id="sideGuestsurname" name="sideGuest-surname-${$count}" type="text">
-      <label for="sideGuestAge" class="sign-up-label additionnal-sideGuest-label"><p>Age</p></label>
-      <input class="additionnal-input additionnal-sideGuest-input" id="sideGuestAge" name="sideGuest-age-${$count}" type="text">
+  if ($count < 5) {
+    $addFood.after(`
+    <div class="sideGuest-food-container" id="sideGuest-food-container-${$count}">
+    <div class="sub-additionnal-sideGuest-form-container">
+        <label for="sideGuestName" class="sign-up-label additionnal-sideGuest-label"><p>Name</p></label>
+        <input class="additionnal-input additionnal-sideGuest-input" id="sideGuestName" name="sideGuest-name-${$count}" type="text">
+        <label for="sideGuestSurname" class="sign-up-label additionnal-sideGuest-label"><p>Surname</p></label>
+        <input class="additionnal-input additionnal-sideGuest-input" id="sideGuestsurname" name="sideGuest-surname-${$count}" type="text">
+        <label for="sideGuestAge" class="sign-up-label additionnal-sideGuest-label"><p>Age</p></label>
+        <input class="additionnal-input additionnal-sideGuest-input" id="sideGuestAge" name="sideGuest-age-${$count}" type="text">
+    </div>
+    <div class="sideGuest-food-choice-container-${$count}">
+    <div class="sideGuest-food-control-${$count} sideGuest-food-control">
+    <p>Régime alimentaire particulier ?</p>
+        <div class="btn-container">
+        <button type="button" class="add-btn" onclick="addSideGuestFood(${$count}, 0)">
+            <img src="../public/img/add.png" alt="ajouter"></img>
+        </button>
+        <button type="button" class="add-btn" onclick="minusSideGuestFood(${i})">
+            <img src="../public/img/minus.png" alt="ajouter"></img>
+        </button>
+    </div>
+    </div>
+  
+    </div>
+    <hr class="sideGuest-hr">
+    <div class="sideGuest-btn-container">
+        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(${$count})">
+            <img class="add-img" src="../public/img/add.png" alt="ajouter"></img>
+        </button>
+        <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(${$count})">
+            <img class="add-img" src="../public/img/minus.png" alt="ajouter"></img>
+        </button>
+    </div>
   </div>
-  <div class="sideGuest-food-choice-container-${$count}">
-  <div class="sideGuest-food-control-${$count} sideGuest-food-control">
-  <p>Régime alimentaire particulier ?</p>
-      <div class="btn-container">
-      <button type="button" class="add-btn" onclick="addSideGuestFood(${$count}, 0)">
-          <img src="../public/img/add.png" alt="ajouter"></img>
-      </button>
-      <button type="button" class="add-btn" onclick="minusSideGuestFood(${i})">
-          <img src="../public/img/minus.png" alt="ajouter"></img>
-      </button>
-  </div>
-  </div>
-
-  </div>
-  <hr class="sideGuest-hr">
-  <div class="sideGuest-btn-container">
-      <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(${$count})">
-          <img class="add-img" src="../public/img/add.png" alt="ajouter"></img>
-      </button>
-      <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(${$count})">
-          <img class="add-img" src="../public/img/minus.png" alt="ajouter"></img>
-      </button>
-  </div>
-</div>
-  `);
+    `);
+  }
 }
 
 function minusFood() {
