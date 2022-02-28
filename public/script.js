@@ -27,20 +27,12 @@ function addSideGuestFood(i, j) {
   $count = $foodChoiceForm.length;
   $createFood = $(`.btn-container`);
   j = j + 1;
-  $count2 = $(`.sideGuest-food-0`).length;
+  $count2 = $(`.sideGuest-food-${i}`).length;
   $foodControl = $(`.sideGuest-food-control-${i}`);
   $foodControl.after(`
         <div class="additionnal-sideGuest-food-container additionnal-sideGuest-food-container-${$count2} .sideGuest-food-${i} additionnal-sideGuest-food-container-${$count}-${$count2}">
         <div class="sideGuest-food-individual-control">
         <label for="food-${i}-${$count2}" class="sign-up-label"><p>Aliment</p></label>
-        <div class="btn-container">
-<button type="button" class="add-btn" onclick="addSideGuestFood(${i}, ${j})">
-  <img src="../public/img/add.png" alt="ajouter"></img>
-</button>
-<button type="button" class="add-btn" onclick="minusSideGuestFood(${i})">
-  <img src="../public/img/minus.png" alt="ajouter"></img>
-</button>
-</div>
         </div>        
             <input class="sideGuest-food-input additionnal-input" id="food-${i}-${$count2}" type="text" value="" name="sideGuest-food-${i}-${$count2}">
         </div>
@@ -50,7 +42,7 @@ function addSideGuestFood(i, j) {
   console.log($foodControl);
   console.log($createFood);
   console.log($count);
-  console.log($count2);
+  console.log(j);
 }
 
 function yesSideGuest() {
@@ -95,7 +87,7 @@ function yesSideGuest() {
 function addSideGuest(i) {
   $addFood = $(".sideGuest-food-container:last-child");
   $foodChoiceForm = $(".sideGuest-food-container");
-  $additionnalFoodChoiceForm = $(`.additionnal-sideGuest-food-container-${i}`);
+  $additionnalFoodChoiceForm = $(`.sideGuest-food-container-${i}`);
   $count2 = $additionnalFoodChoiceForm.length;
   $count = $foodChoiceForm.length;
   if ($count < 5) {
@@ -158,3 +150,13 @@ function closeAlert() {
   $alert = $(".alert");
   $alert.css("display", "none");
 }
+
+
+// Loader --start 
+
+$(window).on("load", function () {
+  $(".loader-main").fadeOut(750);
+});
+
+
+// Loader -- end

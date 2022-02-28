@@ -25,6 +25,66 @@ main {
   margin: 2.5% auto;
 }
 
+/* Loader -- start*/
+
+.loader-main{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#111;
+  min-height:100vh;
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+.loading{
+  width:200px;
+  height:200px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.loading span{
+  position:absolute;
+  width: 25%;
+  height: 50%;
+  top: 25%;
+  left: 37.5%;
+  border:2px solid #fff;
+  animation: animate 5s linear infinite;
+}
+
+.loading span:nth-child(1)
+{
+  border-radius:60% 40% 21% 79% / 35% 55% 45% 65%  ;
+}
+.loading span:nth-child(2)
+{
+  animation-direction:reverse;
+  border-radius:50% 50% 51% 49% / 68% 68% 32% 32%;
+}
+.loading span:nth-child(3)
+{
+  animation-duration:3s;
+  border-radius:32% 68% 32% 68% / 43% 47% 53% 57%;
+}
+@keyframes animate{
+  0%{
+   transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+.loading h2{
+  color:#fff;
+  font-weight: 500;
+}
+
+/* Loader -- end*/
+
+
+
 /*Alerts -- start*/
 
 .alert {
@@ -115,6 +175,10 @@ nav p {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.nav-link {
+  position: relative;
+}
+
 .lantern-small {
   margin-top: 2.5%;
   width: 7.5%;
@@ -127,8 +191,63 @@ nav p {
 .user-block {
   /* display: none; */
   display: flex;
-  width: 50%;
-  position: absolute;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgb(157,173,127);
+  background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 100%);
+  padding: 5%;
+  border: solid 1px black;
+  border-radius: 0.5rem 0.25rem;
+  width: 150%;
+  height: 100%;
+}
+
+.user-block p {
+  font-size: 35%;
+  color: #F7F7E8;
+}
+
+.log-out-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.log-out-block {
+  display: flex;
+  width: 75%;
+  margin: auto;
+}
+
+.sign-in-block {
+  display: flex;
+  width: 75%;
+  margin: auto;
+}
+
+.sign-in-block a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.log-out {
+  display: flex;
+  width: 100%;
+  background: #ff633b;
+  padding: 1%;
+  justify-content: center;
+  border-radius: 0.5rem 0.25rem;
+}
+
+.profile-btn {
+  display: flex;
+  width: 100%;
+  background: #C7CFB7;
+  padding: 1%;
+  justify-content: center;
+  border-radius: 0.5rem 0.25rem;
+  border: solid 1px black;
 }
 
 .user-img:hover .user-block {
@@ -288,7 +407,8 @@ nav p {
   border: solid 1px #557174;
   background: rgba(0, 0, 0, 0);
   margin-bottom: 7.5%;
-  padding: 0 2.5%;
+  padding: 0.5% 1%;
+  font-family: 'Sans Serif'
 }
 
 .sign-in-btn {
@@ -414,6 +534,8 @@ nav p {
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .housing-choice-form p,
