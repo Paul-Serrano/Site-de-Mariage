@@ -9,13 +9,23 @@ $title = "Bienvenue, si vous êtes un invité du mariage d'Hugo et Noémie, veui
 
 $closeChoice = $title;
 
+$homeConnect = "connect";
+$homeConnect1 = "sign-in";
+$homeConnect3 = "signIn";
+
 if(isset($_GET['success'])) {
     $close = false;
     if($_GET['success'] == 'signIn') {
         $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['success'] == 'signUp') {
         $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
 }
 
@@ -23,30 +33,54 @@ if(isset($_GET['error'])) {
     $close = false;
     if($_GET['error'] == 'knownMail') {
         $title = "Formulaire d'inscrpition";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['error'] == 'missingInput') {
         $title = "Formulaire d'inscrpition";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['error'] == 'differentPasswords') {
         $title = "Formulaire d'inscrpition";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['error'] == 'differentPasswords') {
         $title = "Formulaire d'inscrpition";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if ($_GET['error'] == "missingMail") {
         $title = "Formulaire de connexion";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
 
     if ($_GET['error'] == "missingPass") {
         $title = "Formulaire de connexion";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
 
     if ($_GET['error'] == "noUser") {
         $title = "Formulaire de connexion";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
 
     if ($_GET['error'] == "passNoMatch") {
         $title = "Formulaire de connexion";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
 }
 
@@ -59,12 +93,21 @@ if(isset($_GET['page'])) {
     }
     if($_GET['page'] == 'signIn') {
         $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['page'] == 'signUp') {
         $title = "Formulaire d'inscription";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['page'] == 'signIn') {
         $title = "Formulaire de connexion";
+        $homeConnect = "home";
+        $homeConnect1 = "index";
+        $homeConnect3 = "";
     }
     if($_GET['page'] == 'contact') {
         $title = "Contact";
@@ -88,10 +131,7 @@ if(isset($_GET['page'])) {
 
 if($title == $closeChoice) {
     $close = false;
-}
-
-    
-    
+}  
 
 
 ?>
@@ -118,11 +158,13 @@ if($title == $closeChoice) {
         }
         else {
         ?>
-        <a href="../view/sign-in.php?page=signIn" class="nav-link" style="align-self:flex-start;">
+        <div class="home-connect-block">
+        <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link" style="align-self:flex-start;">
             <button class="nav-btn">
-                <img src="../public/img/connect.png" alt="connectez vous">
+                <img src="../public/img/<?php echo $homeConnect;?>.png" alt="connectez vous">
             </button>
         </a>
+        </div>
         <?php
         }
         ?>
