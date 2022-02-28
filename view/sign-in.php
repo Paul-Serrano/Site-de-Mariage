@@ -42,7 +42,7 @@ if (isset($_GET["error"])) {
             <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div class='close-alert'><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
             <div class="submit-container">
                 <div class="sign-in-link-container">
-                        <a href="../view/sign-up.php?page=signIn" class="sign-up-link"><p>Vous n'avez pas de compte ? c'est par ici !</p></a>
+                        <a href="../view/sign-up.php?page=signUp" class="sign-up-link"><p>Vous n'avez pas de compte ? c'est par ici !</p></a>
                     </div>
                     <div class="sign-in-submit-container">
                         <button type="submit" name="sign-in-submit" class="sign-in-btn"><p>Se connecter</p></button>

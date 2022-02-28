@@ -87,7 +87,7 @@ if (isset($_GET['success'])) {
                     <div class="form-info-container">
                         <p class='form-info'>Seuls vos noms et prénoms seront visibles par les autres invités. Le reste des informations est uniquement accessible à Hugo et Noémie, ainsi qu'au développeur.</p>
                     </div>  
-                    <a href="../view/sign-in.php?page=signUp" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
+                    <a href="../view/sign-in.php?page=signIn" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
                 </div>
                 <div class="submit-sign-up-container">
                     <button type="submit" name="sign-up-submit" class="sign-up-submit-btn"><p>Valider Inscription</p></button>

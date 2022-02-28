@@ -5,6 +5,10 @@ require_once "../includes/_loader.php";
 
 $close = true;
 
+$title = "Bienvenue, si vous êtes un invité du mariage d'Hugo et Noémie, veuillez vous identifier svp !";
+
+$closeChoice = $title;
+
 if(isset($_GET['success'])) {
     $close = false;
     if($_GET['success'] == 'signIn') {
@@ -82,7 +86,9 @@ if(isset($_GET['page'])) {
     }
 }
 
-
+if($title == $closeChoice) {
+    $close = false;
+}
 
     
     
