@@ -15,9 +15,5 @@ require_once "../includes/_nav.php";
         </form>
     </main>
     <script src="../ckeditor/ckeditor.js"></script>
-    <script>
-        ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
-  console.error(error);
-});
-    </script>
+    <script src="../public/script.js"></script>
 </body>

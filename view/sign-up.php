@@ -28,6 +28,12 @@ if (isset($_GET["error"])) {
         $type = "warning";
         $message = "Veuillez rentrer le même mot de passe, deux fois.";
     }
+
+    
+    if ($_GET['error'] == "knownMail") {
+        $type = "warning";
+        $message = "Un compte avec cette adresse mail est déjà crée, veuillez vous connecter ou contacter l'administrateur.";
+    }
 }
 
 if (isset($_GET['success'])) {
@@ -66,7 +72,7 @@ if (isset($_GET['success'])) {
                 <div class="<?php echo $form[1][$i]?>-form additionnal-form-group">
                     <p><?php echo $form[2][$i]?></p>
                     <div class="additionnal-<?php echo $form[4][$i]?>-container-0 additionnal-<?php echo $form[4][$i]?>-container">
-                        <button class="additionnal-form-btn" type="button" <?php if($i == 2){ echo 'onclick="addFood(0)"';} else{ echo 'onclick="yesSideGuest()"';}?>>
+                        <button class="additionnal-form-btn" type="button" <?php if($i == 2){ echo 'onclick="addFood(0)"';} else{ echo 'onclick="yesSideGuest(0)"';}?>>
                             <p>Oui</p>
                         </button>
                     </div>
@@ -81,7 +87,7 @@ if (isset($_GET['success'])) {
                     <div class="form-info-container">
                         <p class='form-info'>Seuls vos noms et prénoms seront visibles par les autres invités. Le reste des informations est uniquement accessible à Hugo et Noémie, ainsi qu'au développeur.</p>
                     </div>  
-                    <a href="sign-in.php" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
+                    <a href="../view/sign-in.php?page=signUp" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
                 </div>
                 <div class="submit-sign-up-container">
                     <button type="submit" name="sign-up-submit" class="sign-up-submit-btn"><p>Valider Inscription</p></button>

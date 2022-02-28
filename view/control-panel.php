@@ -17,4 +17,5 @@ include_once "../includes/_nav.php";
 
         </div>
     </main>
+    <script src="../public/script.js"></script>
 </body>

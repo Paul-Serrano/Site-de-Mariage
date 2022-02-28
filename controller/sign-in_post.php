@@ -6,12 +6,12 @@ if(isset($_POST['sign-in-submit'])){
 
     
     if(empty($_POST['mail'])) {
-        header('Location:../view/sign-in.php?error=missingMail');
+        header('Location:../view/sign-in.php?error=missingMail?page=signIn');
         exit();
     }
 
     if(empty($_POST['pass'])) {
-        header('Location:../view/sign-in.php?error=missingPass');
+        header('Location:../view/sign-in.php?error=missingPass?page=signIn');
         exit();
     }
     
@@ -29,7 +29,7 @@ if(isset($_POST['sign-in-submit'])){
     }
 
     if(empty($signInInfo)){
-        header('Location:../view/sign-in.php?error=noUser');
+        header('Location:../view/sign-in.php?error=noUser?page=signIn');
         exit();
     }
 
@@ -38,7 +38,7 @@ if(isset($_POST['sign-in-submit'])){
 
 
     if ($signInInfo[0]['password'] != $_POST['pass']) {
-        header('Location:../view/sign-in.php?error=passNoMatch');
+        header('Location:../view/sign-in.php?error=passNoMatch?page=signIn');
         exit();
     }
 

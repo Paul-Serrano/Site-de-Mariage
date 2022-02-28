@@ -22,19 +22,21 @@ function addFood(i) {
   }
 }
 
-function addSideGuestFood(i, j) {
+$j = 0;
+
+function addSideGuestFood(i) {
   $foodChoiceForm = $(".sideGuest-food-container");
   $count = $foodChoiceForm.length;
   $createFood = $(`.btn-container`);
-  j = j + 1;
+  $j++;
   $count2 = $(`.sideGuest-food-${i}`).length;
   $foodControl = $(`.sideGuest-food-control-${i}`);
   $foodControl.after(`
-        <div class="additionnal-sideGuest-food-container additionnal-sideGuest-food-container-${$count2} .sideGuest-food-${i} additionnal-sideGuest-food-container-${$count}-${$count2}">
+        <div class="additionnal-sideGuest-food-container additionnal-sideGuest-food-container-${$j} .sideGuest-food-${i} additionnal-sideGuest-food-container-${i}-${$j}">
         <div class="sideGuest-food-individual-control">
-        <label for="food-${i}-${$count2}" class="sign-up-label"><p>Aliment</p></label>
+        <label for="food-${i}-${$j}" class="sign-up-label"><p>Aliment</p></label>
         </div>        
-            <input class="sideGuest-food-input additionnal-input" id="food-${i}-${$count2}" type="text" value="" name="sideGuest-food-${i}-${$count2}">
+            <input class="sideGuest-food-input additionnal-input" id="food-${i}-${$j}" type="text" value="" name="sideGuest-food-${i}-${$j}">
         </div>
         `);
   console.log($(`.sideGuest-food-0`));
@@ -42,7 +44,6 @@ function addSideGuestFood(i, j) {
   console.log($foodControl);
   console.log($createFood);
   console.log($count);
-  console.log(j);
 }
 
 function yesSideGuest() {
@@ -60,7 +61,7 @@ function yesSideGuest() {
     <div class="sideGuest-food-control-0 sideGuest-food-control">
         <p>Régime alimentaire particulier ?</p>
         <div class="btn-container">
-            <button type="button" class="add-btn" onclick="addSideGuestFood(0, 0)">
+            <button type="button" class="add-btn" onclick="addSideGuestFood(0)">
                 <img src="../public/img/add.png" alt="ajouter"></img>
             </button>
             <button type="button" class="add-btn" onclick="minusSideGuestFood(0)">
@@ -72,7 +73,7 @@ function yesSideGuest() {
 
     <hr class="sideGuest-hr">
     <div class="sideGuest-btn-container">
-        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(0)">
+        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(0, 0)">
             <img class="add-img" src="../public/img/add.png" alt="ajouter"></img>
         </button>
         <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(0)">
@@ -105,7 +106,7 @@ function addSideGuest(i) {
     <div class="sideGuest-food-control-${$count} sideGuest-food-control">
     <p>Régime alimentaire particulier ?</p>
         <div class="btn-container">
-        <button type="button" class="add-btn" onclick="addSideGuestFood(${$count}, 0)">
+        <button type="button" class="add-btn" onclick="addSideGuestFood(${$count})">
             <img src="../public/img/add.png" alt="ajouter"></img>
         </button>
         <button type="button" class="add-btn" onclick="minusSideGuestFood(${i})">
@@ -117,7 +118,7 @@ function addSideGuest(i) {
     </div>
     <hr class="sideGuest-hr">
     <div class="sideGuest-btn-container">
-        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(${$count})">
+        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(${$count}, ${$j})">
             <img class="add-img" src="../public/img/add.png" alt="ajouter"></img>
         </button>
         <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(${$count})">
@@ -160,3 +161,7 @@ $(window).on("load", function () {
 
 
 // Loader -- end
+
+ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
+  console.error(error);
+});

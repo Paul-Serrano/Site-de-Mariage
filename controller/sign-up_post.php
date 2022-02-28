@@ -26,6 +26,28 @@ if(isset($_POST["sign-up-submit"])) {
             exit();
         }
     }
+
+    try {
+        $sqlGetMail = "SELECT mail FROM user";
+        $reqGetMail = $db->prepare($sqlGetMail);
+        $reqGetMail->execute();
+        $existingMail = $reqGetMail->fetchAll();
+    
+    } catch (PDOException $e) {
+        $db = null;
+        echo 'Erreur : '.$e->getMessage();
+    }
+
+    for($i = 0; $i < count($existingMail); $i++) {
+        if($existingMail[$i]['mail'] == $mail)  {
+            header('Location:../view/sign-up.php?error=knownMail');
+            exit();
+        }
+    }
+
+    ?><pre><?php
+    var_dump($existingMail);
+    ?></pre><?php
     
     if ($pass !== $pass2) {
         header('Location:../view/sign-up.php?error=differentPasswords');
