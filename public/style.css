@@ -860,3 +860,43 @@ input[type="checkbox"]:checked + label p {
 }
 
 /* Contact -- end*/
+
+/* control panel -- start*/
+
+.control-panel-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-panel-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.user-name-block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+}
+
+.panel-user-block {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 2.5%;
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  padding: 2.5%;
+}
+
+.user-img-block {
+  display: flex;
+  width: 20%;
+}
+
+
+/* control panel -- end*/

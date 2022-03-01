@@ -3,8 +3,8 @@
 require ("../includes/_nav.php");
 // require_once "includes/_connect.php";
 
-$regularForm = ["name", "surname", "mail", "tel", "adress", "pass", "pass2"];
-$regularFormLabel = ["Nom", "Prénom", "Adresse Mail", "Téléphone", "Adresse Postale", "Mot de Passe", "Retapez mot de passe"];
+$regularForm = ["name", "surname", "mail", "tel", "adress", "cp", "ville", "pass", "pass2"];
+$regularFormLabel = ["Nom", "Prénom", "Adresse Mail", "Téléphone", "Adresse Postale", "Code Postal", "Ville",  "Mot de Passe", "Retapez mot de passe"];
 $hypotheticForm = ["housing-choice", "food-choice", "sideGuest-choice"];
 $specialForm = ["housing", "sideGuest", "food"];
 $choice = ["yes", "no"];
@@ -49,6 +49,11 @@ if (isset($_GET['success'])) {
     <main class="sign-up-main">
         <form class="sign-up-form" action="../controller/sign-up_post.php" method="POST">
             <div class="regular-form">
+                <div class="<?php echo $form[1][0]?>-form">
+                    <p><?php echo $form[2][0]?></p>
+                    <input id="<?php echo $form[1][0]?>-yes" type="checkbox" name="<?php echo $form[1][0]?>" value="yes">
+                    <label for="<?php echo $form[1][0]?>-yes" class="sign-up-label"><p>Oui</p></label>
+                </div>
                 <?php
                 for($i = 0; $i < count($form[0]); $i++) {
                 ?>
@@ -59,11 +64,6 @@ if (isset($_GET['success'])) {
                 <?php
                 }
                 ?>                    
-                <div class="<?php echo $form[1][0]?>-form">
-                    <p><?php echo $form[2][0]?></p>
-                    <input id="<?php echo $form[1][0]?>-yes" type="checkbox" name="<?php echo $form[1][0]?>" value="yes">
-                    <label for="<?php echo $form[1][0]?>-yes" class="sign-up-label"><p>Oui</p></label>
-                </div>
             </div>
             <div class="additionnal-form">
                 <?php

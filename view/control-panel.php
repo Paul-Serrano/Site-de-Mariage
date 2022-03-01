@@ -1,6 +1,15 @@
 <?php
 
 include_once "../includes/_nav.php";
+require_once "../controller/control-panel_post.php"
+
+?><pre><?php 
+// var_dump($_SESSION['surname']);
+// var_dump($_POST['pass']);
+// var_dump($getUsers);
+// var_dump(count($signInInfo));
+// var_dump($userPass);
+?></pre><?php
 
 ?>
 
@@ -11,10 +20,30 @@ include_once "../includes/_nav.php";
                 <label for="search-user"></label>
                 <input id="search-user" type="text">
             </div>
-            <div class="control-panel-tag-container"></div>
+            <div class="control-panel-tag-container">
+                <button class="panel-tag"><p></p></button>
+                <button class="panel-tag"><p></p></button>
+                <button class="panel-tag"><p></p></button>
+                <button class="panel-tag"><p></p></button>
+                <button class="panel-tag"><p></p></button>
+                <button class="panel-tag"><p></p></button>
+            </div>
         </div>
         <div class="control-panel-results">
-
+        <?php
+        for($i = 0; $i < count($getUsers); $i++) {
+        ?>
+        <div class="panel-user-block">
+            <div class="user-img-block"><img src="../public/img/user.png" alt=""></div>
+            <div class="user-name-block">
+                <p><?php echo $getUsers[$i]["name"];?></p>
+                <p><?php echo $getUsers[$i]["surname"];?></p>
+            </div>
+            <div class="user-tag-block"></div>
+        </div>
+        <?php
+        }
+        ?>
         </div>
     </main>
     <script src="../public/script.js"></script>

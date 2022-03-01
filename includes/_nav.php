@@ -127,6 +127,9 @@ if(isset($_GET['page'])) {
     if($_GET['page'] == 'panel') {
         $title = "Big Brother";
     }
+    if($_GET['page'] == 'profile') {
+        $title = "Bienvenu sur le profil de ".$_SESSION['surname']."";
+    }
 }
 
 if($title == $closeChoice) {
@@ -147,7 +150,7 @@ if($title == $closeChoice) {
                     </form>
                 </div>
                 <div class="sign-in-block">
-                    <a class="nav-link" href="../view/user-profile.php?page=profile">
+                    <a class="nav-link" href="../view/profile.php?page=profile">
                         <button class="nav-btn profile-btn">
                             <p>Votre profil</p>
                         </button>
