@@ -2,12 +2,39 @@
 
 require_once "../includes/_nav.php";
 
+
+$alert = false;
+$contactAlert = false;
+
+
+if(isset($_GET['error'])) {
+    if($_GET['error'] == "missingInput") {
+        $alert = true;
+        $type = "warning";
+        $message="Veuillez changer au moins une information ou retourner vers la navigation !";
+    }
+    if($_GET['error'] == "wrongPass") {
+        $alert = true;
+        $type = "warning";
+        $contactAlert = true;
+        $message = "Votre mot de passe actuel n'est pas le bon, vous pouvez contacter l'administrateur pour en obtenir un nouveau. Cliquez sur le lien ci dessous";
+        $contact = `<a href="../view/contact.php"><p>Formulaire de contact</p></a>`;
+    }
+    if($_GET['error'] == "diffPass") {
+        $alert = true;
+        $type = "warning";
+        $message="Vous avez rentré deux nouveaux mots de passe différents, essayez une nouvelle fois !";
+    }
+}
+
 ?>
 
 <body>
     <main class="change-info-main">
         <p>Remplissez les éléments que vous souhaitez modifier, entrez votre mot de passe et validez !</p>
-        <form class="change-form" action="change-info_post.php" mathod="POST">
+        <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div class='close-alert'><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
+        <?php echo $contactAlert ? "<a href='../view/contact.php'><p>Formulaire de contact</p></a>" : ''; ?>
+        <form class="change-form" action="../controller/change-info_post.php" method="POST">
             <div class="change-form-content">
                 <div class="change-input-block">
                     <label for="mail" class="change-label"><p>Adresse mail</p></label>
@@ -35,9 +62,11 @@ require_once "../includes/_nav.php";
                 </div>
             </div>
             <div class="change-validation-block">
+                <label for="newpass2" class="change-label"><p>Confirmation nouveau mot de passe</p></label>
+                <input class="change-input" id="newpass2" type="text" name="newpass2">
                 <label for="pass" class="change-label"><p>Mot de passe actuel, pour validation</p></label>
                 <input class="change-input" id="pass" type="text" name="pass">
-                <button class='change-info-btn' name="change-info-btn"><p>Valider Changements</p></button>
+                <button type="submit" class='change-info-btn' name="change-info-btn"><p>Valider Changements</p></button>
             </div>
         </form>
     </main>

@@ -22,28 +22,20 @@ function addFood(i) {
   }
 }
 
-$j = 0;
-
 function addSideGuestFood(i) {
   $foodChoiceForm = $(".sideGuest-food-container");
   $count = $foodChoiceForm.length;
   $createFood = $(`.btn-container`);
-  $j++;
   $count2 = $(`.sideGuest-food-${i}`).length;
   $foodControl = $(`.sideGuest-food-control-${i}`);
   $foodControl.after(`
-        <div class="additionnal-sideGuest-food-container additionnal-sideGuest-food-container-${$j} .sideGuest-food-${i} additionnal-sideGuest-food-container-${i}-${$j}">
+        <div class="additionnal-sideGuest-food-container  sideGuest-food-${i} additionnal-sideGuest-food-container-${i}">
         <div class="sideGuest-food-individual-control">
-        <label for="food-${i}-${$j}" class="sign-up-label"><p>Aliment</p></label>
+        <label for="food-${i}" class="sign-up-label"><p>Aliment</p></label>
         </div>        
-            <input class="sideGuest-food-input additionnal-input" id="food-${i}-${$j}" type="text" value="" name="sideGuest-food-${i}-${$j}">
+            <input class="sideGuest-food-input additionnal-input" id="food-${i}" type="text" value="" name="sideGuest-food-${i}">
         </div>
         `);
-  console.log($(`.sideGuest-food-0`));
-  console.log($foodChoiceForm);
-  console.log($foodControl);
-  console.log($createFood);
-  console.log($count);
 }
 
 function yesSideGuest() {
@@ -73,7 +65,7 @@ function yesSideGuest() {
 
     <hr class="sideGuest-hr">
     <div class="sideGuest-btn-container">
-        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(0, 0)">
+        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(0)">
             <img class="add-img" src="../public/img/add.png" alt="ajouter"></img>
         </button>
         <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(0)">
@@ -109,7 +101,7 @@ function addSideGuest(i) {
         <button type="button" class="add-btn" onclick="addSideGuestFood(${$count})">
             <img src="../public/img/add.png" alt="ajouter"></img>
         </button>
-        <button type="button" class="add-btn" onclick="minusSideGuestFood(${i})">
+        <button type="button" class="add-btn" onclick="minusSideGuestFood(${$count})">
             <img src="../public/img/minus.png" alt="ajouter"></img>
         </button>
     </div>
@@ -118,7 +110,7 @@ function addSideGuest(i) {
     </div>
     <hr class="sideGuest-hr">
     <div class="sideGuest-btn-container">
-        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(${$count}, ${$j})">
+        <button type="button" class="add-sideGuest-btn" onclick="addSideGuest(${$count})">
             <img class="add-img" src="../public/img/add.png" alt="ajouter"></img>
         </button>
         <button type="button" class="add-sideGuest-btn" onclick="minusSideGuest(${$count})">
@@ -143,7 +135,9 @@ function minusSideGuest(i) {
 }
 
 function minusSideGuestFood(i) {
-  $subFood = $(`.additionnal-sideGuest-food-container-${i}`).last();
+  console.log($(`.sideGuest-food-0`));
+  $subFood = $(`.sideGuest-food-${i}:last-child()`);
+  console.log($subFood);
   $subFood.remove();
 }
 

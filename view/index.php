@@ -7,22 +7,28 @@ $alert = false;
 if (isset($_GET['success'])) {
     if($_GET['success'] == 'sendMail') {
         $alert = true;
-    $type = "success";
-    $message = "Votre message a bien été envoyé, nous vous répondrons dans les meilleurs délais !";
+        $type = "success";
+        $message = "Votre message a bien été envoyé, nous vous répondrons dans les meilleurs délais !";
+    }
+
+    if($_GET['success'] == "changeInfo") {
+        $alert = true;
+        $type= "success";
+        $message="Vos données ont bien été modiiée !";
     }
 
     if($_GET['success'] == 'signUp') {
         $alert = true;
-    $type = "success";
-    $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
+        $type = "success";
+        $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
     }
 
     if($_GET['success'] == 'signInIndex') {
         $alert = true;
-    $type = "success";
-    $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
+        $type = "success";
+        $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
     }
-    
+    var_dump($_SESSION['pass']);
 }
 
 ?>

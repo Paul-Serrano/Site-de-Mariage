@@ -2,6 +2,10 @@
 
 include_once "../includes/_nav.php";
 
+if(isset($_SESSION['mail'])){
+    header('Location:../view/index.php?page=index');
+}
+
 $alert = false;
 
 if (isset($_GET["error"])) {

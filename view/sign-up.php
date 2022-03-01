@@ -1,7 +1,11 @@
 <?php
 
 require ("../includes/_nav.php");
-// require_once "includes/_connect.php";
+
+if(isset($_SESSION['mail'])){
+    header('Location:../view/index.php?page=index');
+}
+
 
 $regularForm = ["name", "surname", "mail", "tel", "adress", "cp", "ville", "pass", "pass2"];
 $regularFormLabel = ["Nom", "Prénom", "Adresse Mail", "Téléphone", "Adresse Postale", "Code Postal", "Ville",  "Mot de Passe", "Retapez mot de passe"];
@@ -74,7 +78,7 @@ if (isset($_GET['success'])) {
                 <div class="<?php echo $form[1][$i]?>-form additionnal-form-group">
                     <p><?php echo $form[2][$i]?></p>
                     <div class="additionnal-<?php echo $form[4][$i]?>-container-0 additionnal-<?php echo $form[4][$i]?>-container">
-                        <button class="additionnal-form-btn" type="button" <?php if($i == 2){ echo 'onclick="addFood(0)"';} else{ echo 'onclick="yesSideGuest(0)"';}?>>
+                        <button class="additionnal-form-btn" type="button" <?php if($i == 2){ echo 'onclick="addFood(0)"';} else{ echo 'onclick="yesSideGuest()"';}?>>
                             <p>Oui</p>
                         </button>
                     </div>

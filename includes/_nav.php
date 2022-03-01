@@ -5,7 +5,11 @@ require_once "../includes/_loader.php";
 
 $close = true;
 
-$title = "Bienvenue, si vous êtes un invité du mariage d'Hugo et Noémie, veuillez vous identifier svp !";
+$title = "Bonjour, visiteur ou invité ? dans tous les cas, bienvenu";
+
+if(isset($_SESSION['mail'])) {
+    $title = "Bonjour ".$_SESSION["surname"]." ! Vous passez une bonne journée ?";
+}
 
 $closeChoice = $title;
 

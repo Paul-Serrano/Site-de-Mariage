@@ -227,10 +227,13 @@ if(isset($_POST["sign-up-submit"])) {
         $_SESSION["tel"] = $tel;
         $_SESSION["adress"] = $adress;
         $_SESSION["housing"] = $housing;
+        $_SESSION["pass"] = $pass;
+        $_SESSION["ville"] = $ville;
+        $_SESSION["cp"] = $cp;
         header("Location:../view/index.php?success=signUp");
 
         ?><pre><?php
-        var_dump($id);
+        var_dump($reqSignUp);
         ?></pre><?php
     }
     

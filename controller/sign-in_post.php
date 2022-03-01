@@ -50,6 +50,10 @@ if(isset($_POST['sign-in-submit'])){
     $_SESSION['name'] = $signInInfo[0]['name'];
     $_SESSION['mail'] = $signInInfo[0]['mail'];
     $_SESSION['tel'] = $signInInfo[0]['tel'];
+    $_SESSION['pass'] = $signInInfo[0]['password'];
+    $_SESSION['adress'] = $signInInfo[0]['adress'];
+    $_SESSION['ville'] = $signInInfo[0]['ville'];
+    $_SESSION['cp'] = $signInInfo[0]['cp'];
 
     header('Location:../view/index.php?success=signIn');
     
