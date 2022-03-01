@@ -49,11 +49,7 @@ if (isset($_GET['success'])) {
     <main class="sign-up-main">
         <form class="sign-up-form" action="../controller/sign-up_post.php" method="POST">
             <div class="regular-form">
-                <div class="<?php echo $form[1][0]?>-form">
-                    <p><?php echo $form[2][0]?></p>
-                    <input id="<?php echo $form[1][0]?>-yes" type="checkbox" name="<?php echo $form[1][0]?>" value="yes">
-                    <label for="<?php echo $form[1][0]?>-yes" class="sign-up-label"><p>Oui</p></label>
-                </div>
+                <div></div>
                 <?php
                 for($i = 0; $i < count($form[0]); $i++) {
                 ?>
@@ -63,7 +59,13 @@ if (isset($_GET['success'])) {
                 </div>
                 <?php
                 }
-                ?>                    
+                ?>
+                <div></div>
+                <div class="<?php echo $form[1][0]?>-form">
+                    <p><?php echo $form[2][0]?></p>
+                    <input id="<?php echo $form[1][0]?>-yes" type="checkbox" name="<?php echo $form[1][0]?>" value="yes">
+                    <label for="<?php echo $form[1][0]?>-yes" class="sign-up-label"><p>Oui</p></label>
+                </div>                    
             </div>
             <div class="additionnal-form">
                 <?php

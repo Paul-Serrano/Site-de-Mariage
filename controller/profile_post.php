@@ -17,8 +17,12 @@ try {
     echo 'Erreur : '.$e->getMessage();
 }
 
-?><pre><?php
-var_dump($getUserInfo);
-?></pre><?php
+$userName = $getUserInfo["surname"];
+$userName .= " ";
+$userName .= $getUserInfo["name"];
+
+$userCpVille = $getUserInfo["cp"];
+$userCpVille .= " ";
+$userCpVille .= $getUserInfo["ville"];
 
 ?>

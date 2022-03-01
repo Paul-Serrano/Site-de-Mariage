@@ -119,7 +119,10 @@ if(isset($_GET['page'])) {
         $title = "Itinéraires et cartes";
     }
     if($_GET['page'] == 'info') {
-        $title = "informations pratiques";
+        $title = "Informations pratiques";
+    }
+    if($_GET['page'] == 'changeInfo') {
+        $title = "Formulaire de changement d'informations";
     }
     if($_GET['page'] == 'leetchi') {
         $title = "Cagnotte Leetchi";

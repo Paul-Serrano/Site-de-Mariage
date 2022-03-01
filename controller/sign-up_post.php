@@ -119,7 +119,7 @@ if(isset($_POST["sign-up-submit"])) {
 
     try {
         $sqlSignUp = "INSERT INTO user (name,surname,mail,tel,housing,password,adress,cp,ville)
-        VALUES ('$name', '$surname', '$mail', '$tel', '$housing', '$pass', '$adress', '$cp', '$adress')";
+        VALUES ('$name', '$surname', '$mail', '$tel', '$housing', '$pass', '$adress', '$cp', '$ville')";
         $reqSignUp = $db->prepare($sqlSignUp);
         // $reqSignUp->bindValue(':name', $name, PDO::PARAM_STR);
         // $req->bindValue(':name', $_POST["name"], PDO::PARAM_STR);
@@ -230,11 +230,7 @@ if(isset($_POST["sign-up-submit"])) {
         header("Location:../view/index.php?success=signUp");
 
         ?><pre><?php
-        var_dump($_SESSION["surname"]);
-        var_dump($foodChoice);
-        var_dump($surname);
-        var_dump($food);
-        var_dump($signUpSideGuest);
+        var_dump($id);
         ?></pre><?php
     }
     
