@@ -16,9 +16,11 @@ if(isset($_POST["sign-up-submit"])) {
     else{
         $housing = "non";
     }
+    $cp = htmlspecialchars($_POST["cp"]);
+    $ville = htmlspecialchars($_POST["ville"]);
     $pass = htmlspecialchars($_POST["pass"]);
     $pass2 = htmlspecialchars($_POST["pass2"]);
-    $userInfo = [$name, $surname, $mail, $tel, $pass, $pass2, $adress];
+    $userInfo = [$name, $surname, $mail, $tel, $pass, $pass2, $adress, $cp, $ville];
 
     for($i = 0; $i < count($userInfo); $i++) {
         if(empty($userInfo[$i])) {
@@ -116,8 +118,8 @@ if(isset($_POST["sign-up-submit"])) {
     $bindValues = [':name', ':surname', ':mail', ':tel', ':housing', ':pass', ':adress'];
 
     try {
-        $sqlSignUp = "INSERT INTO user (name,surname,mail,tel,housing,password,adress)
-        VALUES ('$name', '$surname', '$mail', '$tel', '$housing', '$pass', '$adress')";
+        $sqlSignUp = "INSERT INTO user (name,surname,mail,tel,housing,password,adress,cp,ville)
+        VALUES ('$name', '$surname', '$mail', '$tel', '$housing', '$pass', '$adress', '$cp', '$ville')";
         $reqSignUp = $db->prepare($sqlSignUp);
         // $reqSignUp->bindValue(':name', $name, PDO::PARAM_STR);
         // $req->bindValue(':name', $_POST["name"], PDO::PARAM_STR);
@@ -218,6 +220,7 @@ if(isset($_POST["sign-up-submit"])) {
  
     if($reqSignUp) {
         session_start();
+        $_SESSION['id'] = $id;
         $_SESSION["name"] = $name;
         $_SESSION["surname"] = $surname;
         $_SESSION["mail"] = $mail;
@@ -227,11 +230,7 @@ if(isset($_POST["sign-up-submit"])) {
         header("Location:../view/index.php?success=signUp");
 
         ?><pre><?php
-        var_dump($_SESSION["surname"]);
-        var_dump($foodChoice);
-        var_dump($surname);
-        var_dump($food);
-        var_dump($signUpSideGuest);
+        var_dump($id);
         ?></pre><?php
     }
     

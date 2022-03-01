@@ -119,13 +119,19 @@ if(isset($_GET['page'])) {
         $title = "Itinéraires et cartes";
     }
     if($_GET['page'] == 'info') {
-        $title = "informations pratiques";
+        $title = "Informations pratiques";
+    }
+    if($_GET['page'] == 'changeInfo') {
+        $title = "Formulaire de changement d'informations";
     }
     if($_GET['page'] == 'leetchi') {
         $title = "Cagnotte Leetchi";
     }
     if($_GET['page'] == 'panel') {
         $title = "Big Brother";
+    }
+    if($_GET['page'] == 'profile') {
+        $title = "Bienvenu sur le profil de ".$_SESSION['surname']."";
     }
 }
 
@@ -147,7 +153,7 @@ if($title == $closeChoice) {
                     </form>
                 </div>
                 <div class="sign-in-block">
-                    <a class="nav-link" href="../view/user-profile.php?page=profile">
+                    <a class="nav-link" href="../view/profile.php?page=profile">
                         <button class="nav-btn profile-btn">
                             <p>Votre profil</p>
                         </button>

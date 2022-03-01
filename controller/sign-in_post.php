@@ -6,12 +6,12 @@ if(isset($_POST['sign-in-submit'])){
 
     
     if(empty($_POST['mail'])) {
-        header('Location:../view/sign-in.php?error=missingMail?page=signIn');
+        header('Location:../view/sign-in.php?error=missingMail');
         exit();
     }
 
     if(empty($_POST['pass'])) {
-        header('Location:../view/sign-in.php?error=missingPass?page=signIn');
+        header('Location:../view/sign-in.php?error=missingPass');
         exit();
     }
     
@@ -29,7 +29,7 @@ if(isset($_POST['sign-in-submit'])){
     }
 
     if(empty($signInInfo)){
-        header('Location:../view/sign-in.php?error=noUser?page=signIn');
+        header('Location:../view/sign-in.php?error=noUser');
         exit();
     }
 
@@ -38,14 +38,14 @@ if(isset($_POST['sign-in-submit'])){
 
 
     if ($signInInfo[0]['password'] != $_POST['pass']) {
-        header('Location:../view/sign-in.php?error=passNoMatch?page=signIn');
+        header('Location:../view/sign-in.php?error=passNoMatch');
         exit();
     }
 
     session_start();
 
 
-
+    $_SESSION['id'] = $signInInfo[0]['id'];
     $_SESSION['surname'] = $signInInfo[0]['surname'];
     $_SESSION['name'] = $signInInfo[0]['name'];
     $_SESSION['mail'] = $signInInfo[0]['mail'];
