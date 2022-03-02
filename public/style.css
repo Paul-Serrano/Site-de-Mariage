@@ -1100,3 +1100,52 @@ input[type="radio"]:checked + label p {
 }
 
 /* Change info -- end*/
+
+
+/* cagnotte leetchi -- start*/
+
+.leetchi-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.leetchi-text-block {
+  display: flex;
+  border: 1px solid #557174;
+  border-radius: 0.5rem 0.2rem;
+  padding: 5%;
+  margin: 5% auto;
+}
+
+
+.leetchi-btn-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leetchi-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(157,173,127);
+background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 100%);
+  border: 1px solid #557174;
+  border-radius: 0.5rem 0.25rem;
+  width: 50%;
+}
+
+.leetchi-btn p {
+  font-size: 50%;
+  color: #f7f7e8;
+}
+
+.leetchi-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+/* cagnotte leetchi - end*/
