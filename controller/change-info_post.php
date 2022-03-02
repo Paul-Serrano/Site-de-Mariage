@@ -138,15 +138,6 @@ if(isset($_POST['change-info-btn'])){
     if($reqTel) {
         $_SESSION['tel'] == $_POST['tel'];
     }
-    
-    
-    ?><pre><?php 
-    // var_dump($_SESSION['surname']);
-    var_dump($reqPass);
-    var_dump($reqCp);
-    // var_dump(count($signInInfo));
-    // var_dump($userPass);
-    ?></pre><?php
 
     header('Location:../view/index.php?success=changeInfo');
 }

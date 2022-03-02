@@ -28,7 +28,6 @@ if (isset($_GET['success'])) {
         $type = "success";
         $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
     }
-    var_dump($_SESSION['pass']);
 }
 
 ?>

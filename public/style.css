@@ -574,6 +574,22 @@ input[type="checkbox"] + label {
   border-radius: 0.5rem 0.25rem;
 }
 
+input[type="radio"] + label {
+  display: flex;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 1px #557174;
+  margin: 2.5% auto;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  border-radius: 0.5rem 0.25rem;
+}
+
+.mail-to-input {
+  display: none;
+}
+
 .additionnal-form-btn {
   display: flex;
   width: 50%;
@@ -617,7 +633,22 @@ input[type="checkbox"]:checked + label {
   border: 1px black solid;
 }
 
+input[type="radio"]:checked + label {
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+  color: #f7f7e8;
+  border: 1px black solid;
+}
+
 input[type="checkbox"]:checked + label p {
+  color: #f7f7e8;
+}
+
+input[type="radio"]:checked + label p {
   color: #f7f7e8;
 }
 
@@ -820,6 +851,35 @@ input[type="checkbox"]:checked + label p {
   );
 }
 
+.mail-to-block {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mail-to-block p {
+  font-size: 50%;
+}
+
+.mail-to-topic-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.mail-to-topic-input {
+    background: rgba(0,0,0,0);
+    border-radius: 0.5rem 0.25rem;
+    border: #557174 1px solid;
+    width: 75%;
+    padding: 1%;
+    font-family: 'Sans-Serif';
+    font-size: 50%;
+}
+
 .contact-btn p {
   font-size: 50%;
   color: #f7f7e8;
@@ -829,6 +889,10 @@ input[type="checkbox"]:checked + label p {
   width: 100%;
   border: 2.5px solid black;
   border-radius: 0.5rem 0.25rem;
+}
+
+.ck-editor__editable {
+  height: 3em;
 }
 
 .ck-content p,
