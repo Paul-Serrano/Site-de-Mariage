@@ -23,8 +23,7 @@ for($i = 0; $i < count($getUsers); $i++) {
 }
 
 ?><pre><?php
-var_dump($getUsers);
-var_dump($getNoHousingUsers);
+
 ?></pre><?php
 
 ?>

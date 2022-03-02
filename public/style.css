@@ -965,6 +965,13 @@ body {
   scrollbar-color: #557174 rgba(0,0,0,0)
 }
 
+.search-user-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
 /*scrollbar -- end */
 
 /* control panel -- start*/
@@ -1324,3 +1331,13 @@ background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 10
 }
 
 /* info pratiques -- end */
+
+/* map -- start */ 
+
+#map {
+  height: 500px;
+  display: flex;
+  width: 500px;
+}
+
+/* map - end */
