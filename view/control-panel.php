@@ -17,8 +17,10 @@ require_once "../controller/control-panel_post.php"
     <main class="control-panel-main">
         <div class="control-panel-search-container">
             <div class="control-panel-searchbar-container">
-                <label for="search-user"></label>
-                <input id="search-user" class="search-user-input" type="text">
+                <form class="search-user-form" action="control-panel_post.php" method="GET">
+                    <label for="search-user" class="search-user"><p>Recherche invité</p></label>
+                    <input id="search-user" class="search-user-input" type="text">
+                </form>
             </div>
             <hr>
             <div class="control-panel-tag-container">
@@ -34,7 +36,7 @@ require_once "../controller/control-panel_post.php"
         <?php
         for($i = 0; $i < count($getUsers); $i++) {
         ?>
-        <div class="panel-user-block">
+        <div class='panel-user-block'>
             <div class="user-img-block"><img src="../public/img/user.png" alt=""></div>
             <div class="user-name-block">
                 <p><?php echo $getUsers[$i]["name"];?></p>

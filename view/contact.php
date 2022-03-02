@@ -2,6 +2,21 @@
 
 require_once "../includes/_nav.php";
 
+$alert = false;
+
+if(isset($_GET['error'])) {
+    if($_GET['error'] == 'noMailTo') {
+        $alert = true;
+        $type = 'warning';
+        $message = "Veuillez choisir un destinataire s'il vous plait !";
+    }
+
+    if($_GET['error'] == 'noMessage') {
+        $alert = true;
+        $type = 'warning';
+        $message = "Veuillez rentrer un message s'il vous plait !";
+    }
+}
 
 ?>
 
@@ -17,7 +32,8 @@ require_once "../includes/_nav.php";
             <label for="mail-to-hugo" class="mail-to-label"><p>Mail pour Noémie et Hugo, les mariés</p></label>
             <input class="mail-to-input" id="mail-to-paul" name="mail-to" type="radio" value="paul" />
             <label for="mail-to-paul" class="mail-to-label"><p>Mail pour Paul Serrano, Développeur du site et témoin</p></label>
-        </div>    
+        </div>  
+        <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div class='close-alert'><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>  
             <textarea name="message" id="textarea" cols="30" rows="10"></textarea>
             <div class="contact-btn-container">
                 <button class="contact-btn" type="submit" name="contact-submit"><p>Envoyer message</p></button>

@@ -14,4 +14,17 @@ try {
     echo 'Erreur : '.$e->getMessage();
 }
 
+$getNoHousingUsers = [];
+
+for($i = 0; $i < count($getUsers); $i++) {
+    if($getUsers[$i]['housing'] == "non") {
+        array_push($getNoHousingUsers, $getUsers[$i]);
+    }
+}
+
+?><pre><?php
+var_dump($getUsers);
+var_dump($getNoHousingUsers);
+?></pre><?php
+
 ?>

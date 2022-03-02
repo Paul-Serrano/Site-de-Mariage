@@ -3,6 +3,16 @@
 require_once "../includes/_head.php";
 
 if(isset($_POST['contact-submit'])){
+
+  if(empty($_POST['mail-to'])) {
+    header('Location:../view/contact.php?error=noMailTo');
+    exit;
+  }
+
+  if(empty($_POST['message'])) {
+    header('Location:../view/contact.php?error=noMessage');
+    exit;
+  }
   
          if(true) {
 

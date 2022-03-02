@@ -379,6 +379,8 @@ nav p {
   justify-content: center;
   align-items: center;
   height: 75%;
+  width: 50%;
+  margin: auto;
 }
 
 .index-block-content img {
@@ -981,6 +983,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   height: 7.5em;
+  padding: 2.5%;
 }
 
 .user-name-block {
@@ -1027,7 +1030,13 @@ body {
   display: flex;
   width: 25%;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.control-panel-searchbar-container p {
+  display: flex;
+  font-size: 50%;
 }
 
 .control-panel-tag-container {
@@ -1060,8 +1069,14 @@ body {
 .search-user-input {
   font-size: 50%;
     background: rgba(0,0,0,0);
-    border: solid 1px black;
+    border: solid 1px #557174;
     border-radius: 0.5rem 0.25rem;
+    font-family: 'Sans-Serif';
+}
+
+.search-user {
+  align-self: flex-start;
+  margin-left: 10%;
 }
 
 
@@ -1242,7 +1257,8 @@ body {
 background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 100%);
   border: 1px solid #557174;
   border-radius: 0.5rem 0.25rem;
-  width: 50%;
+  width: 75%;
+  padding: 1%;
 }
 
 .leetchi-btn p {

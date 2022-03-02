@@ -166,7 +166,7 @@ ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
 // Control panel -- start
 
 $('#housing-btn').on("click", function() {
-  
+  // $neHousingUser = <?php echo json_encode($variableAPasser); ?>;
 })
 
 // Control panel -- end
