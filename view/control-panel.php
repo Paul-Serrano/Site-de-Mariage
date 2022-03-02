@@ -18,14 +18,15 @@ require_once "../controller/control-panel_post.php"
         <div class="control-panel-search-container">
             <div class="control-panel-searchbar-container">
                 <label for="search-user"></label>
-                <input id="search-user" type="text">
+                <input id="search-user" class="search-user-input" type="text">
             </div>
+            <hr>
             <div class="control-panel-tag-container">
-                <button class="panel-tag"><p></p></button>
-                <button class="panel-tag"><p></p></button>
-                <button class="panel-tag"><p></p></button>
-                <button class="panel-tag"><p></p></button>
-                <button class="panel-tag"><p></p></button>
+                <button class="panel-tag"><p>Regime alimentaire spécifique</p></button>
+                <button type="button" id="housing-btn" class="panel-tag"><p>N'ont pas encore prévu de logement</p></button>
+                <button class="panel-tag"><p>Enfants</p></button>
+                <button class="panel-tag"><p>Personnes agées</p></button>
+                <button class="panel-tag"><p>Autre accompagnants</p></button>
                 <button class="panel-tag"><p></p></button>
             </div>
         </div>

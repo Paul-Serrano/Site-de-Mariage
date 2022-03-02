@@ -143,6 +143,14 @@ if($title == $closeChoice) {
     $close = false;
 }  
 
+$panel = false;
+
+if(isset($_SESSION['mail'])) {
+    if($_SESSION['mail'] == "paul.serrano08374@gmail.com") {
+        $panel = true;
+    }
+}
+
 
 ?>
 
@@ -196,10 +204,18 @@ if($title == $closeChoice) {
             <?php
             }
             ?>
+            <?php 
+            if(isset($_SESSION['mail'])) {
+                if($_SESSION['mail'] == "paul.serrano08374@gmail.com") {
+            ?>
             <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
                 <button class="nav-btn">
                     <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
                 </button>
             </a>
+            <?php                
+                }
+            };
+            ?>
         </div>
 </nav>

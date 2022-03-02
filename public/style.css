@@ -920,6 +920,51 @@ input[type="radio"]:checked + label p {
 
 /* Contact -- end*/
 
+
+/*scrollbar -- start */
+
+body::-webkit-scrollbar {
+  width: 0.25em; 
+}
+
+body::-webkit-scrollbar-track {
+  background: #9dad7f; 
+  border: 2.5px solid #557174; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #557174;  
+  border: 0.25em solid #557174;
+}
+
+body {
+  scrollbar-width: thin; 
+  scrollbar-color: #557174 rgba(0,0,0,0)
+}
+
+.control-panel-results::-webkit-scrollbar {
+  width: 0.25em; 
+}
+
+.control-panel-results::-webkit-scrollbar-track {
+  background: #9dad7f; 
+  border-radius: 0.5rem 0.25rem;
+  border: 2.5px solid #557174;
+}
+
+.control-panel-results::-webkit-scrollbar-thumb {
+  background-color: #557174; 
+  border-radius: 0.5rem 0.25rem;
+  border: 5px solid #557174;
+}
+
+.control-panel-results {
+  scrollbar-width: thin; 
+  scrollbar-color: #557174 rgba(0,0,0,0)
+}
+
+/*scrollbar -- end */
+
 /* control panel -- start*/
 
 .control-panel-main {
@@ -928,25 +973,33 @@ input[type="radio"]:checked + label p {
 }
 
 .control-panel-results {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 7.5em;
 }
 
 .user-name-block {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 40%;
 }
 
+.user-name-block p {
+  font-size: 50%;
+}
+
 .panel-user-block {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
-  margin-bottom: 2.5%;
+  width: 75%;
+  margin-top: 2.5%;
   border: 1px solid black;
   border-radius: 0.5rem 0.25rem;
   padding: 2.5%;
@@ -955,7 +1008,62 @@ input[type="radio"]:checked + label p {
 .user-img-block {
   display: flex;
   width: 20%;
+  justify-content: center;
 }
+
+.control-panel-search-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: auto;
+}
+
+.control-panel-search-container hr {
+  color: black;
+  border: 1px solid black;
+}
+
+.control-panel-searchbar-container {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.control-panel-tag-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 65%;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5% 0;
+  height: 2.5em;
+}
+
+.panel-tag {
+  width: 75%;
+  border: solid 1px black;
+  border-radius: 0.5rem 0.25rem;
+  background: rgb(157,173,127);
+  background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 100%);
+  align-self: center;
+  justify-self: center;
+
+}
+
+
+.panel-tag p {
+  font-size: 40%;
+  color: #f7f7e8;
+}
+
+.search-user-input {
+  font-size: 50%;
+    background: rgba(0,0,0,0);
+    border: solid 1px black;
+    border-radius: 0.5rem 0.25rem;
+}
+
 
 /* control panel -- end*/
 
@@ -1149,3 +1257,54 @@ background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 10
   text-decoration: none;
 }
 /* cagnotte leetchi - end*/
+
+/* info pratiques -- start */
+
+.info-main {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.info-main hr {
+  display: flex;
+  color: black;
+  border: 1px solid black;
+  width: 25%;
+  transform: rotate(90deg);
+}
+
+.info-left-block {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #557174;
+  border-radius: 0.5rem 0.25rem;
+  padding: 2.5%;
+}
+
+.info-right-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 60%;
+}
+
+.info-top-block,
+.info-bottom-block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #557174;
+  border-radius: 0.5rem 0.25rem;
+  padding: 2.5%;
+}
+
+.info-right-block hr {
+  transform: rotate(0);
+  width: 50%;
+  margin: 5% 0;
+}
+
+/* info pratiques -- end */

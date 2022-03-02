@@ -161,3 +161,12 @@ ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
 });
 
 // Contact sheet -- end
+
+
+// Control panel -- start
+
+$('#housing-btn').on("click", function() {
+  
+})
+
+// Control panel -- end
