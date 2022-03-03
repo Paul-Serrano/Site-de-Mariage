@@ -1,18 +1,18 @@
 // map -- start
 
-map = L.map('map').setView([51.505, -0.09], 13);
+// map = L.map("map").setView([51.505, -0.09], 13);
 
-L.tileLayer('https://{s}.tile.openstreamap.fr/osmfr/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    minZoom: 5,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(map);
+// L.tileLayer("https://{s}.tile.openstreamap.fr/osmfr/{z}/{x}/{y}.png", {
+//   attribution:
+//     'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//   maxZoom: 18,
+//   minZoom: 5,
+//   id: "mapbox/streets-v11",
+//   tileSize: 512,
+//   zoomOffset: -1,
+//   accessToken: "your.mapbox.access.token",
+// }).addTo(map);
 // map -- end
-
 
 function addFood(i) {
   $addFood = $(`.additionnal-food-container-${i}`);
@@ -178,11 +178,13 @@ ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
 
 // Contact sheet -- end
 
-
 // Control panel -- start
 
-$('#housing-btn').on("click", function() {
-  // $neHousingUser = <?php echo json_encode($variableAPasser); ?>;
-})
+function showNoHousing() {
+  $housing = $(".yes");
+  $tag = $("#housing-tag");
+  $housing.toggle("noDisplay");
+  // $tag.toggle("active-tag");
+}
 
 // Control panel -- end

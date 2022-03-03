@@ -873,13 +873,13 @@ input[type="radio"]:checked + label p {
 }
 
 .mail-to-topic-input {
-    background: rgba(0,0,0,0);
-    border-radius: 0.5rem 0.25rem;
-    border: #557174 1px solid;
-    width: 75%;
-    padding: 1%;
-    font-family: 'Sans-Serif';
-    font-size: 50%;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0.5rem 0.25rem;
+  border: #557174 1px solid;
+  width: 75%;
+  padding: 1%;
+  font-family: "Sans-Serif";
+  font-size: 50%;
 }
 
 .contact-btn p {
@@ -922,47 +922,46 @@ input[type="radio"]:checked + label p {
 
 /* Contact -- end*/
 
-
 /*scrollbar -- start */
 
 body::-webkit-scrollbar {
-  width: 0.25em; 
+  width: 0.25em;
 }
 
 body::-webkit-scrollbar-track {
-  background: #9dad7f; 
-  border: 2.5px solid #557174; 
+  background: #9dad7f;
+  border: 2.5px solid #557174;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #557174;  
+  background-color: #557174;
   border: 0.25em solid #557174;
 }
 
 body {
-  scrollbar-width: thin; 
-  scrollbar-color: #557174 rgba(0,0,0,0)
+  scrollbar-width: thin;
+  scrollbar-color: #557174 rgba(0, 0, 0, 0);
 }
 
 .control-panel-results::-webkit-scrollbar {
-  width: 0.25em; 
+  width: 0.25em;
 }
 
 .control-panel-results::-webkit-scrollbar-track {
-  background: #9dad7f; 
+  background: #9dad7f;
   border-radius: 0.5rem 0.25rem;
   border: 2.5px solid #557174;
 }
 
 .control-panel-results::-webkit-scrollbar-thumb {
-  background-color: #557174; 
+  background-color: #557174;
   border-radius: 0.5rem 0.25rem;
   border: 5px solid #557174;
 }
 
 .control-panel-results {
-  scrollbar-width: thin; 
-  scrollbar-color: #557174 rgba(0,0,0,0)
+  scrollbar-width: thin;
+  scrollbar-color: #557174 rgba(0, 0, 0, 0);
 }
 
 .search-user-form {
@@ -1058,27 +1057,36 @@ body {
 
 .panel-tag {
   width: 75%;
-  border: solid 1px black;
   border-radius: 0.5rem 0.25rem;
-  background: rgb(157,173,127);
-  background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 100%);
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #557174;
   align-self: center;
   justify-self: center;
-
+  padding: 2.5%;
 }
 
+.active-tag {
+  border: solid 1px black;
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    90deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+}
 
 .panel-tag p {
-  font-size: 40%;
-  color: #f7f7e8;
+  font-size: 35%;
+  color: #557174;
 }
 
 .search-user-input {
   font-size: 50%;
-    background: rgba(0,0,0,0);
-    border: solid 1px #557174;
-    border-radius: 0.5rem 0.25rem;
-    font-family: 'Sans-Serif';
+  background: rgba(0, 0, 0, 0);
+  border: solid 1px #557174;
+  border-radius: 0.5rem 0.25rem;
+  font-family: "Sans-Serif";
+  margin-bottom: 10%;
 }
 
 .search-user {
@@ -1086,6 +1094,27 @@ body {
   margin-left: 10%;
 }
 
+.search-user-btn {
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem 0.25rem;
+  border: 1px solid black;
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+}
+
+.search-user-btn p {
+  color: #f7f7e8;
+  font-size: 50%;
+}
+
+.noDisplay {
+  display: none;
+}
 
 /* control panel -- end*/
 
@@ -1231,7 +1260,6 @@ body {
 
 /* Change info -- end*/
 
-
 /* cagnotte leetchi -- start*/
 
 .leetchi-main {
@@ -1249,7 +1277,6 @@ body {
   margin: 5% auto;
 }
 
-
 .leetchi-btn-block {
   display: flex;
   align-items: center;
@@ -1260,8 +1287,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(157,173,127);
-background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 100%);
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    90deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
   border: 1px solid #557174;
   border-radius: 0.5rem 0.25rem;
   width: 75%;
@@ -1332,7 +1363,7 @@ background: linear-gradient(90deg, rgba(157,173,127,1) 0%, rgba(85,113,116,1) 10
 
 /* info pratiques -- end */
 
-/* map -- start */ 
+/* map -- start */
 
 #map {
   height: 500px;
