@@ -187,4 +187,11 @@ function showNoHousing() {
   // $tag.toggle("active-tag");
 }
 
+// function searchUser() {
+//   $search = $(".search-user-input").val();
+//   console.log($search);
+//   if ($(".panel-user-block").indexOf($search)) {
+//   }
+// }
+
 // Control panel -- end

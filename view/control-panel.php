@@ -17,10 +17,10 @@ require_once "../controller/control-panel_post.php"
     <main class="control-panel-main">
         <div class="control-panel-search-container">
             <div class="control-panel-searchbar-container">
-                <form class="search-user-form" action="control-panel_post.php" method="GET">
+                <form class="search-user-form" action="../controller/control-panel_post.php" method="POST">
                     <label for="search-user" class="search-user"><p>Recherche invité</p></label>
-                    <input id="search-user" class="search-user-input" type="text">
-                    <button class="search-user-btn" name="search-user-btn" type="submit">
+                    <input id="search-user" class="search-user-input" type="text" name="search-user">
+                    <button class="search-user-btn" name="search-user-btn" type="button" onclick="searchUser()">
                         <p>Lancer recherche</p>
                     </button>
                 </form>
