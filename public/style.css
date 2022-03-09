@@ -1372,3 +1372,112 @@ body {
 }
 
 /* map - end */
+
+
+/* tablet & phone wide -- start */
+
+
+@media (max-width: 850px) {
+  .lantern-small {
+    display: none;
+  }
+
+  .title-block p {
+    font-size: 50%;
+  }
+
+  .lantern-large {
+    width: 50%;
+  }
+
+  .sign-up-submit-btn {
+    width: 100%;
+  }
+
+  .loading h2 {
+    font-size: 50%;
+  }
+
+  .index-main {
+    height: 150vh;
+  }
+
+  .index-block {
+    align-items: center;
+  }
+
+  .index-block-content {
+    width: 75%;
+    margin: 0;
+  }
+
+  .close-block, .user-block {
+    width: 20%;
+  }
+
+  .title-block {
+    width: 50%;
+  }
+
+  .profile-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .user-info-block {
+    width: 75%;
+  }
+
+  .user-info-content {
+    justify-content: center;
+  }
+
+  .profile-main hr {
+    margin: 5% 0;
+    border: black 1px solid;
+    width: 50%;
+  }
+
+  .change-form-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mail-to-block {
+    flex-direction: column-reverse;
+  }
+
+  input[type='radio'] + label {
+    width: 50%;
+  }
+
+  .mail-to-topic-input {
+    width: 100%;
+  }
+
+  .mail-to-topic-block {
+    margin-bottom: 5%;
+  }
+
+  .control-panel-searchbar-container p {
+    font-size: 35%;
+  }
+
+  .panel-tag {
+    width: 90%;
+  }
+
+  .panel-tag p {
+    font-size: 25%;
+  }
+
+  .panel-user-block {
+    width: 90%;
+  }
+}
+
+
+/* tablet & phone wide -- end */
+
+
