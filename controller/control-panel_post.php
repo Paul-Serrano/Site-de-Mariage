@@ -41,8 +41,43 @@ for($i = 0; $i < count($getFood); $i++) {
     }
 }
 
-$foodClass = "food"
+try {
+    $sqlGetSideGuest = "SELECT * FROM sideguest";
+    $reqGetSideGuest = $db->prepare($sqlGetSideGuest);
+    $reqGetSideGuest->execute();
+    $getSideGuest = $reqGetSideGuest->fetchAll();
+
+} catch (PDOException $e) {
+    $db = null;
+    echo 'Erreur : '.$e->getMessage();
+}
+
+$getUserChild = [];
+$getUserSide = [];
+$getUserOld = [];
+
+for($i = 0; $i < count($getSideGuest); $i++) {
+    if($getSideGuest[$i]['style'] == "Enfant") {
+        array_push($getUserChild, $getSideGuest[$i]["id"]);
+    }
+    if($getSideGuest[$i]['style'] == "Adulte") {
+        array_push($getUserSide, $getSideGuest[$i]["id"]);
+    }
+    if($getSideGuest[$i]['style'] == "Personne agée") {
+        array_push($getUserOld, $getSideGuest[$i]["id"]);
+    }
+}
 
 ?><pre><?php
+// var_dump($getSideGuest);
+// var_dump($getUserSide);
+// var_dump($getUserOld);
+// var_dump($getUserChild);
 ?></pre><?php
+
+
+if(isset($_POST['reset-searchbar'])) {
+    header('Location:../view/control-panel.php?page=panel');
+}
+
 ?>

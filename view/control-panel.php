@@ -23,6 +23,9 @@ require_once "../controller/control-panel_post.php"
                     <button class="search-user-btn" name="search-user-btn" type="button" onclick="searchUser()">
                         <p>Lancer recherche</p>
                     </button>
+                    <div class="reset-searchbar-block">
+                    <button type="submit" name="reset-searchbar" class="reset-searchbar-btn"><p>Réinitialiser</p></button>
+                </div>
                 </form>
             </div>
             <hr>
@@ -45,10 +48,16 @@ require_once "../controller/control-panel_post.php"
                         <button type="button" class="panel-btn-tag yes-tag" onclick="showYesHousing()"><p>Prévu</p></button>
                     </div>
                 </div>
-                <button class="panel-tag"><p>Enfants</p></button>
-                <button class="panel-tag"><p>Personnes agées</p></button>
-                <button class="panel-tag"><p>Autre accompagnants</p></button>
-                <button class="panel-tag"><p></p></button>
+                <div class="panel-tag">
+                    <div class="panel-tag-title">
+                        <p>Accompagnants</p>
+                    </div>
+                    <div class="search-choice">
+                        <button type="button" class="panel-btn-tag sideguest-tag" onclick="showChild()"><p>Enfants</p></button>
+                        <button type="button" class="panel-btn-tag sideguest-tag" onclick="showAdult()"><p>Adultes</p></button>
+                        <button type="button" class="panel-btn-tag sideguest-tag" onclick="showOld()"><p>Personne agée</p></button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="control-panel-results">
@@ -56,12 +65,12 @@ require_once "../controller/control-panel_post.php"
         for($i = 0; $i < count($getUsers); $i++) {
             if(in_array($getUsers[$i]['id'], $getUserFood)) {
             ?>
-            <div class='panel-user-block food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
+            <div class='<?php if(in_array($getUsers[$i]['id'], $getUserChild)) {echo "child ";} if (in_array($getUsers[$i]['id'], $getUserSide)) {echo "adult ";} if (in_array($getUsers[$i]['id'], $getUserOld)) {echo "old ";}?>panel-user-block food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
             <?php
             }
             else {
             ?>
-            <div class='panel-user-block no-food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
+            <div class='<?php if(in_array($getUsers[$i]['id'], $getUserChild)) {echo "child ";} if (in_array($getUsers[$i]['id'], $getUserSide)) {echo "adult ";} if (in_array($getUsers[$i]['id'], $getUserOld)) {echo "old ";}?>panel-user-block no-food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
             <?php
             }
             ?>

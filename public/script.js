@@ -192,12 +192,40 @@ function showYesHousing() {
 
 function showYesFood() {
   $food = $(".food");
-  $food.toggle("noDisplay-house");
+  $food.toggle("noDisplay-food");
 }
 
 function showNoFood() {
   $food = $(".no-food");
-  $food.toggle("noDisplay-house");
+  $food.toggle("noDisplay-food");
+  console.log($food);
+}
+
+function showChild() {
+  $user = $(".panel-user-block");
+  for ($i = 0; $i < $user.length; $i++) {
+    if ($user[$i].classList.contains("child") == false) {
+      $user[$i].classList.toggle("noDisplay-sideguest");
+    }
+  }
+}
+
+function showAdult() {
+  $user = $(".panel-user-block");
+  for ($i = 0; $i < $user.length; $i++) {
+    if ($user[$i].classList.contains("adult") == false) {
+      $user[$i].classList.toggle("noDisplay-sideguest");
+    }
+  }
+}
+
+function showOld() {
+  $user = $(".panel-user-block");
+  for ($i = 0; $i < $user.length; $i++) {
+    if ($user[$i].classList.contains("old") == false) {
+      $user[$i].classList.toggle("noDisplay-sideguest");
+    }
+  }
 }
 
 function searchUser() {
