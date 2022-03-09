@@ -182,16 +182,22 @@ ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
 
 function showNoHousing() {
   $housing = $(".yes");
-  $tag = $("#housing-tag");
   $housing.toggle("noDisplay-house");
-  // $tag.toggle("active-tag");
 }
 
 function showYesHousing() {
   $housing = $(".non");
-  $tag = $("#housing-tag");
   $housing.toggle("noDisplay-house");
-  // $tag.toggle("active-tag");
+}
+
+function showYesFood() {
+  $food = $(".food");
+  $food.toggle("noDisplay-house");
+}
+
+function showNoFood() {
+  $food = $(".no-food");
+  $food.toggle("noDisplay-house");
 }
 
 function searchUser() {

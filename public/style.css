@@ -1160,11 +1160,11 @@ body {
   opacity: 0.5;
 }
 
-#no-housing-tag {
+.no-tag {
   background: #ff633b;
 }
 
-#yes-housing-tag {
+.yes-tag {
   background: rgb(157, 173, 127);
 }
 

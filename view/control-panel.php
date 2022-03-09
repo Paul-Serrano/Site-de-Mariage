@@ -27,14 +27,22 @@ require_once "../controller/control-panel_post.php"
             </div>
             <hr>
             <div class="control-panel-tag-container">
-                <button class="panel-tag"><p>Alimentation</p></button>
+            <div class="panel-tag">
+                    <div class="panel-tag-title">
+                        <p>Alimentation</p>
+                    </div>
+                    <div class="search-choice">
+                        <button type="button" class="panel-btn-tag no-tag" onclick="showNoFood()"><p>Particularités</p></button>
+                        <button type="button" class="panel-btn-tag yes-tag" onclick="showYesFood()"><p>Pas de contraintes</p></button>
+                    </div>
+                </div>
                 <div class="panel-tag">
                     <div class="panel-tag-title">
                         <p>Logement</p>
                     </div>
                     <div class="search-choice">
-                        <button type="button" id="no-housing-tag" class="panel-btn-tag" onclick="showNoHousing()"><p>Non Prévu</p></button>
-                        <button type="button" id="yes-housing-tag" class="panel-btn-tag" onclick="showYesHousing()"><p>Prévu</p></button>
+                        <button type="button" class="panel-btn-tag no-tag" onclick="showNoHousing()"><p>Non Prévu</p></button>
+                        <button type="button" class="panel-btn-tag yes-tag" onclick="showYesHousing()"><p>Prévu</p></button>
                     </div>
                 </div>
                 <button class="panel-tag"><p>Enfants</p></button>
@@ -46,15 +54,24 @@ require_once "../controller/control-panel_post.php"
         <div class="control-panel-results">
         <?php
         for($i = 0; $i < count($getUsers); $i++) {
-        ?>
-        <div class='panel-user-block <?php echo $getUsers[$i]["name"]?> <?php echo $getUsers[$i]["surname"]?> <?php echo $getUsers[$i]["housing"]?>'>
-            <div class="user-img-block"><img src="../public/img/user.png" alt=""></div>
-            <div class="user-name-block">
-                <p class="user-name"><?php echo $getUsers[$i]["name"];?></p>
-                <p class="user-surname"><?php echo $getUsers[$i]["surname"];?></p>
+            if(in_array($getUsers[$i]['id'], $getUserFood)) {
+            ?>
+            <div class='panel-user-block food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
+            <?php
+            }
+            else {
+            ?>
+            <div class='panel-user-block no-food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
+            <?php
+            }
+            ?>
+                <div class="user-img-block"><img src="../public/img/user.png" alt=""></div>
+                <div class="user-name-block">
+                    <p class="user-name"><?php echo $getUsers[$i]["name"];?></p>
+                    <p class="user-surname"><?php echo $getUsers[$i]["surname"];?></p>
+                </div>
+                <div class="user-tag-block"></div>
             </div>
-            <div class="user-tag-block"></div>
-        </div>
         <?php
         }
         ?>
