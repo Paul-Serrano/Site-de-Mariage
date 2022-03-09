@@ -5,7 +5,7 @@ require_once "../includes/_loader.php";
 
 $close = true;
 
-$title = "Bonjour, visiteur ou invité ? dans tous les cas, bienvenu";
+$title = "Bienvenu sur le site de Noémie et Hugo !";
 
 if(isset($_SESSION['mail'])) {
     $title = "Bonjour ".$_SESSION["surname"]." ! Vous passez une bonne journée ?";
@@ -209,7 +209,7 @@ if(isset($_SESSION['mail'])) {
             ?>
             <?php 
             if(isset($_SESSION['mail'])) {
-                if($_SESSION['mail'] == "paul.serrano08374@gmail.com") {
+                if($_SESSION['mail'] == "paul.serrano08374@gmail.com" && $title != "Big Brother") {
             ?>
             <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
                 <button class="nav-btn">
