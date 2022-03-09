@@ -164,13 +164,13 @@ nav p {
 }
 
 .lantern-small {
-  width: 7.5%;
+  width: 5%;
+  display: flex;
 }
 
-.lantern-large {
-  height: 35%;
-  width: auto;
-  margin: 5% auto 0;
+.garland {
+  width: 7.5%;
+  display: flex;
 }
 
 .title-block {
@@ -178,6 +178,7 @@ nav p {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  width: 25%;
 }
 
 .title-block p {
@@ -1057,12 +1058,20 @@ body {
 
 .panel-tag {
   width: 75%;
-  border-radius: 0.5rem 0.25rem;
-  background: rgba(0, 0, 0, 0);
-  border: 1px solid #557174;
+  border-radius: 0.5rem 0.25rem 0 0;
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+  border: 1px solid black;
   align-self: center;
   justify-self: center;
   padding: 2.5%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .active-tag {
@@ -1077,7 +1086,9 @@ body {
 
 .panel-tag p {
   font-size: 35%;
-  color: #557174;
+  color: #f7f7e8;
+  margin: auto;
+  text-align: center;
 }
 
 .search-user-input {
@@ -1112,7 +1123,60 @@ body {
   font-size: 50%;
 }
 
-.noDisplay {
+.search-choice {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 100%;
+  left: -1px;
+  background: rgb(157, 173, 127);
+  background: linear-gradient(
+    165deg,
+    rgba(157, 173, 127, 1) 0%,
+    rgba(85, 113, 116, 1) 100%
+  );
+  border: 1px solid black;
+  border-radius: 0 0 0.5rem 0.25rem;
+}
+
+.panel-tag:hover .search-choice {
+  display: flex;
+}
+
+.panel-btn-tag {
+  display: flex;
+  width: 75%;
+  margin: 5% auto;
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  transition: ease 1s;
+}
+
+.panel-btn-tag:hover {
+  opacity: 0.5;
+}
+
+#no-housing-tag {
+  background: #ff633b;
+}
+
+#yes-housing-tag {
+  background: rgb(157, 173, 127);
+}
+
+.panel-btn-tag p {
+  color: #f7f7e8;
+}
+
+.noDisplay-house {
+  display: none;
+}
+
+.noDisplay-user {
   display: none;
 }
 
@@ -1373,9 +1437,7 @@ body {
 
 /* map - end */
 
-
 /* tablet & phone wide -- start */
-
 
 @media (max-width: 850px) {
   .lantern-small {
@@ -1411,7 +1473,8 @@ body {
     margin: 0;
   }
 
-  .close-block, .user-block {
+  .close-block,
+  .user-block {
     width: 20%;
   }
 
@@ -1448,7 +1511,7 @@ body {
     flex-direction: column-reverse;
   }
 
-  input[type='radio'] + label {
+  input[type="radio"] + label {
     width: 50%;
   }
 
@@ -1477,7 +1540,4 @@ body {
   }
 }
 
-
 /* tablet & phone wide -- end */
-
-

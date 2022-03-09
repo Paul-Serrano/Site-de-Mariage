@@ -186,12 +186,15 @@ if(isset($_SESSION['mail'])) {
         <?php
         }
         ?>
-        <img class="nav-img lantern-small" src="../public/img/lantern-small.png" alt="lanternes">
+        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
+        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes" style="transform:rotateY(180deg);">
         <div class="title-block">
         <p><?php echo $title;?></p>
-        <img class="nav-img lantern-large" src="../public/img/lantern-large.png" alt="lanternes">
+            <div class="garland-block">
+            </div>
         </div>
-        <img class="nav-img lantern-small" src="../public/img/lantern-small.png" alt="lanternes">
+        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes">
+        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
         <div class="close-block">
             <?php
             if($close) {

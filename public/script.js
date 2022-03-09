@@ -183,15 +183,35 @@ ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
 function showNoHousing() {
   $housing = $(".yes");
   $tag = $("#housing-tag");
-  $housing.toggle("noDisplay");
+  $housing.toggle("noDisplay-house");
   // $tag.toggle("active-tag");
 }
 
-// function searchUser() {
-//   $search = $(".search-user-input").val();
-//   console.log($search);
-//   if ($(".panel-user-block").indexOf($search)) {
-//   }
-// }
+function showYesHousing() {
+  $housing = $(".non");
+  $tag = $("#housing-tag");
+  $housing.toggle("noDisplay-house");
+  // $tag.toggle("active-tag");
+}
+
+function searchUser() {
+  $user = $(".panel-user-block");
+  $search = $(".search-user-input").val();
+  $name = $(".user-name");
+  $surname = $(".user-surname");
+  $positionName = [];
+  $positionSurname = [];
+  $nameString = [];
+  $surnameString = [];
+  for ($i = 0; $i < $name.length; $i++) {
+    $nameString[$i] = $name[$i].innerHTML;
+    $surnameString[$i] = $surname[$i].innerHTML;
+    $positionName[$i] = $nameString[$i].indexOf($search);
+    $positionSurname[$i] = $surnameString[$i].indexOf($search);
+    if ($positionName[$i] == -1 && $positionSurname[$i] == -1) {
+      $user[$i].classList.toggle("noDisplay-user");
+    }
+  }
+}
 
 // Control panel -- end
