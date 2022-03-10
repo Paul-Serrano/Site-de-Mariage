@@ -249,3 +249,18 @@ function searchUser() {
 }
 
 // Control panel -- end
+
+// profile switch -- start
+
+function switchProfileInfo(a, b) {
+  $foodInfo = $(".user-food-block");
+  $selfInfo = $(".user-selfinfo-block");
+  $sideGuestInfo = $(".user-sideguest-block");
+
+  $switch = [$foodInfo, $selfInfo, $sideGuestInfo];
+
+  $switch[a].css("display", "flex");
+  $switch[b].css("display", "none");
+}
+
+// profile switch -- end

@@ -65,12 +65,12 @@ require_once "../controller/control-panel_post.php"
         for($i = 0; $i < count($getUsers); $i++) {
             if(in_array($getUsers[$i]['id'], $getUserFood)) {
             ?>
-            <div class='<?php if(in_array($getUsers[$i]['id'], $getUserChild)) {echo "child ";} if (in_array($getUsers[$i]['id'], $getUserSide)) {echo "adult ";} if (in_array($getUsers[$i]['id'], $getUserOld)) {echo "old ";}?>panel-user-block food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
+            <a href="../view/profile.php?page=profile&id=<?php echo $getUsers[$i]['id']?>" class='<?php if(in_array($getUsers[$i]['id'], $getUserChild)) {echo "child ";} if (in_array($getUsers[$i]['id'], $getUserSide)) {echo "adult ";} if (in_array($getUsers[$i]['id'], $getUserOld)) {echo "old ";}?>panel-user-block food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
             <?php
             }
             else {
             ?>
-            <div class='<?php if(in_array($getUsers[$i]['id'], $getUserChild)) {echo "child ";} if (in_array($getUsers[$i]['id'], $getUserSide)) {echo "adult ";} if (in_array($getUsers[$i]['id'], $getUserOld)) {echo "old ";}?>panel-user-block no-food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
+            <a  href="../view/profile.php?page=profile&id=<?php echo $getUsers[$i]['id']?>" class='<?php if(in_array($getUsers[$i]['id'], $getUserChild)) {echo "child ";} if (in_array($getUsers[$i]['id'], $getUserSide)) {echo "adult ";} if (in_array($getUsers[$i]['id'], $getUserOld)) {echo "old ";}?>panel-user-block no-food <?php echo $getUsers[$i]["name"];?> <?php echo $getUsers[$i]["surname"];?> <?php echo $getUsers[$i]["housing"];?>'>
             <?php
             }
             ?>
@@ -80,11 +80,11 @@ require_once "../controller/control-panel_post.php"
                     <p class="user-surname"><?php echo $getUsers[$i]["surname"];?></p>
                 </div>
                 <div class="user-tag-block"></div>
-            </div>
+            </a>
         <?php
         }
         ?>
-        </div>
+        </a>
     </main>
     <script src="../public/script.js"></script>
 </body>

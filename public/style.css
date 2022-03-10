@@ -1013,6 +1013,7 @@ body {
   border: 1px solid black;
   border-radius: 0.5rem 0.25rem;
   padding: 2.5%;
+  text-decoration: none;
 }
 
 .user-img-block {
@@ -1220,16 +1221,39 @@ body {
 
 /* Profile -- start*/
 
-.user-info-block {
+.user-info-container {
   display: flex;
   flex-direction: column;
   width: 30%;
   margin: auto;
+}
+
+.profile-choice {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.switch-profile-btn {
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  width: 45%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.user-info-block {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .user-info-block p {
-  font-size: 50%;
+  font-size: 35%;
 }
 
 .user-profile-info-block {
@@ -1240,12 +1264,53 @@ body {
   align-items: center;
 }
 
+.sideguest-info-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  width: 75%;
+  border-radius: 0.5rem 0.25rem;
+  padding: 1%;
+  margin: 5%;
+}
+
+.sideguest-name-surname-block {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
 .user-info-content {
   display: flex;
   width: 100%;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 2.5%;
+}
+
+.user-food-content {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.user-food-block {
+  display: flex;
+  align-items: center;
+}
+
+.user-food {
+  border: 1px solid #ff633b;
+  border-radius: 0.5rem 0.25rem;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 1%;
+}
+
+.food-icon {
+  width: 25%;
+  margin: 0 10%;
 }
 
 .user-photo-block {
@@ -1285,6 +1350,11 @@ body {
 
 .user-change-info-btn p {
   color: #f7f7e8;
+}
+
+.user-food-block,
+.user-sideguest-block {
+  display: none;
 }
 
 /* Profile -- end*/
@@ -1529,6 +1599,15 @@ body {
 
   .user-info-content {
     justify-content: center;
+  }
+
+  .user-info-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
   }
 
   .profile-main hr {

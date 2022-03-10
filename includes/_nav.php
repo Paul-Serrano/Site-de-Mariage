@@ -135,7 +135,7 @@ if(isset($_GET['page'])) {
         $title = "Big Brother";
     }
     if($_GET['page'] == 'profile') {
-        $title = "Bienvenu sur le profil de ".$_SESSION['surname']."";
+        $title = "Bienvenu sur votre page de  profil ".$_SESSION['surname']."";
     }
 }
 
@@ -150,6 +150,11 @@ if(isset($_SESSION['mail'])) {
         $panel = true;
     }
 }
+
+if(isset($_GET['id'])){
+    $title = "Page de profil n° ".$_GET['id']."";
+}
+
 
 
 ?>
