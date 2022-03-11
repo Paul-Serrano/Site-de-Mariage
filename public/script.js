@@ -8,15 +8,15 @@ $(window).on("load", function () {
 
 // map -- start
 
-var map = L.map("map").setView([51.505, -0.09], 13);
+var map = L.map("map").setView([43.294437408447266, -0.3681723177433014], 14);
 
 L.tileLayer(
   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
   {
     attribution:
       'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    minZoome: 5,
+    maxZoom: 20,
+    minZoom: 4,
     id: "mapbox/streets-v11",
     tileSize: 512,
     zoomOffset: -1,
@@ -30,6 +30,16 @@ var marker = L.marker([51.5, -0.09]).addTo(map);
 marker.bindPopup("Premier marqueur");
 
 // map -- end
+
+// Contact sheet -- start
+
+ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
+  console.error(error);
+});
+
+// Contact sheet -- end
+
+// sign up form -- start
 
 function addFood(i) {
   $addFood = $(`.additionnal-food-container-${i}`);
@@ -179,13 +189,7 @@ function closeAlert() {
   $alert.css("display", "none");
 }
 
-// Contact sheet -- start
-
-ClassicEditor.create(document.querySelector("#textarea")).catch((error) => {
-  console.error(error);
-});
-
-// Contact sheet -- end
+// sign up form -- end
 
 // Control panel -- start
 
