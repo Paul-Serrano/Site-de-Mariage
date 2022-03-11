@@ -114,7 +114,7 @@ if(isset($_GET['page'])) {
         $homeConnect3 = "";
     }
     if($_GET['page'] == 'contact') {
-        $title = "Contact";
+        $title = "Formulaire de Contact";
     }
     if($_GET['page'] == 'portfolio') {
         $title = "Porfolio";
@@ -126,7 +126,7 @@ if(isset($_GET['page'])) {
         $title = "Informations pratiques";
     }
     if($_GET['page'] == 'changeInfo') {
-        $title = "Formulaire de changement d'informations";
+        $title = "Changement d'informations";
     }
     if($_GET['page'] == 'leetchi') {
         $title = "Cagnotte Leetchi";

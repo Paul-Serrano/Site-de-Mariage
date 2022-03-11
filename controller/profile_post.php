@@ -77,6 +77,8 @@ for($i = 0; $i < 6; $i++) {
     }
 }
 
+$sideGuest = [];
+
 try {
     $sqlGetUserSideGuest = "SELECT * FROM sideguest WHERE id = '$userId'";
     $reqGetUserSideGuest = $db->prepare($sqlGetUserSideGuest);
