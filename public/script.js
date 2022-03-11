@@ -1,17 +1,34 @@
+// Loader --start
+
+$(window).on("load", function () {
+  $(".loader-main").fadeOut(750);
+});
+
+// Loader -- end
+
 // map -- start
 
-// map = L.map("map").setView([51.505, -0.09], 13);
+var map = L.map("map").setView([51.505, -0.09], 13);
 
-// L.tileLayer("https://{s}.tile.openstreamap.fr/osmfr/{z}/{x}/{y}.png", {
-//   attribution:
-//     'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//   maxZoom: 18,
-//   minZoom: 5,
-//   id: "mapbox/streets-v11",
-//   tileSize: 512,
-//   zoomOffset: -1,
-//   accessToken: "your.mapbox.access.token",
-// }).addTo(map);
+L.tileLayer(
+  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+  {
+    attribution:
+      'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    minZoome: 5,
+    id: "mapbox/streets-v11",
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken:
+      "pk.eyJ1IjoicGF1bC1zZXJyYW5vIiwiYSI6ImNsMG1md2NyZDA2NHcza3BhNDZuZG1jNzMifQ.1w7IuCAcF1GDd22qb4eJ9Q",
+  }
+).addTo(map);
+
+var marker = L.marker([51.5, -0.09]).addTo(map);
+
+marker.bindPopup("Premier marqueur");
+
 // map -- end
 
 function addFood(i) {
@@ -161,14 +178,6 @@ function closeAlert() {
   $alert = $(".alert");
   $alert.css("display", "none");
 }
-
-// Loader --start
-
-$(window).on("load", function () {
-  $(".loader-main").fadeOut(750);
-});
-
-// Loader -- end
 
 // Contact sheet -- start
 

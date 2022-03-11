@@ -1538,7 +1538,29 @@ body {
 #map {
   height: 500px;
   display: flex;
-  width: 500px;
+  width: 75%;
+  border-radius: 0.5rem 0.25rem;
+  border: solid 1px black;
+}
+
+.leaflet-control-attribution a {
+  font-size: 50%;
+}
+
+.leaflet-popup-content {
+  font-size: 50%;
+}
+
+.leaflet-popup-close-button {
+  font-size: 25%;
+}
+
+.map-block {
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 /* map - end */
