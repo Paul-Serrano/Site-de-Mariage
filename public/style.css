@@ -1538,7 +1538,7 @@ body {
 #map {
   height: 500px;
   display: flex;
-  width: 75%;
+  width: 50%;
   border-radius: 0.5rem 0.25rem;
   border: solid 1px black;
 }
@@ -1547,8 +1547,40 @@ body {
   font-size: 50%;
 }
 
-.leaflet-popup-content {
-  font-size: 50%;
+.marker-block {
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.leaflet-popup-content p {
+  font-size: 35%;
+  text-align: center;
+  color: #557174;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2.5% 0 !important;
+}
+
+.leaflet-popup-content a {
+  background: #f2fa5a;
+  border-radius: 0.5rem 0.25rem;
+  border: 1px black solid;
+  padding: 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.map-car-icon {
+  width: 25%;
+}
+
+.leaflet-popup-content a {
+  text-decoration: none;
 }
 
 .leaflet-popup-close-button {

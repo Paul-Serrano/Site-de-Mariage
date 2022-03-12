@@ -10,6 +10,6 @@ require_once "../includes/_nav.php";
             <div class="map" id="map"></div>
         </div>
     </main>
-    <script src="../public/script.js">
+    <script src="../public/map.js">
     </script>
 </body>

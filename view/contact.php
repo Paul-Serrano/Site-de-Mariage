@@ -41,5 +41,5 @@ if(isset($_GET['error'])) {
         </form>
     </main>
     <script src="../ckeditor/ckeditor.js"></script>
-    <script src="../public/script.js"></script>
+    <script src="../public/contact.js"></script>
 </body>
