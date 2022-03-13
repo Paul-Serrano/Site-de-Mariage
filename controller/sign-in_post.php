@@ -55,7 +55,7 @@ if(isset($_POST['sign-in-submit'])){
     $_SESSION['ville'] = $signInInfo[0]['ville'];
     $_SESSION['cp'] = $signInInfo[0]['cp'];
 
-    header('Location:../view/index.php?success=signIn');
+    header('Location:../view/index.php?success=signIn&page=index');
     
 
 

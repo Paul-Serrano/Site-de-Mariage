@@ -202,7 +202,7 @@ if(isset($_POST["sign-up-submit"])) {
             $reqSignUpSideGuest->bindValue(':id', $id[0]["id"], PDO::PARAM_STR);
 
             $reqSignUpSideGuest->execute();
-            $signUpSideGuest = $reqSignUpFood->fetchAll();
+            $signUpSideGuest = $reqSignUpSideGuest->fetchAll();
         }
     
     
@@ -228,7 +228,7 @@ if(isset($_POST["sign-up-submit"])) {
         $_SESSION["pass"] = $pass;
         $_SESSION["ville"] = $ville;
         $_SESSION["cp"] = $cp;
-        header("Location:../view/index.php?success=signUp");
+        header("Location:../view/index.php?success=signUp&page=index");
 
         ?><pre><?php
         ?></pre><?php

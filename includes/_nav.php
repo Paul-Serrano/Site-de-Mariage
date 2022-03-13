@@ -229,6 +229,11 @@ if(isset($_GET['id'])){
                 <?php
                 }
             }
+            else {
+                ?>
+                    <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
+                <?php
+                }
             ?>
         </div>
 </nav>
