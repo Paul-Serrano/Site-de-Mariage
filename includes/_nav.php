@@ -99,19 +99,19 @@ if(isset($_GET['page'])) {
         $title = "Bienvenu sur le site de Noémie et Hugo !";
         $homeConnect = "home";
         $homeConnect1 = "index";
-        $homeConnect3 = "";
+        $homeConnect3 = "index";
     }
     if($_GET['page'] == 'signUp') {
         $title = "Formulaire d'inscription";
         $homeConnect = "home";
         $homeConnect1 = "index";
-        $homeConnect3 = "";
+        $homeConnect3 = "index";
     }
     if($_GET['page'] == 'signIn') {
         $title = "Formulaire de connexion";
         $homeConnect = "home";
         $homeConnect1 = "index";
-        $homeConnect3 = "";
+        $homeConnect3 = "index";
     }
     if($_GET['page'] == 'contact') {
         $title = "Formulaire de Contact";
