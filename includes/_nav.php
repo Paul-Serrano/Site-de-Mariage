@@ -223,11 +223,11 @@ if(isset($_GET['id'])){
             </a>
             <?php                
                 }
-            }
-            else {
-            ?>
-            <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
-            <?php
+                else if(isset($_GET['page']) && $_GET['page'] == 'index') {
+                ?>
+                    <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
+                <?php
+                }
             }
             ?>
         </div>

@@ -41,7 +41,14 @@ var events = {
     event: "Mariage civil",
     lat: 43.464725494384766,
     lon: -0.6177549958229065,
-    link: "",
+    link:
+      "https://www.google.com/maps/dir/" +
+      adress +
+      ",+" +
+      cp +
+      ",+" +
+      ville +
+      "/Mairie,+18+Rue+la+Carr%C3%A8re,+64370+Arthez-de-B%C3%A9arn",
     marker: weddingMarkerIcon,
   },
   Salle: {
@@ -49,7 +56,14 @@ var events = {
     event: "Soirée de célébration",
     lat: 43.50549324389578,
     lon: -0.6157836935017258,
-    link: "",
+    link:
+      "https://www.google.com/maps/dir/" +
+      adress +
+      ",+" +
+      cp +
+      ",+" +
+      ville +
+      "/Salle+des+fêtes+Maison+tous+d+Hagetaubin,+64370,+Hagetaubin",
     marker: partyMarkerIcon,
   },
 };
@@ -97,7 +111,13 @@ for (e in events) {
     icon: events[e].marker,
   }).addTo(map);
   weddingMarker.bindPopup(
-    "<p>" + events[e].spot + "</p><p>" + events[e].event + "</p>"
+    "<p>" +
+      events[e].spot +
+      "</p><p>" +
+      events[e].event +
+      "</p><a href='" +
+      events[e].link +
+      "' target='_blank'><p>Itinéraire depuis chez vous</p></a>"
   );
 }
 
