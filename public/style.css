@@ -408,7 +408,7 @@ nav p {
 }
 
 .index-block-content img {
-  width: 75%;
+  width: 50%;
   object-fit: contain;
   animation: flip;
 }

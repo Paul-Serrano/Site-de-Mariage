@@ -35,6 +35,7 @@ var housingMarkerIcon = L.icon({
   iconAnchor: [25, 25],
 });
 
+
 var events = {
   mairie: {
     spot: "Mairie d'Arthez",
@@ -117,7 +118,7 @@ for (e in events) {
       events[e].event +
       "</p><a href='" +
       events[e].link +
-      "' target='_blank'><p>Itinéraire depuis chez vous</p></a>"
+      "' target='_blank'><p>Itinéraire</p></a>"
   );
 }
 
