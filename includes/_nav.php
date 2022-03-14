@@ -195,8 +195,6 @@ if(isset($_GET['id'])){
         <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes" style="transform:rotateY(180deg);">
         <div class="title-block">
         <p><?php echo $title;?></p>
-            <div class="garland-block">
-            </div>
         </div>
         <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes">
         <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
@@ -238,4 +236,92 @@ if(isset($_GET['id'])){
         </div>
 </nav>
 
-<nav class="nav-phone"></nav>
+<nav class="nav-phone">
+    <div class="nav-phone-container">
+        <div class="nav-left">
+        <?php
+            if(isset($_SESSION['surname'])) {
+            ?>
+            <div class="user-block">
+            <button type="button" class="menu-burger-btn" onclick="openMenuBurger()">
+                <img src="../public/img/menu-burger.png" alt="menu">
+            </button>
+                <div class="menu-burger">
+                    <div class="sign-in-block">
+                        <a class="nav-link" href="../view/profile.php?page=profile">
+                            <button class="nav-btn profile-btn">
+                                <p>Votre profil</p>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="log-out-block">
+                        <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
+                            <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            else {
+            ?>
+            <div class="home-connect-block">
+            <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link" style="align-self:flex-start;">
+                <button class="nav-btn">
+                    <img src="../public/img/<?php echo $homeConnect;?>.png" alt="connectez vous">
+                </button>
+            </a>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="nav-central">
+            <div class="title-block">
+                <p><?php echo $title;?></p>
+            </div>
+        </div>
+        <div class="close-block">
+        <?php
+        if($close) {
+        ?>
+            <a href="../view/index.php?page=index" class="nav-link nav-link-right">
+                <button class="nav-btn">
+                    <img class="nav-img" src="../public/img/close.png" alt="panneau de configuration">
+                </button>
+            </a>
+        <?php
+        }
+        ?>
+        <?php 
+        if(isset($_SESSION['mail'])) {
+            if($_SESSION['mail'] == "paul.serrano08374@gmail.com" && $title != "Big Brother") {
+        ?>
+            <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
+                <button class="nav-btn">
+                    <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
+                </button>
+            </a>
+        <?php                
+            }
+            else if(isset($_GET['page']) && $_GET['page'] == 'index') {
+            ?>
+                <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
+            <?php
+            }
+        }
+        else {
+            ?>
+                <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
+            <?php
+            }
+        ?>
+        </div>
+    </div>
+    <div class="nav-img-block">
+        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">  
+        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes" style="transform:rotateY(180deg);">
+        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes">
+        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
+    </div>
+</nav>

@@ -42,4 +42,5 @@ if(isset($_GET['error'])) {
     </main>
     <script src="../ckeditor/ckeditor.js"></script>
     <script src="../public/contact.js"></script>
+    <script src="../public/open-menu-burger.js"></script>
 </body>

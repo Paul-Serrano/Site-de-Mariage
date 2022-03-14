@@ -51,5 +51,6 @@ $villeDefault = 'Pau';
     </script>
     <script src="../public/map.js">
     </script>
+    <script src="../public/open-menu-burger.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 </body>

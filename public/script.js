@@ -1,3 +1,12 @@
+// menu burger -- start
+
+function openMenuBurger() {
+  $menu = $('.menu-burger');
+  $menu.toggle('.display');
+}
+
+// menu burger -- end
+
 // Loader --start
 
 $(window).on("load", function () {

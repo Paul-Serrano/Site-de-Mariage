@@ -70,4 +70,5 @@ if (isset($_GET['success'])) {
     </div>
 </main>
 <script src="../public/script.js"></script>
+<script src="../public/open-menu-burger.js"></script>
 </body>
