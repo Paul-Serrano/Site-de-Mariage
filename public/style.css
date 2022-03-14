@@ -370,7 +370,7 @@ nav p {
   align-items: center;
   justify-content: center;
   left: -2px;
-  top: 0;
+  top: -2px;
 }
 
 .not-availaible p {
@@ -1921,6 +1921,12 @@ body {
     display: flex;
   }
 
+  .index-main {
+    margin-top: 5%;
+    width: 90%;
+    height: 100%;
+  }
+
   .index-container {
     display: flex;
     flex-direction: column;
@@ -1937,6 +1943,7 @@ body {
   .index-block {
     flex-direction: row;
     height: 50%;
+    margin-bottom: 5%;
   }
 
   .index-block-link:nth-child(1) {
@@ -1951,13 +1958,13 @@ body {
 
 
   .index-block-link:nth-child(3) {
-    left: 2.%;
+    left: -2.5%;
     width: 100%;
     }
 
 
   .index-block-link:nth-child(4) {
-    left: 2.%;
+    left: 2.5%;
     width: 100%;
   }
 
