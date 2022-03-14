@@ -40,7 +40,6 @@ if(isset($_SESSION['id'])) {
 
 
 ?><pre><?php
-var_dump($connect);
 ?></pre><?php
 
 
