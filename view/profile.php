@@ -170,19 +170,21 @@ if(isset($_GET['id'])){
                                 <p><?php echo $getUserSideGuest[$i]['age'];?> ans</p>
                             </div>
                         </div>
+                        <?php
+                        if(!empty($sideGuestFood)) {
+                        ?>
+                        <hr>
                         <div class="sideguest-food-content">
                             <?php
-                            if(!empty($sideGuestFood)) {
-                                for($j = 0; $j < count($sideGuestFood[$i]); $j++) {
-                                    ?>
-                                    <div class="sideguest-indiv-food-content">
-                                        <img class="sideguest-food-img" src="../public/img/noFood.png" alt="photo de profil">
-                                        <p><?php echo $sideGuestFood[$i][$j];?></p>
-                                    </div>
-                                    <?php
-                                }
-
+                            for($j = 0; $j < count($sideGuestFood[$i]); $j++) {
+                                ?>
+                                <div class="sideguest-indiv-food-content">
+                                    <img class="sideguest-food-img" src="../public/img/noFood.png" alt="photo de profil">
+                                    <p><?php echo $sideGuestFood[$i][$j];?></p>
+                                </div>
+                                <?php
                             }
+                        }
                             ?>
                         </div>
                     </div>

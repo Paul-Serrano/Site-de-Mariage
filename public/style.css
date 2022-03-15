@@ -182,7 +182,7 @@ nav p {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 25%;
+  width: 30%;
 }
 
 .title-block p {
@@ -1331,6 +1331,15 @@ body {
   margin: auto;
 }
 
+.sideguest-info-block hr {
+  width: 75%;
+  margin: 5%;
+  display: flex;
+  border: 1px solid black;
+  background: black;
+  border-radius: 0.5rem;
+}
+
 .sideguest-food-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1349,7 +1358,7 @@ body {
 }
 
 .sideguest-food-img {
-  width: 25%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;

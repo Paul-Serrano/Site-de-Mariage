@@ -52,6 +52,10 @@ if(isset($_POST["sign-up-submit"])) {
         exit();
     }
 
+    // if($cp) {
+
+    // }
+
 
     for($i = 1; $i < 7; $i++) {
         if(isset($_POST['food-'.$i.''])) {
