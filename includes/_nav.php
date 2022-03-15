@@ -8,7 +8,7 @@ $close = true;
 $title = "Bienvenu sur le site de Noémie et Hugo !";
 
 if(isset($_SESSION['mail'])) {
-    $title = "Bonjour ".$_SESSION["surname"]." ! Vous passez une bonne journée ?";
+    $title = "Bonjour ".$_SESSION["surname"]." ! Vous allez bien ?";
 }
 
 $closeChoice = $title;

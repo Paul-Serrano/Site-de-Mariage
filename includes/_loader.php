@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 require_once "../includes/_head.php";
 
@@ -13,4 +13,4 @@ require_once "../includes/_head.php";
             <h2>Loading...</h2>
         </div>
     </main>
-</body>
+</body> -->

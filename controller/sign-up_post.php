@@ -107,10 +107,6 @@ if(isset($_POST["sign-up-submit"])) {
 //     $sideGuestFoodBig[$j] =  $sideGuestFoodSmall;
 // }
 
-    
-
-
-
     try {
         $sqlSignUp = "INSERT INTO user (name,surname,mail,tel,housing,password,adress,cp,ville)
         VALUES (:name, :surname, :mail, :tel, :housing, :pass, :adress, :cp, :ville)";
@@ -144,10 +140,6 @@ if(isset($_POST["sign-up-submit"])) {
             echo 'Erreur : '.$e->getMessage();
         }
     }
-
-    ?><pre><?php
-    var_dump($id);
-    ?></pre><?php
 
     if($foodChoice) {
         try {
@@ -211,9 +203,68 @@ if(isset($_POST["sign-up-submit"])) {
             echo
             'Erreur : '.$e->getMessage();
         }
+    }
 
+    $sideGuestFoodIndividual = [];
+    $sideGuestFood = [];
+
+    for($i = 0; $i < 5; $i++) {
+        for($j = 0; $j < 5; $j++) {
+            if(isset($_POST['sideGuest-food-'.$i.'-'.$j.''])){
+                array_push($sideGuestFoodIndividual, $_POST['sideGuest-food-'.$i.'-'.$j.'']);
+            }
+        }
+        if(isset($_POST['sideGuest-food-'.$i.'-0']))
+        array_push($sideGuestFood, $sideGuestFoodIndividual);
+        $sideGuestFoodIndividual = [];
+    }
+
+    $userId = $id[0]['id'];
+
+    if($reqSignUpSideGuest) {
+        try {
+            $sqlGetSideGuestId = "SELECT sideGuest_id FROM sideguest WHERE id = '$userId'";
+            $reqGetSideGuestId = $db->prepare($sqlGetSideGuestId);
+            $reqGetSideGuestId->execute();
+            $sideGuestId = $reqGetSideGuestId->fetchAll();
+        
+        } catch (PDOException $e) {
+            $db = null;
+            echo 'Erreur : '.$e->getMessage();
+        }
+    }
+
+    for($i = 0; $i < count($sideGuestId); $i++) {
+
+        try {
+            $sqlSignUpGuestFood = "INSERT INTO food (type0, type1, type2, type3, type4, type5, sideGuest_id)
+            VALUES (:food1, :food2, :food3, :food4, :food5, :food6, :sideGuest_id)";
+            $reqSignUpGuestFood = $db->prepare($sqlSignUpGuestFood);
+            for($j = 0; $j < 6; $j++) {
+                $k = $j + 1;
+                if(isset($sideGuestFood[$i][$j])) {
+                    $reqSignUpGuestFood->bindValue(':food'.$k.'', $sideGuestFood[$i][$j], PDO::PARAM_STR);
+                }
+                else {
+                    $reqSignUpGuestFood->bindValue(':food'.$k.'', "", PDO::PARAM_STR);
+                }
+            }
+            $reqSignUpGuestFood->bindValue(':sideGuest_id', $sideGuestId[$i]['sideGuest_id'], PDO::PARAM_STR);
+            $reqSignUpGuestFood->execute();
+            $signUpGuestFood = $reqSignUpGuestFood->fetchAll();
+        }
+    
+    
+        catch (PDOException $e) {
+            $db = null;
+            echo
+            'Erreur : '.$e->getMessage();
+        }
 
     }
+
+    ?><pre><?php
+    ?></pre><?php
  
     if($reqSignUp) {
 
@@ -230,8 +281,7 @@ if(isset($_POST["sign-up-submit"])) {
         $_SESSION["cp"] = $cp;
         header("Location:../view/index.php?success=signUp&page=index");
 
-        ?><pre><?php
-        ?></pre><?php
+  
     }
     
 }

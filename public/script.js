@@ -1,8 +1,8 @@
 // menu burger -- start
 
 function openMenuBurger() {
-  $menu = $('.menu-burger');
-  $menu.toggle('.display');
+  $menu = $(".menu-burger");
+  $menu.toggle(".display");
 }
 
 // menu burger -- end
@@ -42,19 +42,20 @@ function addFood(i) {
 }
 
 function addSideGuestFood(i) {
-  $foodChoiceForm = $(".sideGuest-food-container");
-  $count = $foodChoiceForm.length;
   $createFood = $(`.btn-container`);
-  $count2 = $(`.sideGuest-food-${i}`).length;
+  $count = $(`.sideGuest-food-${i}`).length;
+  console.log($count);
   $foodControl = $(`.sideGuest-food-control-${i}`);
-  $foodControl.after(`
-        <div class="additionnal-sideGuest-food-container  sideGuest-food-${i} additionnal-sideGuest-food-container-${i}">
-        <div class="sideGuest-food-individual-control">
-        <label for="food-${i}" class="sign-up-label"><p>Aliment</p></label>
-        </div>        
-            <input class="sideGuest-food-input additionnal-input" id="food-${i}" type="text" value="" name="sideGuest-food-${i}">
-        </div>
-        `);
+  if ($count < 5) {
+    $foodControl.after(`
+    <div class="additionnal-sideGuest-food-container  sideGuest-food-${i} additionnal-sideGuest-food-container-${i}">
+    <div class="sideGuest-food-individual-control">
+    <label for="food-${i}" class="sign-up-label"><p>Aliment</p></label>
+    </div>        
+        <input class="sideGuest-food-input additionnal-input" id="food-${i}" type="text" value="" name="sideGuest-food-${i}-${$count}">
+    </div>
+    `);
+  }
 }
 
 function yesSideGuest() {

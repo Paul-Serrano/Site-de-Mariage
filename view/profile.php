@@ -8,6 +8,10 @@ if(isset($_GET['id'])){
     $id = intval($_GET['id']);
     $getUserSideGuest = [];
     $food = [];
+    $sideGuestFood = [];
+    $userSideGuest = [];
+    $sideGuestFoodEmpty = [];
+    $sideGuestFoodIndiv = [];
 
     for($i = 0; $i < count($getAllUsers); $i++) {
         if($getAllUsers[$i]['id'] == $id) {
@@ -34,10 +38,37 @@ if(isset($_GET['id'])){
            array_push($getUserSideGuest, $getAllSideGuest[$i]);
         }
     }
+
+    for($i = 0; $i < count($getUserSideGuest); $i++) {
+        for($j = 0; $j < count($getAllFood); $j++) {
+            if($getUserSideGuest[$i]['sideGuest_id'] == $getAllFood[$j]['sideGuest_id']) {
+               array_push($sideGuestFoodEmpty, $getAllFood[$j]); 
+            }
+        }
+    }
+
+    for($i = 0; $i < count($sideGuestFoodEmpty); $i++){
+        for($j = 0; $j < 6; $j++) {
+            if(!empty($sideGuestFoodEmpty[$i]['type'.$j.''])){
+                array_push($sideGuestFoodIndiv, $sideGuestFoodEmpty[$i]['type'.$j.'']);
+            }
+        }
+        array_push($sideGuestFood, $sideGuestFoodIndiv);
+        $sideGuestFoodIndiv = [];
+    }
+
+
 }
 
+
 ?><pre><?php
+// var_dump($sideGuestFood);
+// var_dump($sideGuestFoodEmpty);
+// var_dump($getUserSideGuest);
+// var_dump($getAllFood);
+// var_dump($userSideGuest);
 ?></pre><?php
+
 
 
 ?>
@@ -125,16 +156,34 @@ if(isset($_GET['id'])){
                     for($i = 0; $i < count($getUserSideGuest); $i++) {
                     ?>
                     <div class="user-profile-info-block sideguest-info-block">
-                        <div class="sideguest-name-surname-block">
-                            <div class="sideguest-info-content">
-                                <p><?php echo $getUserSideGuest[$i]['surname'];?></p>
+                        <div class="sideguest-name-age-block">
+                            <div class="sideguest-name-surname-block">
+                                <div class="sideguest-info-content">
+                                    <p><?php echo $getUserSideGuest[$i]['surname'];?></p>
+                                </div>
+                                <p> </p>
+                                <div class="sideguest-info-content">
+                                    <p><?php echo $getUserSideGuest[$i]['name'];?></p>
+                                </div>
                             </div>
                             <div class="sideguest-info-content">
-                                <p><?php echo $getUserSideGuest[$i]['name'];?></p>
+                                <p><?php echo $getUserSideGuest[$i]['age'];?> ans</p>
                             </div>
                         </div>
-                        <div class="sideguest-info-content">
-                            <p><?php echo $getUserSideGuest[$i]['age'];?> ans</p>
+                        <div class="sideguest-food-content">
+                            <?php
+                            if(!empty($sideGuestFood)) {
+                                for($j = 0; $j < count($sideGuestFood[$i]); $j++) {
+                                    ?>
+                                    <div class="sideguest-indiv-food-content">
+                                        <img class="sideguest-food-img" src="../public/img/noFood.png" alt="photo de profil">
+                                        <p><?php echo $sideGuestFood[$i][$j];?></p>
+                                    </div>
+                                    <?php
+                                }
+
+                            }
+                            ?>
                         </div>
                     </div>
                     <?php

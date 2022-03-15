@@ -90,8 +90,51 @@ try {
     echo 'Erreur : '.$e->getMessage();
 }
 
+try {
+    $sqlGetSideGuestId = "SELECT sideGuest_id FROM sideguest Where id = '$userId'";
+    $reqGetSideGuestId = $db->prepare($sqlGetSideGuestId);
+    $reqGetSideGuestId->execute();
+    $getSideGuestId = $reqGetSideGuestId->fetchAll();
+
+} catch (PDOException $e) {
+    $db = null;
+    echo 'Erreur : '.$e->getMessage();
+}
+
+$getUserSideGuestFood = [];
+
+for($i = 0; $i < count($getSideGuestId); $i++) {
+    $sideGuestId = $getSideGuestId[$i]['sideGuest_id'];
+    try {
+        $sqlGetUserSideGuestFood = "SELECT * FROM food WHERE sideguest_id = '$sideGuestId'";
+        $reqGetUserSideGuestFood = $db->prepare($sqlGetUserSideGuestFood);
+        $reqGetUserSideGuestFood->execute();
+        $getUserSideGuestFoodInit = $reqGetUserSideGuestFood->fetchAll();
+        $getUserSideGuestFood[$i] = $getUserSideGuestFoodInit;
+    
+    } catch (PDOException $e) {
+        $db = null;
+        echo 'Erreur : '.$e->getMessage();
+    }
+}
+
+$sideGuestFoodEmpty = [];
+$sideGuestFoodIndiv = [];
+$sideGuestFood = [];
+for($j = 0; $j < count($getUserSideGuestFood); $j++) {
+    $sideGuestFoodIndiv = [];
+    for($i = 0; $i < 6; $i++) {
+        if(!empty($getUserSideGuestFood[$j][0]['type'.$i.''])) {
+            array_push($sideGuestFoodIndiv, $getUserSideGuestFood[$j][0]['type'.$i.'']);
+        }
+    }
+    array_push($sideGuestFood, $sideGuestFoodIndiv);
+}
+
 ?><pre><?php
-// var_dump($getUserSideGuest);
+// var_dump($sideGuestFoodIndiv);
+// var_dump($sideGuestFood);
+// var_dump($getUserSideGuestFood);
 ?></pre><?php
 
 ?>

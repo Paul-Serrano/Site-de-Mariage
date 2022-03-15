@@ -1308,7 +1308,7 @@ body {
 
 .sideguest-info-block {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   border: 1px solid black;
   width: 75%;
@@ -1321,6 +1321,38 @@ body {
   display: flex;
   width: 50%;
   justify-content: space-evenly;
+}
+
+.sideguest-name-age-block {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.sideguest-food-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.sideguest-indiv-food-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 100%;
+}
+
+.sideguest-food-img {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-info-content {
@@ -1637,6 +1669,14 @@ body {
   display: flex;
 }
 
+#itineraire {
+  flex-direction: row;
+}
+
+.click-img {
+  width: 25%;
+}
+
 /* map - end */
 
 /* tablet & phone wide -- start */
@@ -1806,7 +1846,7 @@ body {
 
 /* phone portrait -- start*/
 
-@media (max-width: 850px) {
+@media (max-width: 450px) {
   .nav {
     display: none;
   }
@@ -1823,7 +1863,6 @@ body {
     width: 100%;
   }
 
-  
   .nav-left {
     display: flex;
     align-items: center;
@@ -1887,8 +1926,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(199,207,183);
-    background: linear-gradient(90deg, rgba(199,207,183,1) 0%, rgba(157,173,127,1) 100%);
+    background: rgb(199, 207, 183);
+    background: linear-gradient(
+      90deg,
+      rgba(199, 207, 183, 1) 0%,
+      rgba(157, 173, 127, 1) 100%
+    );
     width: 500%;
     z-index: 10000;
     border: 1px solid black;
@@ -1901,12 +1944,12 @@ body {
     justify-content: center;
     align-items: center;
     border: none;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     width: 100%;
   }
 
   .sign-in-block {
-    margin: 0 auto 5%;;
+    margin: 0 auto 5%;
   }
 
   .log-out-block {
@@ -1952,34 +1995,34 @@ body {
   }
 
   .index-block-link:nth-child(2) {
-  left: 2.5%;
-  width: 100%;
+    left: 2.5%;
+    width: 100%;
   }
-
 
   .index-block-link:nth-child(3) {
     left: -2.5%;
     width: 100%;
-    }
-
+  }
 
   .index-block-link:nth-child(4) {
     left: 2.5%;
     width: 100%;
   }
 
-
   .index-block-link:nth-child(5) {
     left: -2.5%;
     width: 100%;
   }
-
 
   #map {
     width: 100%;
   }
 
   .user-info-container {
+    width: 100%;
+  }
+
+  .user-info-block {
     width: 100%;
   }
 
@@ -2073,12 +2116,67 @@ body {
   .control-panel-results {
     display: flex;
     flex-direction: column;
+    padding: 0;
+  }
+
+  .user-img-block {
+    display: none;
+  }
+
+  .user-name-block {
+    width: 60%;
   }
 
   .panel-tag p {
     font-size: 35%;
   }
 
+  .sign-in-label,
+  .sign-in-input {
+    width: 100%;
+  }
+
+  .alert-container .alert {
+    width: 100%;
+  }
+
+  .alert {
+    width: 75%;
+  }
+
+  .regular-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .additionnal-form {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .food-choice-form {
+    width: 100%;
+  }
+
+  .additionnal-form-group {
+    width: 100%;
+  }
+
+  .additionnal-food-container {
+    width: 100%;
+  }
+
+  .additionnal-sideGuest-container {
+    width: 100%;
+  }
+
+  .sideGuest-food-container {
+    width: 100%;
+  }
+
+  .sign-in-btn {
+    width: 100%;
+  }
 }
 
 /* phone portrait -- end*/

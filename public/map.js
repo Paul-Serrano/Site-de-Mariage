@@ -35,7 +35,6 @@ var housingMarkerIcon = L.icon({
   iconAnchor: [25, 25],
 });
 
-
 var events = {
   mairie: {
     spot: "Mairie d'Arthez",
@@ -116,9 +115,9 @@ for (e in events) {
       events[e].spot +
       "</p><p>" +
       events[e].event +
-      "</p><a href='" +
+      "</p><a id='itineraire' href='" +
       events[e].link +
-      "' target='_blank'><p>Itinéraire</p></a>"
+      "' target='_blank'><p>Itinéraire</p><img class='click-img' src='../public/img/click.png' alt='click'></a>"
   );
 }
 
@@ -135,7 +134,7 @@ for (house in houses) {
       houses[house].ville +
       "</p><p><img class='map-car-icon' src='../public/img/car.png' alt='voiture'>" +
       houses[house].time +
-      "</p></a></div>"
+      "<img class='click-img' src='../public/img/click.png' alt='click'></p></a></div>"
   );
 }
 
