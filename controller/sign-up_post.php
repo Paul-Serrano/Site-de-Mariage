@@ -63,6 +63,16 @@ if(isset($_POST["sign-up-submit"])) {
         exit();
     }
 
+    if(!is_numeric($cp)) {
+        header('Location:../view/sign-up.php?error=wrongCp');
+        exit();
+    }
+
+    ?><pre><?php
+    // var_dump($cp);
+    // var_dump(is_numeric($cp));
+    ?></pre><?php
+
 
 
 
@@ -234,7 +244,7 @@ if(isset($_POST["sign-up-submit"])) {
 
     $userId = $id[0]['id'];
 
-    if($reqSignUpSideGuest) {
+    if(isset($reqSignUpSideGuest)) {
         try {
             $sqlGetSideGuestId = "SELECT sideGuest_id FROM sideguest WHERE id = '$userId'";
             $reqGetSideGuestId = $db->prepare($sqlGetSideGuestId);
@@ -247,34 +257,39 @@ if(isset($_POST["sign-up-submit"])) {
         }
     }
 
-    for($i = 0; $i < count($sideGuestId); $i++) {
+    if(isset($reqSignUpSideGuest) && !empty($sideGuestFood)) {
 
-        try {
-            $sqlSignUpGuestFood = "INSERT INTO food (type0, type1, type2, type3, type4, type5, sideGuest_id)
-            VALUES (:food1, :food2, :food3, :food4, :food5, :food6, :sideGuest_id)";
-            $reqSignUpGuestFood = $db->prepare($sqlSignUpGuestFood);
-            for($j = 0; $j < 6; $j++) {
-                $k = $j + 1;
-                if(isset($sideGuestFood[$i][$j])) {
-                    $reqSignUpGuestFood->bindValue(':food'.$k.'', $sideGuestFood[$i][$j], PDO::PARAM_STR);
+        for($i = 0; $i < count($sideGuestId); $i++) {
+
+            try {
+                $sqlSignUpGuestFood = "INSERT INTO food (type0, type1, type2, type3, type4, type5, sideGuest_id)
+                VALUES (:food1, :food2, :food3, :food4, :food5, :food6, :sideGuest_id)";
+                $reqSignUpGuestFood = $db->prepare($sqlSignUpGuestFood);
+                for($j = 0; $j < 6; $j++) {
+                    $k = $j + 1;
+                    if(isset($sideGuestFood[$i][$j])) {
+                        $reqSignUpGuestFood->bindValue(':food'.$k.'', $sideGuestFood[$i][$j], PDO::PARAM_STR);
+                    }
+                    else {
+                        $reqSignUpGuestFood->bindValue(':food'.$k.'', "", PDO::PARAM_STR);
+                    }
                 }
-                else {
-                    $reqSignUpGuestFood->bindValue(':food'.$k.'', "", PDO::PARAM_STR);
-                }
+                $reqSignUpGuestFood->bindValue(':sideGuest_id', $sideGuestId[$i]['sideGuest_id'], PDO::PARAM_STR);
+                $reqSignUpGuestFood->execute();
+                $signUpGuestFood = $reqSignUpGuestFood->fetchAll();
             }
-            $reqSignUpGuestFood->bindValue(':sideGuest_id', $sideGuestId[$i]['sideGuest_id'], PDO::PARAM_STR);
-            $reqSignUpGuestFood->execute();
-            $signUpGuestFood = $reqSignUpGuestFood->fetchAll();
-        }
+        
+        
+            catch (PDOException $e) {
+                $db = null;
+                echo
+                'Erreur : '.$e->getMessage();
+            }
     
-    
-        catch (PDOException $e) {
-            $db = null;
-            echo
-            'Erreur : '.$e->getMessage();
         }
 
     }
+    
 
     ?><pre><?php
     ?></pre><?php

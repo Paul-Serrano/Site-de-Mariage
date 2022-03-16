@@ -227,7 +227,7 @@ if(isset($_GET['id'])){
                 <?php
                 }
             }
-            else {
+            else if(isset($_GET['page']) && ($_GET['page'] == 'index' || $_GET['page'] == 'signIn' || $_GET['page'] == 'signUp')) {
                 ?>
                     <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
                 <?php
@@ -310,7 +310,7 @@ if(isset($_GET['id'])){
             <?php
             }
         }
-        else {
+        else if(isset($_GET['page']) && ($_GET['page'] == 'index' || $_GET['page'] == 'signIn' || $_GET['page'] == 'signUp')) {
             ?>
                 <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
             <?php

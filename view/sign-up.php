@@ -48,6 +48,11 @@ if (isset($_GET["error"])) {
         $type = "warning";
         $message = "Le code n'est pas valide, veuillez réessayer ou contacter directement les mariés ou le développeur";
     }
+
+    if ($_GET['error'] == "wrongCp") {
+        $type = "warning";
+        $message = "Le code postal n'est pas valide !";
+    }
 }
 
 if (isset($_GET['success'])) {
@@ -69,7 +74,18 @@ if (isset($_GET['success'])) {
                 ?>
                 <div class="<?php echo $form[0][$i]?>-form-group form-group">
                     <label for="<?php echo $form[0][$i]?>" class="sign-up-label"><p><?php echo $form[3][$i]?></p></label>
-                    <input id="<?php echo $form[0][$i]?>" type="text" value="" name="<?php echo $form[0][$i]?>">
+                    <?php 
+                    if($i == 7 || $i == 8) {
+                    ?>
+                        <input id="<?php echo $form[0][$i]?>" type="password" value="" name="<?php echo $form[0][$i]?>">
+                    <?php
+                    }
+                    else {
+                    ?>
+                        <input id="<?php echo $form[0][$i]?>" type="text" value="" name="<?php echo $form[0][$i]?>">
+                    <?php
+                    }
+                    ?>
                 </div>
                 <?php
                 }

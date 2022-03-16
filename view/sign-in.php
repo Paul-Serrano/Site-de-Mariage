@@ -41,7 +41,7 @@ if (isset($_GET["error"])) {
             <label for="mail" class="sign-in-label"><p>Adresse mail</p></label>
             <input class="sign-in-input" id="mail" type="text" name="mail">
             <label for="pass" class="sign-in-label"><p>Mot de passe</p></label>
-            <input class="sign-in-input" id="pass" type="text" name="pass">
+            <input class="sign-in-input" id="pass" type="password" name="pass">
             <div class="alert-container">
             <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div class='close-alert'><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
             <div class="submit-container">

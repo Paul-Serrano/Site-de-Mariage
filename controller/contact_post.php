@@ -46,7 +46,7 @@ if(isset($_POST['contact-submit'])){
     var_dump($mailTo);
     var_dump($message);
     var_dump($sujet);
-    // var_dump($userPass);
+    var_dump($header);
     ?></pre><?php
 
          header("Location:../view/index.php?success=sendMail");

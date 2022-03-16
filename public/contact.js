@@ -13,3 +13,9 @@ $(window).on("load", function () {
 });
 
 // Loader -- end
+
+
+function closeAlert() {
+  $alert = $(".alert");
+  $alert.css("display", "none");
+}

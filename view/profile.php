@@ -171,7 +171,7 @@ if(isset($_GET['id'])){
                             </div>
                         </div>
                         <?php
-                        if(!empty($sideGuestFood)) {
+                        if(!empty($sideGuestFood[$i])) {
                         ?>
                         <hr>
                         <div class="sideguest-food-content">
