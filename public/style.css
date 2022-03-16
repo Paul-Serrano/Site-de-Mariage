@@ -29,6 +29,15 @@ main {
   display: none;
 }
 
+.phone-hr {
+  display: none;
+  width: 100%;
+  background: black;
+  border: solid black 1px;
+  border-radius: 0.5rem 0.25rem;
+  margin: 5% 0;
+}
+
 /* Loader -- start*/
 
 .loader-main {
@@ -552,6 +561,7 @@ nav p {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 0 0 5%;
 }
 
 .additionnal-form-group {
@@ -569,7 +579,7 @@ nav p {
 }
 
 .form-group input,
-.additionnal-input {
+.additionnal-input, .code-input {
   width: 75%;
   font-family: "Sans-serif";
   font-size: 30%;
@@ -577,6 +587,17 @@ nav p {
   border: 1px solid #557174;
   border-radius: 0.5rem 0.25rem;
   padding: 2.5%;
+}
+
+.submit-sign-up-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.code-input {
+  margin: 2.5% 0 5%;
 }
 
 .housing-choice-form {
@@ -805,7 +826,7 @@ input[type="radio"]:checked + label p {
 }
 
 .sideGuest-hr {
-  width: 50%;
+  width: 25%;
   color: rgba(85, 113, 116, 1);
   border: solid 1px black;
   margin: 5% auto;
@@ -1320,12 +1341,12 @@ body {
 .sideguest-name-surname-block {
   display: flex;
   width: 50%;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .sideguest-name-age-block {
   display: flex;
-  width: 100%;
+  width: 75%;
   justify-content: space-evenly;
   align-items: center;
   margin: auto;
@@ -1355,6 +1376,7 @@ body {
   justify-content: space-evenly;
   margin: auto;
   width: 100%;
+  margin: 0 0 5%;
 }
 
 .sideguest-food-img {
@@ -2175,6 +2197,27 @@ body {
     width: 100%;
   }
 
+  .submit-container {
+    flex-direction: column-reverse;
+  }
+
+  .code-input {
+    width: 100%;
+  }
+
+  .sign-up-submit-btn {
+    justify-content: center;
+  }
+
+  .sign-in-link-container {
+    align-items: center;
+    margin: 5% 0;
+  }
+
+  .form-info-container {
+    margin-bottom: 5%;
+  }
+
   .additionnal-sideGuest-container {
     width: 100%;
   }
@@ -2184,6 +2227,14 @@ body {
   }
 
   .sign-in-btn {
+    width: 100%;
+  }
+
+  .phone-hr {
+    display: flex;
+  }
+
+  .sideguest-name-age-block {
     width: 100%;
   }
 }

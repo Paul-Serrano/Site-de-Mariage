@@ -20,6 +20,7 @@ if(isset($_POST["sign-up-submit"])) {
     $ville = htmlspecialchars($_POST["ville"]);
     $pass = htmlspecialchars($_POST["pass"]);
     $pass2 = htmlspecialchars($_POST["pass2"]);
+    $code = htmlspecialchars($_POST["code"]);
     $userInfo = [$name, $surname, $mail, $tel, $pass, $pass2, $adress, $cp, $ville];
 
     for($i = 0; $i < count($userInfo); $i++) {
@@ -52,9 +53,17 @@ if(isset($_POST["sign-up-submit"])) {
         exit();
     }
 
-    // if($cp) {
+    if(empty($code)) {
+        header('Location:../view/sign-up.php?error=missingCode');
+        exit();
+    }
 
-    // }
+    if($code !== '0000') {
+        header('Location:../view/sign-up.php?error=wrongCode');
+        exit();
+    }
+
+
 
 
     for($i = 1; $i < 7; $i++) {

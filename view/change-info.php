@@ -53,7 +53,7 @@ if(isset($_GET['error'])) {
                     <input class="change-input" id="cp" type="text" name="cp">
                 </div>
                 <div class="change-input-block">
-                    <label for="ville" class="change-label"><p>Code Postal</p></label>
+                    <label for="ville" class="change-label"><p>Ville</p></label>
                     <input class="change-input" id="ville" type="text" name="ville">
                 </div>
                 <div class="change-input-block">

@@ -161,7 +161,7 @@ if(isset($_GET['id'])){
                                 <div class="sideguest-info-content">
                                     <p><?php echo $getUserSideGuest[$i]['surname'];?></p>
                                 </div>
-                                <p> </p>
+                                <p style="width:10%;"><?php echo " ";?></p>
                                 <div class="sideguest-info-content">
                                     <p><?php echo $getUserSideGuest[$i]['name'];?></p>
                                 </div>

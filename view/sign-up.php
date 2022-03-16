@@ -38,6 +38,16 @@ if (isset($_GET["error"])) {
         $type = "warning";
         $message = "Un compte avec cette adresse mail est déjà crée, veuillez vous connecter ou contacter l'administrateur.";
     }
+
+    if ($_GET['error'] == "missingCode") {
+        $type = "warning";
+        $message = "Veuillez renseigner le code présent sur le faire-part svp";
+    }
+
+    if ($_GET['error'] == "wrongCode") {
+        $type = "warning";
+        $message = "Le code n'est pas valide, veuillez réessayer ou contacter directement les mariés ou le développeur";
+    }
 }
 
 if (isset($_GET['success'])) {
@@ -83,10 +93,12 @@ if (isset($_GET['success'])) {
                         </button>
                     </div>
                 </div>
+                <hr class="phone-hr">
                 <?php
                 }
                 ?>
             </div>
+            <hr class="phone-hr">
             <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
             <div class="submit-container">
                 <div class="sign-in-link-container">
@@ -96,6 +108,8 @@ if (isset($_GET['success'])) {
                     <a href="../view/sign-in.php?page=signIn" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
                 </div>
                 <div class="submit-sign-up-container">
+                    <label for="code"><p>Entrez le code présent sur le faire-part</p></label>
+                    <input name="code" id="code" class="code-input" type="text">
                     <button type="submit" name="sign-up-submit" class="sign-up-submit-btn"><p>Valider Inscription</p></button>
                 </div>
             </div>
