@@ -21,7 +21,7 @@ function addFood(i) {
   $addFood = $(`.additionnal-food-container-${i}`);
   $food = $(`.additionnal-food-container`);
   $count = $food.length;
-  if ($count < 7) {
+  if ($count < 6) {
     $addFood.after(`
     <div class="additionnal-food-container-${$count} additionnal-food-container">
         <div class="sign-up-label-container">
@@ -45,9 +45,9 @@ function addSideGuestFood(i) {
   $createFood = $(`.btn-container`);
   $count = $(`.sideGuest-food-${i}`).length;
   console.log($count);
-  $foodControl = $(`.sideGuest-food-control-${i}`);
+  $foodControl = $(`.sideGuest-food-choice-container-${i}`);
   if ($count < 5) {
-    $foodControl.after(`
+    $foodControl.append(`
     <div class="additionnal-sideGuest-food-container  sideGuest-food-${i} additionnal-sideGuest-food-container-${i}">
     <div class="sideGuest-food-individual-control">
     <label for="food-${i}" class="sign-up-label"><p>Aliment</p></label>
