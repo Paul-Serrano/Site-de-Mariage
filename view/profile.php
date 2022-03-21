@@ -177,19 +177,21 @@ if(isset($_GET['id'])){
                         <div class="sideguest-food-content">
                             <?php
                             for($j = 0; $j < count($sideGuestFood[$i]); $j++) {
-                                ?>
+                            ?>
                                 <div class="sideguest-indiv-food-content">
                                     <img class="sideguest-food-img" src="../public/img/noFood.png" alt="photo de profil">
                                     <p><?php echo $sideGuestFood[$i][$j];?></p>
                                 </div>
-                                <?php
+                            <?php
                             }
                         }
                             ?>
                         </div>
-                    </div>
                     <?php
                         }
+                    ?>
+                    </div>
+                        <?php
                     }
                 ?>
                 <!-- <a href="../view/change-info.php?page=changeInfo" class="user-change-info-block">

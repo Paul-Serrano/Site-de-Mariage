@@ -580,7 +580,8 @@ nav p {
 }
 
 .form-group input,
-.additionnal-input, .code-input {
+.additionnal-input,
+.code-input {
   width: 75%;
   font-family: "Sans-serif";
   font-size: 30%;
@@ -1347,7 +1348,7 @@ body {
 
 .sideguest-name-age-block {
   display: flex;
-  width: 75%;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
   margin: auto;

@@ -158,15 +158,14 @@ if(isset($_POST["sign-up-submit"])) {
 
     if($foodChoice) {
         try {
-            $sqlSignUpFood = "INSERT INTO food (type0, type1, type2, type3, type4, type5, id)
-            VALUES (:food1, :food2, :food3, :food4, :food5, :food6, :id)";
+            $sqlSignUpFood = "INSERT INTO food (type0, type1, type2, type3, type4, id)
+            VALUES (:food1, :food2, :food3, :food4, :food5, :id)";
             $reqSignUpFood = $db->prepare($sqlSignUpFood);
             $reqSignUpFood->bindValue(':food1', $food[1], PDO::PARAM_STR);
             $reqSignUpFood->bindValue(':food2', $food[2], PDO::PARAM_STR);
             $reqSignUpFood->bindValue(':food3', $food[3], PDO::PARAM_STR);
             $reqSignUpFood->bindValue(':food4', $food[4], PDO::PARAM_STR);
             $reqSignUpFood->bindValue(':food5', $food[5], PDO::PARAM_STR);
-            $reqSignUpFood->bindValue(':food6', $food[6], PDO::PARAM_STR);
             $reqSignUpFood->bindValue(':id', $id[0]["id"], PDO::PARAM_STR);
             // $reqSignUp->bindValue(':name', $name, PDO::PARAM_STR);
     
@@ -321,31 +320,31 @@ if(isset($_POST["sign-up-submit"])) {
 
     }
 
-    // $sideGuestFoodChoice = false;
-    // $getSideGuestFoodId = [];
+    $sideGuestFoodChoice = false;
+    $getSideGuestFoodId = [];
 
-    // for($i = 0; $i < count($getFood); $i++) {
-    //     array_push($getSideGuestFoodId, $getFood[$i]['sideGuest_id']);
-    // }
+    for($i = 0; $i < count($getFood); $i++) {
+        array_push($getSideGuestFoodId, $getFood[$i]['sideGuest_id']);
+    }
 
-    // for($i = 0; $i < count($sideGuest); $i++) {
-    //     try {
-    //         $sqlSetFood = "UPDATE sideguest SET food = :foodChoice";
-    //         $reqSetFood = $db->prepare($sqlSetFood);
-    //         if(in_array($sideGuestId[$i]['sideGuest_id'], $getSideGuestFoodId)) {
-    //             $reqSetFood->bindValue(':foodChoice', 'yes', PDO::PARAM_STR);
-    //         }
-    //         else {
-    //             $reqSetFood->bindValue(':foodChoice', 'non', PDO::PARAM_STR);
-    //         }
-    //         $reqSetFood->execute();
-    //         $setFood = $reqSetFood->fetchAll();
+    for($i = 0; $i < count($sideGuest); $i++) {
+        try {
+            $sqlSetFood = "UPDATE sideguest SET food = :foodChoice WHERE sideGuest_id = ".$sideGuestId[$i]['sideGuest_id']."";
+            $reqSetFood = $db->prepare($sqlSetFood);
+            if(in_array($sideGuestId[$i]['sideGuest_id'], $getSideGuestFoodId)) {
+                $reqSetFood->bindValue(':foodChoice', 'yes', PDO::PARAM_STR);
+            }
+            else {
+                $reqSetFood->bindValue(':foodChoice', 'non', PDO::PARAM_STR);
+            }
+            $reqSetFood->execute();
+            $setFood = $reqSetFood->fetchAll();
         
-    //     } catch (PDOException $e) {
-    //         $db = null;
-    //         echo 'Erreur : '.$e->getMessage();
-    //     }
-    // }
+        } catch (PDOException $e) {
+            $db = null;
+            echo 'Erreur : '.$e->getMessage();
+        }
+    }
     
 
 
@@ -371,11 +370,12 @@ if(isset($_POST["sign-up-submit"])) {
         header("Location:../view/index.php?success=signUp&page=index");
 
     ?><pre><?php
-    var_dump($sideGuestFoodProblem);
-    var_dump($sideGuestFood);
-    var_dump($sideGuest);
-    var_dump($sideGuestId);
-    var_dump($getFood);
+    // var_dump($sideGuestFoodProblem);
+    // var_dump($getFood);
+    // var_dump($sideGuest);
+    // var_dump($sideGuestId);
+    // var_dump($getSideGuestFoodId);
+    
     ?></pre><?php
   
     }

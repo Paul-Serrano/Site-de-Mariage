@@ -52,6 +52,7 @@ try {
     echo 'Erreur : '.$e->getMessage();
 }
 
+
 $getUserChild = [];
 $getUserSide = [];
 $getUserOld = [];
@@ -68,11 +69,23 @@ for($i = 0; $i < count($getSideGuest); $i++) {
     }
 }
 
+$getSideGuestYesFood = [];
+$getSideGuestNoFood = [];
+
+for($i = 0; $i < count($getSideGuest); $i++) {
+    if($getSideGuest[$i]['food'] == 'yes') {
+        array_push($getSideGuestYesFood, $getSideGuest[$i]);
+    }
+    else {
+        array_push($getSideGuestNoFood, $getSideGuest[$i]);
+    }
+}
+
 
 
 ?><pre><?php
-// var_dump($getSideGuest);
-// var_dump($getUserSide);
+var_dump($getSideGuestYesFood);
+var_dump($getSideGuestNoFood);
 // var_dump($getUserOld);
 // var_dump($getUserChild);
 ?></pre><?php
