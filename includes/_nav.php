@@ -146,7 +146,7 @@ if($title == $closeChoice) {
 $panel = false;
 
 if(isset($_SESSION['mail'])) {
-    if($_SESSION['mail'] == "paul.serrano08374@gmail.com") {
+    if($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "lienhard.noemie@orange.fr") {
         $panel = true;
     }
 }

@@ -84,8 +84,8 @@ for($i = 0; $i < count($getSideGuest); $i++) {
 
 
 ?><pre><?php
-var_dump($getSideGuestYesFood);
-var_dump($getSideGuestNoFood);
+// var_dump($getSideGuestYesFood);
+// var_dump($getSideGuestNoFood);
 // var_dump($getUserOld);
 // var_dump($getUserChild);
 ?></pre><?php
