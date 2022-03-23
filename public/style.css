@@ -1,7 +1,7 @@
 @font-face {
   font-family: "nickainleynormal";
-  src: url("nickainley-normal-webfont.woff2") format("woff2"),
-    url("nickainley-normal-webfont.woff") format("woff");
+  src: url("../public/font/nickainley-normal-webfont.woff2") format("woff2"),
+    url("../public/font/nickainley-normal-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Nickainley", "Sans-serif";
+  font-family: "Dancing Script", "Sans-serif";
   font-size: 2rem;
   color: #557174;
 }
