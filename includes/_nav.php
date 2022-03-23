@@ -212,7 +212,7 @@ if(isset($_GET['id'])){
             ?>
             <?php 
             if(isset($_SESSION['mail'])) {
-                if($_SESSION['mail'] == "paul.serrano08374@gmail.com" && $title != "Big Brother") {
+                if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
             ?>
             <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
                 <button class="nav-btn">
@@ -281,10 +281,10 @@ if(isset($_GET['id'])){
                 <p><?php echo $title;?></p>
             </div>
         </div>
-        <div class="close-block">
         <?php
         if($close) {
         ?>
+        <div class="close-block">
             <a href="../view/index.php?page=index" class="nav-link nav-link-right">
                 <button class="nav-btn">
                     <img class="nav-img" src="../public/img/close.png" alt="panneau de configuration">
@@ -295,7 +295,7 @@ if(isset($_GET['id'])){
         ?>
         <?php 
         if(isset($_SESSION['mail'])) {
-            if($_SESSION['mail'] == "paul.serrano08374@gmail.com" && $title != "Big Brother") {
+            if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
         ?>
             <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
                 <button class="nav-btn">
@@ -304,17 +304,7 @@ if(isset($_GET['id'])){
             </a>
         <?php                
             }
-            else if(isset($_GET['page']) && $_GET['page'] == 'index') {
-            ?>
-                <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
-            <?php
-            }
         }
-        else if(isset($_GET['page']) && ($_GET['page'] == 'index' || $_GET['page'] == 'signIn' || $_GET['page'] == 'signUp')) {
-            ?>
-                <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
-            <?php
-            }
         ?>
         </div>
     </div>
