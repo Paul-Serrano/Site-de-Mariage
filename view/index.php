@@ -35,6 +35,18 @@ if (isset($_GET['success'])) {
 <body>
 <main class="index-main">
 <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
+    <div class="planning-container">
+        <div class="planning-block">
+            <div class="planning-filter">
+                <div class="planning-content">
+                    <p>Planning  détaillé du mariage</p>
+                    <hr>
+                    <p>Informations complémentaires (thème, accès etc)</p>
+                </div>
+            </div>
+            <img class="planning-bckg" src="../public/img/building.png" alt="building">
+        </div>
+    </div>
     <div class="index-container">
             <a class="index-block-link" href="../view/map.php?page=map">
                 <div class="index-block">

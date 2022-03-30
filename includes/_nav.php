@@ -159,6 +159,7 @@ if(isset($_GET['id'])){
 
 ?>
 
+<img class="nav-bckg desktop-nav-bckg" src="../public/img/banniere.png" alt="banniere">
 <nav class="nav">
         <?php
         if(isset($_SESSION['surname'])) {
@@ -237,6 +238,7 @@ if(isset($_GET['id'])){
 </nav>
 
 <nav class="nav-phone">
+<img class="nav-bckg" src="../public/img/banniere.png" alt="banniere">
     <div class="nav-phone-container">
         <div class="nav-left">
         <?php
@@ -307,11 +309,5 @@ if(isset($_GET['id'])){
         }
         ?>
         </div>
-    </div>
-    <div class="nav-img-block">
-        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">  
-        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes" style="transform:rotateY(180deg);">
-        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes">
-        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
     </div>
 </nav>
