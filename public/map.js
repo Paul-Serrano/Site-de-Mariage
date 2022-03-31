@@ -64,6 +64,10 @@ var access = {
   },
 };
 
+var adress = "Place Cémenceau";
+var cp = "64000";
+var ville = "Pau";
+
 var events = {
   mairie: {
     spot: "Mairie d'Arthez",

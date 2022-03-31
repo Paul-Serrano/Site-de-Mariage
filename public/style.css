@@ -327,7 +327,6 @@ nav p {
   align-items: center;
   justify-content: space-evenly;
   width: 10%;
-  align-self: flex-start;
 }
 
 /*nav -- end*/
@@ -2260,6 +2259,10 @@ body {
 
   #map {
     width: 100%;
+  }
+
+  .map-side-block {
+    width: 90%;
   }
 
   .user-info-container {

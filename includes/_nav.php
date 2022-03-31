@@ -202,7 +202,7 @@ if(isset($_GET['id'])){
         else {
         ?>
         <div class="home-connect-block">
-        <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link" style="align-self:flex-start;">
+        <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link">
             <button class="nav-btn">
                 <img src="../public/img/<?php echo $homeConnect;?>.png" alt="connectez vous">
             </button>
@@ -273,7 +273,7 @@ if(isset($_GET['id'])){
             else {
             ?>
             <div class="home-connect-block">
-            <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link" style="align-self:flex-start;">
+            <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link">
                 <button class="nav-btn">
                     <img src="../public/img/<?php echo $homeConnect;?>.png" alt="connectez vous">
                 </button>

@@ -7,8 +7,6 @@ $adressDefault = 'Place Clémenceau';
 $cpDefault = '64000';
 $villeDefault = 'Pau';
 
-
-
 ?>
 
 <body>
@@ -28,34 +26,6 @@ $villeDefault = 'Pau';
             </div>
         </div>
     </main>
-    <script>
-        var cp = <?php 
-        if($connect) {
-            echo json_encode($cp);
-        } 
-        else{
-            echo json_encode($cpDefault);
-        }
-            ?>;
-        
-        var adress = <?php 
-        if($connect) {
-            echo json_encode($adress);
-        } 
-        else{
-            echo json_encode($adressDefault);
-        }
-            ?>;
-
-        var ville = <?php 
-        if($connect) {
-            echo json_encode($ville);
-        } 
-        else{
-            echo json_encode($villeDefault);
-        }
-            ?>;
-    </script>
     <script src="../public/map.js">
     </script>
     <script src="../public/open-menu-burger.js"></script>
