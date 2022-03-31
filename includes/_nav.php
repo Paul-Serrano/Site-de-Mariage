@@ -159,8 +159,9 @@ if(isset($_GET['id'])){
 
 ?>
 
-<img class="nav-bckg desktop-nav-bckg" src="../public/img/banniere.png" alt="banniere">
+
 <nav class="nav">
+<img class="nav-bckg desktop-nav-bckg" src="../public/img/banniere2.png" alt="banniere">
         <?php
         if(isset($_SESSION['surname'])) {
         ?>
@@ -238,7 +239,7 @@ if(isset($_GET['id'])){
 </nav>
 
 <nav class="nav-phone">
-<img class="nav-bckg" src="../public/img/banniere.png" alt="banniere">
+<img class="nav-bckg" src="../public/img/banniere2.png" alt="banniere">
     <div class="nav-phone-container">
         <div class="nav-left">
         <?php

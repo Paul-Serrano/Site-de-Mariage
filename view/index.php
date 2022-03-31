@@ -39,12 +39,38 @@ if (isset($_GET['success'])) {
         <div class="planning-block">
             <div class="planning-filter">
                 <div class="planning-content">
-                    <p>Planning  détaillé du mariage</p>
+                    <div class="planning">
+                        <div class="planning-line">
+                            <span>16h: Cérémonie civile</span>
+                            <span>Mairie d'Arthez</span>
+                        </div>
+                        <div class="planning-line">
+                            <span>16h45: Photo de groupe</span>
+                            <span>Mairie d'Arthez</span>
+                        </div>
+                        <div class="planning-line">
+                            <span>17h15: Mise en route</span>
+                            <span>vers la salle des fêtes</span>
+                        </div>
+                        <div class="planning-line">
+                            <span>17h30: Vin d'honneur</span>
+                            <span>St Médard</span>
+                        </div>
+                        <div class="planning-line">
+                            <span>20h30: Début du repas</span>
+                            <span>St Médard</span>
+                        </div>
+                        <div class="planning-line">
+                            <span>23h30: Soirée dansante</span>
+                            <span>St Médard</span>
+                        </div>
+                    </div>
                     <hr>
-                    <p>Informations complémentaires (thème, accès etc)</p>
+                    <p>Informations complémentaires :</p>
+                    <p>Thème vestimentaire : Guinguette / Bal Populaire</p>
                 </div>
             </div>
-            <img class="planning-bckg" src="../public/img/building.png" alt="building">
+            <img class="planning-bckg" src="../public/img/portrait.png" alt="building">
         </div>
     </div>
     <div class="index-container">
@@ -58,12 +84,6 @@ if (isset($_GET['success'])) {
                 <div class="index-block">
                     <div class="index-block-title"><p>Contact</p></div>
                     <div class="index-block-content"><img src="../public/img/contact.png" alt="contact"></div>
-                </div>
-            </a>
-            <a class="index-block-link" href="../view/info.php?page=info">
-                <div class="index-block">
-                    <div class="index-block-title"><p>Inforamtions Pratiques</p></div>
-                    <div class="index-block-content"><img src="../public/img/info.png" alt="info"></div>
                 </div>
             </a>
             <a class="index-block-link" href="../view/leetchi.php?page=leetchi">
