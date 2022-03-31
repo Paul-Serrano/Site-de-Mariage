@@ -86,7 +86,7 @@ if (isset($_GET['success'])) {
                     <div class="index-block-content"><img src="../public/img/contact.png" alt="contact"></div>
                 </div>
             </a>
-            <a class="index-block-link" href="../view/leetchi.php?page=leetchi">
+            <a class="index-block-link" target="_blank" href="https://www.leetchi.com/c/mariage-noemie-et-hugo?fbclid=IwAR0BrDNGZs6Cp6VB-rJw7NL9w8eiLUvLEj_256G8_mfyfhC8UglBSQiApeA">
                 <div class="index-block">
                     <div class="index-block-title"><p>Cagnotte leetchi</p></div>
                     <div class="index-block-content"><img src="../public/img/cagnotte-leetchi.png" alt="cagnotte leetchi"></div>

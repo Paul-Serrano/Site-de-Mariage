@@ -166,18 +166,36 @@ if(isset($_GET['id'])){
         if(isset($_SESSION['surname'])) {
         ?>
         <div class="user-block">
-                <div class="log-out-block">
-                    <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
-                        <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
-                    </form>
+            <button type="button" class="menu-burger-btn" onclick="openMenuBurger()">
+                <img class="nav-img menu-img" src="../public/img/menu-burger.png" alt="menu">
+            </button>
+            <div class="menu-burger">
+                    <div class="sign-in-block">
+                        <a class="nav-link" href="../view/profile.php?page=profile">
+                            <button class="nav-btn profile-btn">
+                                <p>Votre profil</p>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="log-out-block">
+                        <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
+                            <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
+                        </form>
+                    </div>
+                    <?php 
+                    if(isset($_SESSION['mail'])) {
+                        if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
+                    ?>
+                        <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
+                            <button class="nav-btn">
+                                <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
+                            </button>
+                        </a>
+                    <?php
+                        }
+                    }   
+                    ?>
                 </div>
-                <div class="sign-in-block">
-                    <a class="nav-link" href="../view/profile.php?page=profile">
-                        <button class="nav-btn profile-btn">
-                            <p>Votre profil</p>
-                        </button>
-                    </a>
-                </div>   
             </div>
         <?php
         }
@@ -212,29 +230,6 @@ if(isset($_GET['id'])){
             <?php
             }
             ?>
-            <?php 
-            if(isset($_SESSION['mail'])) {
-                if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
-            ?>
-            <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
-                <button class="nav-btn">
-                    <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
-                </button>
-            </a>
-            <?php                
-                }
-                else if(isset($_GET['page']) && $_GET['page'] == 'index') {
-                ?>
-                    <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
-                <?php
-                }
-            }
-            else if(isset($_GET['page']) && ($_GET['page'] == 'index' || $_GET['page'] == 'signIn' || $_GET['page'] == 'signUp')) {
-                ?>
-                    <img class="nav-img" src="../public/img/rings.png" alt="anneaux de mariage">
-                <?php
-                }
-            ?>
         </div>
 </nav>
 
@@ -262,6 +257,19 @@ if(isset($_GET['id'])){
                             <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
                         </form>
                     </div>
+                    <?php 
+                    if(isset($_SESSION['mail'])) {
+                        if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
+                    ?>
+                        <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
+                            <button class="nav-btn">
+                                <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
+                            </button>
+                        </a>
+                    <?php
+                        }
+                    }   
+                    ?>
                 </div>
             </div>
             <?php
@@ -294,19 +302,6 @@ if(isset($_GET['id'])){
                 </button>
             </a>
         <?php
-        }
-        ?>
-        <?php 
-        if(isset($_SESSION['mail'])) {
-            if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
-        ?>
-            <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
-                <button class="nav-btn">
-                    <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
-                </button>
-            </a>
-        <?php                
-            }
         }
         ?>
         </div>
