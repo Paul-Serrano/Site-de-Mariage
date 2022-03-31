@@ -211,13 +211,9 @@ if(isset($_GET['id'])){
         <?php
         }
         ?>
-        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
-        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes" style="transform:rotateY(180deg);">
         <div class="title-block">
         <p><?php echo $title;?></p>
         </div>
-        <img class="nav-img garland" src="../public/img/garland.png" alt="lanternes">
-        <img class="nav-img lantern-small" src="../public/img/lantern-orange.png" alt="lanternes">
         <div class="close-block">
             <?php
             if($close) {
