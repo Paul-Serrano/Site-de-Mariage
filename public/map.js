@@ -1,6 +1,6 @@
 // map -- start
 
-var map = L.map("map").setView([43.42750127515835, -0.5714950582478197], 11);
+var map = L.map("map").setView([43.42750127515835, -0.5714950582478197], 10);
 
 L.tileLayer(
   "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -20,31 +20,31 @@ L.tileLayer(
 var weddingMarkerIcon = L.icon({
   iconUrl: "../public/img/rings.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 25],
+  iconAnchor: [25, 50],
 });
 
 var partyMarkerIcon = L.icon({
   iconUrl: "../public/img/party.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 25],
+  iconAnchor: [25, 50],
 });
 
 var housingMarkerIcon = L.icon({
   iconUrl: "../public/img/sleep.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 25],
+  iconAnchor: [25, 50],
 });
 
 var stationMarkerIcon = L.icon({
   iconUrl: "../public/img/gare.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 25],
+  iconAnchor: [25, 50],
 });
 
 var airportMarkerIcon = L.icon({
   iconUrl: "../public/img/aeroport.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 25],
+  iconAnchor: [25, 50],
 });
 
 var access = {
@@ -56,7 +56,7 @@ var access = {
     marker: stationMarkerIcon,
   },
   aeroport: {
-    spot: "Aéroport d'Uzein",
+    spot: "Aéroport de Pau",
     lat: 43.38235000000003,
     lon: -0.4135899999999424,
     time: "26 min",
@@ -176,11 +176,7 @@ for (a in access) {
     icon: access[a].marker,
   }).addTo(map);
   accessMarker.bindPopup(
-    "<div class='access-marker-block'><p>" +
-      access[a].spot +
-      "</p>" +
-      "<p><img class='map-car-icon' src='../public/img/car.png' alt='voiture'>" +
-      access[a].time
+    `<div class='access-marker-block'><p>${access[a].spot}</p><p><img class='map-car-icon' src='../public/img/car.png' alt='voiture'>${access[a].time}</p></div>`
   );
 }
 

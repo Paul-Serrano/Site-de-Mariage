@@ -66,8 +66,11 @@ if (isset($_GET['success'])) {
                         </div>
                     </div>
                     <hr>
-                    <p>Informations complémentaires :</p>
-                    <p>Thème vestimentaire : Guinguette / Bal Populaire</p>
+                    <div class="wedding-info-content">
+                        <p>Informations :</p>
+                        <p>Le mariage aura lieu du samedi 13 au dimanche 14 août 2022</p>
+                        <p>Thème vestimentaire : Guinguette / Bal Populaire</p>
+                    </div>
                 </div>
             </div>
             <img class="planning-bckg" src="../public/img/portrait.png" alt="building">
