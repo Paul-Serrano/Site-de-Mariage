@@ -1906,6 +1906,10 @@ body {
     width: 25%;
   }
 
+  .close-block {
+    width: 20%;
+  }
+
   .lantern-small {
     display: none;
   }
