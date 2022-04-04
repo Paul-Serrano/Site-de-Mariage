@@ -199,25 +199,32 @@ if(isset($_GET['id'])){
             </div>
         <?php
         }
-        else {
+        else if(($_GET['page'] != "signIn") && ($_GET['page'] != "signUp")) {
         ?>
         <div class="home-connect-block">
-        <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link">
-            <button class="nav-btn">
-                <img src="../public/img/<?php echo $homeConnect;?>.png" alt="connectez vous">
-            </button>
+        <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link connect-nav-link">
+            <div class="sign-in-redirection">
+                <p>Connectez vous pour pouvoir poster et visionner les photos du mariage !</p>
+            </div>
         </a>
         </div>
+        <?php
+        }
+        else {
+        ?>
+            <a href="../view/index.php?page=index" class="nav-link home-nav-link">
+               <img src="../public/img/home.png" alt="home">
+            </a>
         <?php
         }
         ?>
         <div class="title-block">
         <p><?php echo $title;?></p>
         </div>
-        <div class="close-block">
-            <?php
+        <?php
             if($close) {
-            ?>
+        ?>
+        <div class="close-block">
             <a href="../view/index.php?page=index" class="nav-link nav-link-right">
                 <button class="nav-btn">
                     <img class="nav-img" src="../public/img/close.png" alt="panneau de configuration">
