@@ -166,7 +166,7 @@ nav {
   position: relative;
   align-items: center;
   z-index: 1;
-  padding: 2.5% 0;
+  padding: 1.5% 0;
 }
 
 .sign-in-redirection {
@@ -188,6 +188,7 @@ nav {
   text-decoration: none;
   color: #f7f7e8;
   font-size: 40%;
+  text-align: justify;
 }
 
 .menu-burger {
@@ -248,6 +249,9 @@ nav p {
   position: relative;
   text-decoration: none;
   width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .connect-nav-link {
@@ -350,12 +354,32 @@ nav p {
   align-self: center;
 }
 
+.home-block-phone {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
 .home-connect-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   width: 30%;
+}
+
+.home-connect-block-phone {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 2.5% 0;
+}
+
+.home-connect-block-phone p {
+  color: black;
 }
 
 /*nav -- end*/
@@ -665,6 +689,15 @@ nav p {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  width: 75%;
+}
+
+.sign-in-link {
+  display: flex;
+}
+
+.sign-in-link p {
+  font-size: 50%;
 }
 
 .sign-up-main {
@@ -675,13 +708,16 @@ nav p {
 
 .form-info {
   color: black;
-  font-size: 0.3rem;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-info-container {
   width: 75%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   background: rgb(199, 207, 183);
   background: linear-gradient(
@@ -698,6 +734,7 @@ nav p {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 2.5%;
 }
 
 .regular-form {
@@ -1927,8 +1964,8 @@ body {
     height: auto;
   }
 
-  nav {
-    padding: 0;
+  .home-connect-block {
+    width: 50%;
   }
 
   .menu-burger-btn {
@@ -2128,7 +2165,7 @@ body {
 
   .nav-phone {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
   }
 
@@ -2137,7 +2174,10 @@ body {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    padding: 2.5% 0;
+  }
+
+  .home-nav-link {
+    width: 50%;
   }
 
   .nav-left {
@@ -2157,16 +2197,11 @@ body {
   }
 
   .title-block {
-    width: 100%;
+    width: 90%;
   }
 
   .close-block {
     width: 10%;
-  }
-
-  .lantern-small {
-    display: flex;
-    width: 15%;
   }
 
   .nav-img-block {
@@ -2175,11 +2210,6 @@ body {
     margin: auto;
     justify-content: center;
     align-items: center;
-  }
-
-  .garland {
-    display: flex;
-    width: 20%;
   }
 
   .nav-img-block {
@@ -2220,6 +2250,11 @@ body {
 
   .display {
     display: flex;
+  }
+
+  .home-connect-block-phone {
+    display: flex;
+    width: 100%;
   }
 
   .index-main {
@@ -2477,6 +2512,10 @@ body {
 
   .sign-up-submit-btn {
     justify-content: center;
+  }
+
+  .sign-in-link p {
+    font-size: 30%;
   }
 
   .sign-in-link-container {

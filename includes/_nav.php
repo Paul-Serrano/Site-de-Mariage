@@ -199,12 +199,12 @@ if(isset($_GET['id'])){
             </div>
         <?php
         }
-        else if(($_GET['page'] != "signIn") && ($_GET['page'] != "signUp")) {
+        else if(!isset($_GET['page']) || (isset($_GET['page']) && ($_GET['page'] != "signIn") && ($_GET['page'] != "signUp"))) {
         ?>
         <div class="home-connect-block">
         <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link connect-nav-link">
             <div class="sign-in-redirection">
-                <p>Connectez vous pour pouvoir poster et visionner les photos du mariage !</p>
+                <p>Inscrivez vous pour confirmer votre présence et nous aider à préparer l'évenement !</p>
             </div>
         </a>
         </div>
@@ -239,57 +239,55 @@ if(isset($_GET['id'])){
 <nav class="nav-phone">
 <img class="nav-bckg" src="../public/img/banniere2.png" alt="banniere">
     <div class="nav-phone-container">
-        <div class="nav-left">
         <?php
             if(isset($_SESSION['surname'])) {
             ?>
-            <div class="user-block">
-            <button type="button" class="menu-burger-btn" onclick="openMenuBurger()">
-                <img src="../public/img/menu-burger.png" alt="menu">
-            </button>
-                <div class="menu-burger">
-                    <div class="sign-in-block">
-                        <a class="nav-link" href="../view/profile.php?page=profile">
-                            <button class="nav-btn profile-btn">
-                                <p>Votre profil</p>
-                            </button>
-                        </a>
-                    </div>
-                    <div class="log-out-block">
-                        <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
-                            <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
-                        </form>
-                    </div>
-                    <?php 
-                    if(isset($_SESSION['mail'])) {
-                        if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
-                    ?>
-                        <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
-                            <button class="nav-btn">
-                                <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
-                            </button>
-                        </a>
-                    <?php
-                        }
-                    }   
-                    ?>
-                </div>
-            </div>
-            <?php
-            }
-            else {
-            ?>
-            <div class="home-connect-block">
-            <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link">
-                <button class="nav-btn">
-                    <img src="../public/img/<?php echo $homeConnect;?>.png" alt="connectez vous">
+            <div class="nav-left">
+                <div class="user-block">
+                <button type="button" class="menu-burger-btn" onclick="openMenuBurger()">
+                    <img src="../public/img/menu-burger.png" alt="menu">
                 </button>
-            </a>
-            </div>
+                    <div class="menu-burger">
+                        <div class="sign-in-block">
+                            <a class="nav-link" href="../view/profile.php?page=profile">
+                                <button class="nav-btn profile-btn">
+                                    <p>Votre profil</p>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="log-out-block">
+                            <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
+                                <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
+                            </form>
+                        </div>
+                        <?php 
+                        if(isset($_SESSION['mail'])) {
+                            if(($_SESSION['mail'] == "paul.serrano08374@gmail.com" || $_SESSION['mail'] == "hugolecourtois@hotmail.fr" || $_SESSION['mail'] == "liehnard.noemie@orange.fr") && $title != "Big Brother") {
+                        ?>
+                            <a href="../view/control-panel.php?page=panel" class="nav-link nav-link-right">
+                                <button class="nav-btn">
+                                    <img class="nav-img" src="../public/img/settings.png" alt="panneau de configuration">
+                                </button>
+                            </a>
+                        <?php
+                            }
+                        }   
+                        ?>
+                    </div>
+                </div>
+                </div>
             <?php
             }
+            else if((isset($_GET['page']) && (($_GET['page'] == "signIn") || ($_GET['page'] == "signUp")))) {
+                ?>
+                <div class="home-block-phone">
+                <a href="../view/index.php?page=index" class="nav-link home-nav-link">
+                    <img src="../public/img/home.png" alt="home">
+                </a>
+                </div>
+                <?php
+                }
             ?>
-        </div>
         <div class="nav-central">
             <div class="title-block">
                 <p><?php echo $title;?></p>
@@ -307,6 +305,7 @@ if(isset($_GET['id'])){
         <?php
         }
         ?>
+        </div>
         </div>
     </div>
 </nav>

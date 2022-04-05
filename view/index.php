@@ -76,6 +76,19 @@ if (isset($_GET['success'])) {
             <img class="planning-bckg" src="../public/img/portrait.png" alt="building">
         </div>
     </div>
+    <?php
+    if(!isset($_SESSION['mail'])) {
+    ?>
+    <div class="home-connect-block-phone">
+    <a href="../view/<?php echo $homeConnect1;?>.php?page=<?php echo $homeConnect3;?>" class="nav-link connect-nav-link">
+        <div class="sign-in-redirection">
+            <p>Inscrivez vous pour confirmer votre présence et nous aider à préparer l'évenement !</p>
+        </div>
+    </a>
+    </div>
+    <?php
+    }
+    ?>
     <div class="index-container">
             <a class="index-block-link" href="../view/map.php?page=map">
                 <div class="index-block">

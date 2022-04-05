@@ -66,6 +66,7 @@ if (isset($_GET['success'])) {
 
 <body>
     <main class="sign-up-main">
+    <a href="../view/sign-in.php?page=signIn" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
         <form class="sign-up-form" action="../controller/sign-up_post.php" method="POST">
             <div class="regular-form">
                 <div></div>
@@ -120,8 +121,9 @@ if (isset($_GET['success'])) {
                 <div class="sign-in-link-container">
                     <div class="form-info-container">
                         <p class='form-info'>Seuls vos noms et prénoms seront visibles par les autres invités. Le reste des informations est uniquement accessible à Hugo et Noémie, ainsi qu'au développeur.</p>
+                        <hr>
+                        <p class='form-info'>Vous pourrez poster et télécharger vos photos dès l'évenement terminé !</p>
                     </div>  
-                    <a href="../view/sign-in.php?page=signIn" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
                 </div>
                 <div class="submit-sign-up-container">
                     <label for="code"><p>Entrez le code présent sur le faire-part</p></label>
