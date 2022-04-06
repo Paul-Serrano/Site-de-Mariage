@@ -462,6 +462,7 @@ nav p {
 .planning-content hr {
   width: 75%;
   margin: 0 auto;
+  transform: rotate(5deg);
 }
 
 .planning-bckg {
@@ -690,6 +691,14 @@ nav p {
   justify-content: space-around;
   align-items: flex-start;
   width: 75%;
+}
+
+.form-info-container hr {
+  margin: 2.5% auto;
+  display: flex;
+  background: black;
+  border: 1px black solid;
+  transform: rotate(20deg);
 }
 
 .sign-in-link {
@@ -2193,7 +2202,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 90%;
   }
 
   .title-block {
@@ -2356,6 +2365,7 @@ body {
 
   .map-main {
     width: 100%;
+    margin-top: 0%;
   }
 
   #map {
@@ -2521,10 +2531,27 @@ body {
   .sign-in-link-container {
     align-items: center;
     margin: 5% 0;
+    width: 100%;
   }
 
   .form-info-container {
     margin-bottom: 5%;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-info-container hr {
+    width: 75%;
+    margin: 2.5% auto;
+    display: flex;
+    background: black;
+    border: 1px black solid;
+    transform: inherit;
+  }
+
+  .submit-container p {
+    width: 90%;
+    margin: 2.5% auto;
   }
 
   .additionnal-sideGuest-container {

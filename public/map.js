@@ -20,31 +20,31 @@ L.tileLayer(
 var weddingMarkerIcon = L.icon({
   iconUrl: "../public/img/rings.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 50],
+  iconAnchor: [25, 25],
 });
 
 var partyMarkerIcon = L.icon({
   iconUrl: "../public/img/party.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 50],
+  iconAnchor: [25, 25],
 });
 
 var housingMarkerIcon = L.icon({
   iconUrl: "../public/img/sleep.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 50],
+  iconAnchor: [25, 25],
 });
 
 var stationMarkerIcon = L.icon({
   iconUrl: "../public/img/gare.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 50],
+  iconAnchor: [25, 25],
 });
 
 var airportMarkerIcon = L.icon({
   iconUrl: "../public/img/aeroport.png",
   iconSize: [50, 50],
-  iconAnchor: [25, 50],
+  iconAnchor: [25, 25],
 });
 
 var access = {
@@ -87,8 +87,8 @@ var events = {
   Salle: {
     spot: "Salle des fêtes",
     event: "Soirée de célébration",
-    lat: 43.50549324389578,
-    lon: -0.6157836935017258,
+    lat: 43.53153263357338,
+    lon: -0.5939311983820518,
     link:
       "https://www.google.com/maps/dir/" +
       adress +
@@ -96,7 +96,7 @@ var events = {
       cp +
       ",+" +
       ville +
-      "/Salle+des+fêtes+Maison+tous+d+Hagetaubin,+64370,+Hagetaubin",
+      "/Saint-Médard,+64370",
     marker: partyMarkerIcon,
   },
 };

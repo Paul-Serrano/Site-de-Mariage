@@ -5,7 +5,7 @@ require_once "../includes/_loader.php";
 
 $close = true;
 
-$title = "Bienvenu sur le site de Noémie et Hugo !";
+$title = "Bienvenue sur le site de Noémie et Hugo !";
 
 if(isset($_SESSION['mail'])) {
     $title = "Bonjour ".$_SESSION["surname"]." ! Vous allez bien ?";
