@@ -184,15 +184,14 @@ if(isset($_GET['id'])){
                                 </div>
                             <?php
                             }
-                        }
                             ?>
                         </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                     <?php
                         }
-                    ?>
-        
-                        <?php
                     }
                 ?>
                 <!-- <a href="../view/change-info.php?page=changeInfo" class="user-change-info-block">

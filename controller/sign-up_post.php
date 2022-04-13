@@ -4,6 +4,91 @@
 require "../includes/_connect.php";
 
 
+if(isset($_POST["no-go-sign-up-btn"])) {
+    $mail = htmlspecialchars($_POST["no-go-mail"]);
+    $name = htmlspecialchars($_POST["no-go-name"]);
+    $surname = htmlspecialchars($_POST["no-go-surname"]);
+    $pass = htmlspecialchars($_POST["no-go-pass"]);
+    $pass2 = htmlspecialchars($_POST["no-go-pass2"]);
+    $userInfo = [$name, $surname, $mail, $pass];
+
+    for($i = 0; $i < count($userInfo); $i++) {
+        if(empty($userInfo[$i])) {
+            header('Location:../view/sign-up.php?error=missingInput');
+            exit();
+        }
+    }
+
+    try {
+        $sqlGetMail = "SELECT mail FROM user";
+        $reqGetMail = $db->prepare($sqlGetMail);
+        $reqGetMail->execute();
+        $existingMail = $reqGetMail->fetchAll();
+    
+    } catch (PDOException $e) {
+        $db = null;
+        echo 'Erreur : '.$e->getMessage();
+    }
+
+    for($i = 0; $i < count($existingMail); $i++) {
+        if($existingMail[$i]['mail'] == $mail)  {
+            header('Location:../view/sign-up.php?error=knownMail');
+            exit();
+        }
+    }
+
+    try {
+        $sqlGetNoGoMail = "SELECT mail FROM noGo_guest";
+        $reqGetNoGoMail = $db->prepare($sqlGetNoGoMail);
+        $reqGetNoGoMail->execute();
+        $existingNoGoMail = $reqGetNoGoMail->fetchAll();
+    
+    } catch (PDOException $e) {
+        $db = null;
+        echo 'Erreur : '.$e->getMessage();
+    }
+
+    for($i = 0; $i < count($existingNoGoMail); $i++) {
+        if($existingNoGoMail[$i]['mail'] == $mail)  {
+            header('Location:../view/sign-up.php?error=knownMail');
+            exit();
+        }
+    }
+
+    if ($pass !== $pass2) {
+        header('Location:../view/sign-up.php?error=differentPasswords');
+        exit();
+    }
+
+    try {
+        $sqlSignUp = "INSERT INTO nogo_guest (name,surname,mail,pass)
+        VALUES (:name, :surname, :mail, :pass)";
+        $reqSignUp = $db->prepare($sqlSignUp);
+        $reqSignUp->bindValue(':name', $name, PDO::PARAM_STR);
+        $reqSignUp->bindValue(':surname', $surname, PDO::PARAM_STR);
+        $reqSignUp->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $reqSignUp->bindValue(':pass', $pass, PDO::PARAM_STR);
+        $reqSignUp->execute();
+        $signUpInfo = $reqSignUp->fetchAll();
+
+    } catch (PDOException $e) {
+        $db = null;
+        echo 'Erreur : '.$e->getMessage();
+    }
+
+    if($reqSignUp) {
+
+        session_start();
+        $_SESSION['id'] = $id[0]["id"];
+        $_SESSION["name"] = $name;
+        $_SESSION["surname"] = $surname;
+        $_SESSION["mail"] = $mail;
+        $_SESSION["pass"] = $pass;
+        $_SESSION["go"] = false;
+        header("Location:../view/index.php?success=signUp&page=index");
+    }
+}
+
 if(isset($_POST["sign-up-submit"])) {
     $mail = htmlspecialchars($_POST["mail"]);
     $name = htmlspecialchars($_POST["name"]);
@@ -47,19 +132,27 @@ if(isset($_POST["sign-up-submit"])) {
             exit();
         }
     }
+
+    try {
+        $sqlGetNoGoMail = "SELECT mail FROM noGo_guest";
+        $reqGetNoGoMail = $db->prepare($sqlGetNoGoMail);
+        $reqGetNoGoMail->execute();
+        $existingNoGoMail = $reqGetNoGoMail->fetchAll();
+    
+    } catch (PDOException $e) {
+        $db = null;
+        echo 'Erreur : '.$e->getMessage();
+    }
+
+    for($i = 0; $i < count($existingMail); $i++) {
+        if($existingNoGoMail[$i]['mail'] == $mail)  {
+            header('Location:../view/sign-up.php?error=knownMail');
+            exit();
+        }
+    }
     
     if ($pass !== $pass2) {
         header('Location:../view/sign-up.php?error=differentPasswords');
-        exit();
-    }
-
-    if(empty($code)) {
-        header('Location:../view/sign-up.php?error=missingCode');
-        exit();
-    }
-
-    if($code !== '0000') {
-        header('Location:../view/sign-up.php?error=wrongCode');
         exit();
     }
 
@@ -367,6 +460,7 @@ if(isset($_POST["sign-up-submit"])) {
         $_SESSION["pass"] = $pass;
         $_SESSION["ville"] = $ville;
         $_SESSION["cp"] = $cp;
+        $_SESSION["go"] = true;
         header("Location:../view/index.php?success=signUp&page=index");
 
     ?><pre><?php

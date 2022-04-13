@@ -66,7 +66,44 @@ if (isset($_GET['success'])) {
 
 <body>
     <main class="sign-up-main">
-    <a href="../view/sign-in.php?page=signIn" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
+    <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
+        <div class="sign-up-top-block">
+            <a href="../view/sign-in.php?page=signIn" class="sign-in-link"><p>Vous avez déjà un compte ? Venez vous identifier ici !</p></a>
+            <div class="sign-up-choice-block">
+                <p>Serez vous présents pour au moins une partie de l'événement ?</p>
+                <div class="sign-up-choice-btn-block">
+                    <button class="sign-up-choice-btn" onclick="goToWedding()"><p>Oui</p></button>
+                    <button class="sign-up-choice-btn" onclick="noGoToWedding()"><p>Non</p></button>
+                </div>
+            </div>
+        </div>
+        <form class="no-go-sign-up-form" action="../controller/sign-up_post.php" method="POST">
+            <div class="no-go-sign-up-form-content">
+                <div class="no-go-sign-up-form-group">
+                    <label for="no-go-name"><p>Nom</p></label>
+                    <input name="no-go-name" id="no-go-name" type="text">
+                </div>
+                <div class="no-go-sign-up-form-group">
+                    <label for="no-go-surname"><p>Prénom</p></label>
+                    <input name="no-go-surname" id="no-go-surname" type="text">
+                </div>
+                <div class="no-go-sign-up-form-group">
+                    <label for="no-go-mail"><p>Adresse mail</p></label>
+                    <input name="no-go-mail" id="no-go-mail" type="text">
+                </div>
+                <div class="no-go-sign-up-form-group">
+                    <label for="no-go-pass"><p>Mot de passe</p></label>
+                    <input name="no-go-pass" id="no-go-pass" type="text">
+                </div>
+                <div class="no-go-sign-up-form-group">
+                    <label for="no-go-pass2"><p>Répétez mot de passe</p></label>
+                    <input name="no-go-pass2" id="no-go-pass2" type="text">
+                </div>
+            </div>
+            <div class="no-go-submit-btn-block">
+                <button class="sign-up-submit-btn" type="submit" name="no-go-sign-up-btn"><p>Valider Inscription</p></button>
+            </div>
+        </form>
         <form class="sign-up-form" action="../controller/sign-up_post.php" method="POST">
             <div class="regular-form">
                 <div></div>
@@ -116,7 +153,6 @@ if (isset($_GET['success'])) {
                 ?>
             </div>
             <hr class="phone-hr">
-            <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
             <div class="submit-container">
                 <div class="sign-in-link-container">
                     <div class="form-info-container">
@@ -126,8 +162,6 @@ if (isset($_GET['success'])) {
                     </div>  
                 </div>
                 <div class="submit-sign-up-container">
-                    <label for="code"><p>Entrez le code présent sur le faire-part</p></label>
-                    <input name="code" id="code" class="code-input" type="text">
                     <button type="submit" name="sign-up-submit" class="sign-up-submit-btn"><p>Valider Inscription</p></button>
                 </div>
             </div>

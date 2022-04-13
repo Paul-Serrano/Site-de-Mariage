@@ -43,7 +43,7 @@ if(isset($_POST['contact-submit'])){
           </html>
           '; 
   
-        mail($mailTo, $sujet, $message);
+        mail($mailTo, $sujet, $message, $header);
        }
 
 

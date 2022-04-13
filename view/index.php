@@ -39,6 +39,7 @@ if (isset($_GET['success'])) {
         <div class="planning-block">
             <div class="planning-filter">
                 <div class="planning-content">
+                    <p>Dimanche 14 à 12h00, brunch à la salle des fêtes de St Médard</p>
                     <div class="planning">
                         <div class="planning-line">
                             <span>16h: Cérémonie civile</span>

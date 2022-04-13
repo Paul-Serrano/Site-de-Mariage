@@ -17,6 +17,20 @@ $(window).on("load", function () {
 
 // sign up form -- start
 
+function goToWedding() {
+  $goForm = $(".sign-up-form");
+  $noGoForm = $(".no-go-sign-up-form");
+  $noGoForm.css("display", "none");
+  $goForm.css("display", "flex");
+}
+
+function noGoToWedding() {
+  $goForm = $(".sign-up-form");
+  $noGoForm = $(".no-go-sign-up-form");
+  $goForm.css("display", "none");
+  $noGoForm.css("display", "flex");
+}
+
 function addFood(i) {
   $addFood = $(`.additionnal-food-container-${i}`);
   $food = $(`.additionnal-food-container`);

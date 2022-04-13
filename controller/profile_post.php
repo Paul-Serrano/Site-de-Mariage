@@ -18,6 +18,17 @@ try {
 }
 
 try {
+    $sqlGetAllNoGoUsers = "SELECT * FROM nogo_guest";
+    $reqGetAllNoGoUsers = $db->prepare($sqlGetAllNoGoUsers);
+    $reqGetAllNoGoUsers->execute();
+    $getNoGoAllUsers = $reqGetAllNoGoUsers->fetchAll();
+
+} catch (PDOException $e) {
+    $db = null;
+    echo 'Erreur : '.$e->getMessage();
+}
+
+try {
     $sqlGetAllFood = "SELECT * FROM food";
     $reqGetAllFood = $db->prepare($sqlGetAllFood);
     $reqGetAllFood->execute();

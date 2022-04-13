@@ -20,13 +20,13 @@ $homeConnect3 = "signIn";
 if(isset($_GET['success'])) {
     $close = false;
     if($_GET['success'] == 'signIn') {
-        $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $title = "Bienvenue sur le site de Noémie et Hugo !";
         $homeConnect = "home";
         $homeConnect1 = "index";
         $homeConnect3 = "";
     }
     if($_GET['success'] == 'signUp') {
-        $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $title = "Bienvenue sur le site de Noémie et Hugo !";
         $homeConnect = "home";
         $homeConnect1 = "index";
         $homeConnect3 = "";
@@ -170,6 +170,9 @@ if(isset($_GET['id'])){
                 <img class="nav-img menu-img" src="../public/img/menu-burger.png" alt="menu">
             </button>
             <div class="menu-burger">
+                <?php
+                if($_SESSION['go']) {
+                ?>
                     <div class="sign-in-block">
                         <a class="nav-link" href="../view/profile.php?page=profile">
                             <button class="nav-btn profile-btn">
@@ -177,6 +180,9 @@ if(isset($_GET['id'])){
                             </button>
                         </a>
                     </div>
+                <?php
+                }
+                ?>
                     <div class="log-out-block">
                         <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
                             <button class="log-out" name="log-out"><p>Se déconnecter</p></button>

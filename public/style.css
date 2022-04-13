@@ -15,7 +15,7 @@
 }
 
 html {
-  height: 100%;
+  height: auto;
 }
 
 img {
@@ -118,7 +118,6 @@ main {
   padding: 1%;
   align-items: center;
   align-self: flex-end;
-  margin: 2.5%;
   position: absolute;
 }
 
@@ -703,6 +702,7 @@ nav p {
 
 .sign-in-link {
   display: flex;
+  width: 45%;
 }
 
 .sign-in-link p {
@@ -713,6 +713,38 @@ nav p {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+.sign-up-top-block {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sign-up-choice-block {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-choice-block p {
+  font-size: 50%;
+}
+
+.sign-up-choice-btn-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sign-up-choice-btn {
+  width: 25%;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #557174;
+  border-radius: 0.5rem 0.25rem;
+  display: flex;
+  justify-content: center;
 }
 
 .form-info {
@@ -737,6 +769,50 @@ nav p {
   border: 1px solid black;
   border-radius: 0.5rem 0.25rem;
   padding: 1%;
+}
+
+.no-go-sign-up-form {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.no-go-sign-up-form-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5% 0;
+  grid-row-gap: 10%;
+}
+
+.no-go-sign-up-form-group {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-go-sign-up-form-group label p {
+  font-size: 50%;
+}
+
+.no-go-sign-up-form-group input {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #557174;
+  border-radius: 0.5rem 0.25rem;
+  font-size: 50%;
+  font-family: "Sans-Serif";
+}
+
+.no-go-submit-btn-block {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
 }
 
 .sign-up-form {
@@ -991,6 +1067,7 @@ input[type="radio"]:checked + label p {
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
+  margin: 2.5% 0;
 }
 
 .submit-container a p,
@@ -1009,6 +1086,7 @@ input[type="radio"]:checked + label p {
     rgba(157, 173, 127, 1) 0%,
     rgba(85, 113, 116, 1) 100%
   );
+  justify-content: center;
 }
 
 .sign-up-submit-btn p {
@@ -2182,7 +2260,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
+    width: 95%;
   }
 
   .home-nav-link {
@@ -2248,7 +2326,7 @@ body {
 
   .menu-burger {
     width: 400%;
-    left: 150%;
+    left: 175%;
     padding: 25%;
     background: rgba(0, 0, 0, 0.5);
   }
