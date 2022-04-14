@@ -33,7 +33,7 @@ if(isset($_POST['sign-in-submit'])){
     if(empty($signInInfo)){
 
         try {
-            $sqlNoGoSignIn = "SELECT * FROM nogo_guest WHERE mail = '$mail'";
+            $sqlNoGoSignIn = "SELECT * FROM noGo_guest WHERE mail = '$mail'";
             $reqNoGoSignIn = $db->prepare($sqlNoGoSignIn);
             $reqNoGoSignIn->execute();
             $noGosignInInfo = $reqNoGoSignIn->fetchAll();

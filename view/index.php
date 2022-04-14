@@ -23,7 +23,7 @@ if (isset($_GET['success'])) {
         $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";
     }
 
-    if($_GET['success'] == 'signInIndex') {
+    if($_GET['success'] == 'signIn') {
         $alert = true;
         $type = "success";
         $message = "Bonjour ".$_SESSION["surname"]." Vous êtes bien connecté ! ";

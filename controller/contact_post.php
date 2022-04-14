@@ -33,17 +33,9 @@ if(isset($_POST['contact-submit'])){
           $header.='Content-Transfer-Encoding: 8bit';
 
           $sujet = $_POST['mail-to-topic'];
-          $message='
-          <html>
-            <body>
-              <div>
-                '.nl2br($_POST['message']).'
-              </div>
-            </body>
-          </html>
-          '; 
+          $message= nl2br($_POST['message']); 
   
-        mail($mailTo, $sujet, $message, $header);
+        mail($mailTo, $sujet, $message);
        }
 
 
