@@ -61,7 +61,7 @@ if(isset($_POST["no-go-sign-up-btn"])) {
     }
 
     try {
-        $sqlSignUp = "INSERT INTO nogo_guest (name,surname,mail,pass)
+        $sqlSignUp = "INSERT INTO noGo_guest (name,surname,mail,pass)
         VALUES (:name, :surname, :mail, :pass)";
         $reqSignUp = $db->prepare($sqlSignUp);
         $reqSignUp->bindValue(':name', $name, PDO::PARAM_STR);
