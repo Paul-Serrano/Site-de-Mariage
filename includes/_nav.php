@@ -185,7 +185,7 @@ if(isset($_GET['id'])){
                 ?>
                     <div class="log-out-block">
                         <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
-                            <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
+                            <button class="log-out" name="log-out"><p>Déconnexion</p></button>
                         </form>
                     </div>
                     <?php 
@@ -254,6 +254,9 @@ if(isset($_GET['id'])){
                     <img src="../public/img/menu-burger.png" alt="menu">
                 </button>
                     <div class="menu-burger">
+                    <?php
+                    if($_SESSION['go']) {
+                    ?>
                         <div class="sign-in-block">
                             <a class="nav-link" href="../view/profile.php?page=profile">
                                 <button class="nav-btn profile-btn">
@@ -261,9 +264,12 @@ if(isset($_GET['id'])){
                                 </button>
                             </a>
                         </div>
+                    <?php
+                    }
+                    ?>
                         <div class="log-out-block">
                             <form class="log-out-form" action="../includes/_log-out_post.php" method="POST">
-                                <button class="log-out" name="log-out"><p>Se déconnecter</p></button>
+                                <button class="log-out" name="log-out"><p>Déconnexion</p></button>
                             </form>
                         </div>
                         <?php 

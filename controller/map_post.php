@@ -5,7 +5,7 @@ require_once "../includes/_head.php";
 
 $connect = false;
 
-if(isset($_SESSION['id'])) {
+if(isset($_SESSION['id']) && $_SESSION['go']) {
 
     $connect = true;
 
