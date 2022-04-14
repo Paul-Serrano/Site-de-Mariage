@@ -185,7 +185,7 @@ nav {
 
 .sign-in-redirection p {
   text-decoration: none;
-  color: #f7f7e8;
+  color: black;
   font-size: 40%;
   text-align: justify;
 }
@@ -622,6 +622,10 @@ nav p {
 
 /* sign in form -- start */
 
+.sign-in-main {
+  flex-direction: column;
+}
+
 .sign-in-form {
   display: flex;
   flex-direction: column;
@@ -814,6 +818,29 @@ nav p {
   width: 25%;
   justify-content: center;
   align-items: center;
+}
+
+.no-go-info-block {
+  display: flex;
+  width: 60%;
+  margin: 0 auto 2.5%;
+  border: 1px solid black;
+  border-radius: 0.5rem 0.25rem;
+  padding: 1%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(199, 207, 183);
+  background: linear-gradient(
+    165deg,
+    rgba(199, 207, 183, 1) 0%,
+    rgba(157, 173, 127, 1) 100%
+  );
+}
+
+.no-go-info-block p {
+  font-size: 50%;
+  color: black;
+  text-align: center;
 }
 
 .sign-up-form {
@@ -2467,6 +2494,10 @@ body {
 
   .no-go-submit-btn-block {
     width: 50%;
+  }
+
+  .no-go-info-block {
+    width: 90%;
   }
 
   .map-main {

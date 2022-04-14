@@ -93,10 +93,10 @@ if(isset($_GET['page'])) {
         $close = false;
     }
     if($_GET['page'] == 'index') {
-        $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $title = "Bienvenue sur le site de Noémie et Hugo !";
     }
     if($_GET['page'] == 'signIn') {
-        $title = "Bienvenu sur le site de Noémie et Hugo !";
+        $title = "Bienvenue sur le site de Noémie et Hugo !";
         $homeConnect = "home";
         $homeConnect1 = "index";
         $homeConnect3 = "index";
@@ -135,7 +135,7 @@ if(isset($_GET['page'])) {
         $title = "Big Brother";
     }
     if($_GET['page'] == 'profile') {
-        $title = "Bienvenu sur votre page de  profil ".$_SESSION['surname']."";
+        $title = "Bienvenue sur votre page de  profil ".$_SESSION['surname']."";
     }
 }
 

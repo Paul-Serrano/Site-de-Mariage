@@ -100,6 +100,9 @@ if (isset($_GET['success'])) {
                     <input name="no-go-pass2" id="no-go-pass2" type="text">
                 </div>
             </div>
+            <div class="no-go-info-block">
+                <p>Inscrivez vous pour retrouver toutes les photos du mariage !</p>
+            </div>
             <div class="no-go-submit-btn-block">
                 <button class="sign-up-submit-btn" type="submit" name="no-go-sign-up-btn"><p>Valider Inscription</p></button>
             </div>

@@ -37,13 +37,13 @@ if (isset($_GET["error"])) {
 
 <body>
     <main class="sign-in-main">
+    <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div class='close-alert'><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
         <form action="../controller/sign-in_post.php" method="POST" class="sign-in-form">
             <label for="mail" class="sign-in-label"><p>Adresse mail</p></label>
             <input class="sign-in-input" id="mail" type="text" name="mail">
             <label for="pass" class="sign-in-label"><p>Mot de passe</p></label>
             <input class="sign-in-input" id="pass" type="password" name="pass">
             <div class="alert-container">
-            <?php echo $alert ? "<div class='alert alert-{$type} mt-2'><p>{$message}</p><div class='close-alert'><img src='../public/img/close.png' alt='fermer' onclick='closeAlert()'></div></div>" : ''; ?>
             <div class="submit-container">
                 <div class="sign-in-link-container">
                         <a href="../view/sign-up.php?page=signUp" class="sign-up-link"><p>Vous n'avez pas de compte ? c'est par ici !</p></a>
